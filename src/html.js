@@ -6,6 +6,7 @@ export default function HTML(props) {
     <html {...props.htmlAttributes}>
       <head>
         <link href="https://fonts.googleapis.com/css?family=Rubik:400,500|Roboto+Mono:400,500" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
         <meta charSet="utf-8" />
         <meta
           name="viewport"

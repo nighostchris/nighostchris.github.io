@@ -8,6 +8,7 @@
   display: flex;
   font: inherit;
   position: fixed;
+  padding: 48px 0px 8px;
   flex-direction: column;
   vertical-align: baseline;
   background-color: white;
@@ -17,7 +18,7 @@
 
 .sidebar-top {
   flex: 0 0 25%;
-  padding: 32px 32px 8px 32px;
+  padding: 0px 32px;
 }
 
 .sidebar-top-title {
@@ -51,4 +52,47 @@
 
 .sidebar-middle {
   flex: 0 0 50%;
+  display: flex;
+  padding: 0px 32px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sidebar-ul {
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+.sidebar-li {
+  margin: 0.8vh 0px;
+}
+
+.sidebar-li-a {
+  font-size: 20px;
+  padding: 4px 0px;
+  line-height: 2em;
+  color: currentColor;
+  border-style: solid;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  border-width: 0px 0px 2px;
+  border-color: transparent;
+  text-transform: uppercase;
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+}
+
+.sidebar-li-a:hover {
+  font-weight: 500;
+  border-color: black;
+  color: rgb(52, 52, 52);
+}
+
+.sidebar-li-a-current {
+  font-weight: 500;
+  color: rgb(52, 52, 52);
+}
+
+.sidebar-bottom {
+  flex: 0 0 25%;
+  padding: 0px 32px;
 }
