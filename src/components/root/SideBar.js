@@ -36,21 +36,17 @@ const SideBar = () => {
         </nav>
       </div>
       <div className="sidebar-bottom">
-        <p>Contact me by chrisliupascal@gmail.com</p>
+        <p className="sidebar-bottom-email">In case you want to contact me, just go for <strong>chrisliupascal@gmail.com</strong></p>
         <hr className="sidebar-top-divider" />
-        <ul>
+        <ul className="sidebar-ul sidebar-bottom-ul">
           <li>
-            <a href="https://github.com/nighostchris" className="">
-              <i className="fab fa-github">
-                <span>Github</span>
-              </i>
+            <a href="https://github.com/nighostchris" className="sidebar-bottom-li-a">
+              <i className="fab fa-github sidebar-icon" style={{ margin: "0px" }}/>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/chrisliupascal" className="">
-              <i className="fab fa-linkedin">
-                <span>LinkedIn</span>
-              </i>
+            <a href="https://www.linkedin.com/in/chrisliupascal" className="sidebar-bottom-li-a">
+              <i className="fab fa-linkedin sidebar-icon" />
             </a>
           </li>
         </ul>
