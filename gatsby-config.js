@@ -4,4 +4,4 @@ module.exports = {
     siteUrl: `https://www.gatsbyjs.org`,
     description: `Blazing fast modern site generator for React`,
   },
-}
+};
