@@ -7,7 +7,7 @@
   width: 300px;
   display: flex;
   font: inherit;
-  position: fixed;
+  box-sizing: border-box;
   padding: 48px 0px 32px;
   flex-direction: column;
   vertical-align: baseline;

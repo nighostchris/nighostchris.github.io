@@ -22,7 +22,7 @@ const SideBar = () => {
               ["home", "skills", "projects", "resume"].map((tab, index) => (
                 <li className="sidebar-li">
                   <a href={`/${tab === "home" ? "" : tab}`}
-                    className={`sidebar-li-a ${((index === 0 && location.pathname.includes("/"))
+                    className={`sidebar-li-a ${((index === 0 && location.pathname === "/")
                       || (index === 1 && location.pathname === "/skills")
                       || (index === 2 && location.pathname === "/projects")
                       || (index === 3 && location.pathname === "/resume"))

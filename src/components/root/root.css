@@ -1,1 +1,9 @@
+.root {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
 
+.main-content {
+  width: calc(100% - 300px);
+}
