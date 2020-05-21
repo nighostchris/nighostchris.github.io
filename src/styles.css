@@ -20,3 +20,18 @@ p {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
+
+.main-content {
+  overflow-y: auto;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 0.9rem;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  border-radius: 0.8rem;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  background-color: black;
+}
