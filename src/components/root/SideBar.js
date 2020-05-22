@@ -12,7 +12,6 @@ const SideBar = () => {
   console.log(location.pathname.includes("/projects"));
   console.log(location.pathname.includes("/workneducation"));
 
-
   return (
     <div className="sidebar">
       <div className="sidebar-top">
@@ -25,20 +24,26 @@ const SideBar = () => {
       <div className="sidebar-middle">
         <nav>
           <ul className="sidebar-ul">
-            {
-              ["home", "skills", "projects", "work & edu"].map((tab, index) => (
-                <li key={`sidebar-tab-${index}`} className="sidebar-li">
-                  <a href={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}`}
-                    className={`sidebar-li-a ${((index === 0 && location.pathname === "/")
-                      || (index === 1 && location.pathname.includes("/skills"))
-                      || (index === 2 && location.pathname.includes("/projects"))
-                      || (index === 3 && location.pathname.includes("/workneducation")))
-                      && "sidebar-li-a-current"}
-                    `}
-                  >{tab}</a>
-                </li>
-              ))
-            }
+            <li key={`sidebar-tab-home`} className="sidebar-li">
+              <a href="/" className={`sidebar-li-a ${location.pathname === "/" && "sidebar-li-a-current"}`}>
+                home
+              </a>
+            </li>
+            <li key={`sidebar-tab-skills`} className="sidebar-li">
+              <a href="/skills" className={`sidebar-li-a ${location.pathname.includes("/skills") && "sidebar-li-a-current"}`}>
+                skills
+              </a>
+            </li>
+            <li key={`sidebar-tab-projects`} className="sidebar-li">
+              <a href="/projects" className={`sidebar-li-a ${location.pathname.includes("/projects") && "sidebar-li-a-current"}`}>
+                projects
+              </a>
+            </li>
+            <li key={`sidebar-tab-wne`} className="sidebar-li">
+              <a href="/workneducation" className={`sidebar-li-a ${location.pathname.includes("/workneducation") && "sidebar-li-a-current"}`}>
+                work & edu
+              </a>
+            </li>
           </ul>
         </nav>
       </div>
