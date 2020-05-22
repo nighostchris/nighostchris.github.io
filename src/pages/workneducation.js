@@ -46,11 +46,15 @@ const WorkAndEducationPage = () => (
               <span
                 className="vertical-timeline-element-icon bounce-in"
                 style={{
+                  color: 'rgb(255, 255, 255)',
                   background: `${experience.category === 'work' ? "rgb(33, 150, 243)" : "rgb(233, 30, 99)"}`,
-                  color: 'rgb(255, 255, 255)'
+                  boxShadow: `0 0 0 4px ${experience.category === 'work' ? "#1976d2" : "#c2185b"}`
                 }}
               />
-              <div className="vertical-timeline-element-content bounce-in">
+              <div
+                className="vertical-timeline-element-content bounce-in"
+                style={{ borderTop: `3px solid ${experience.category === 'work' ? "rgb(33, 150, 243)" : "rgb(233, 30, 99)"}` }}
+              >
                 <div className="vertical-timeline-element-content-arrow" />
                 <h2 className="timeline-element-title">{ experience.title }</h2>
                 <h4>{ experience.subtitle }</h4>

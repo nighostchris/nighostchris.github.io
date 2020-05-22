@@ -140,8 +140,8 @@ p {
   content: '';
   height: 100%;
   position: absolute;
-  background: #fff;
-  box-shadow: 4px 8px 10px grey;
+  background: black;
+  box-shadow: 4px 4px 5px grey;
 }
 
 @media only screen and (min-width:1170px) {
@@ -196,7 +196,6 @@ p {
   height: 40px;
   border-radius: 50%;
   position: absolute;
-  box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0,0,0,.08);
 }
 
 .vertical-timeline-element-icon svg {
