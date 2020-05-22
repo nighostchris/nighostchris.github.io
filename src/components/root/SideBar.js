@@ -1,17 +1,8 @@
 import React from "react";
-import { globalHistory as history } from '@reach/router';
 
 import "./sidebar.css";
 
 const SideBar = () => {
-  const { location } = history;
-  
-  console.log(location.pathname);
-  console.log(location.pathname === "/");
-  console.log(location.pathname.includes("/skills"));
-  console.log(location.pathname.includes("/projects"));
-  console.log(location.pathname.includes("/workneducation"));
-
   return (
     <div className="sidebar">
       <div className="sidebar-top">
@@ -24,26 +15,18 @@ const SideBar = () => {
       <div className="sidebar-middle">
         <nav>
           <ul className="sidebar-ul">
-            <li key={`sidebar-tab-home`} className="sidebar-li">
-              <a href="/" className={`sidebar-li-a ${location.pathname === "/" && "sidebar-li-a-current"}`}>
-                home
-              </a>
-            </li>
-            <li key={`sidebar-tab-skills`} className="sidebar-li">
-              <a href="/skills" className={`sidebar-li-a ${location.pathname.includes("/skills") && "sidebar-li-a-current"}`}>
-                skills
-              </a>
-            </li>
-            <li key={`sidebar-tab-projects`} className="sidebar-li">
-              <a href="/projects" className={`sidebar-li-a ${location.pathname.includes("/projects") && "sidebar-li-a-current"}`}>
-                projects
-              </a>
-            </li>
-            <li key={`sidebar-tab-wne`} className="sidebar-li">
-              <a href="/workneducation" className={`sidebar-li-a ${location.pathname.includes("/workneducation") && "sidebar-li-a-current"}`}>
-                work & edu
-              </a>
-            </li>
+            {
+              ["home", "skills", "projects", "work & edu"].map((tab, index) => (
+                <li className="sidebar-li">
+                  <a
+                    className="sidebar-li-a"
+                    href={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}`}
+                  >
+                    {tab}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </nav>
       </div>

@@ -4,7 +4,7 @@
   margin: 0;
   bottom: 0px;
   z-index: 500;
-  width: 300px;
+  width: 260px;
   display: flex;
   font: inherit;
   box-sizing: border-box;
@@ -14,6 +14,24 @@
   background-color: white;
   -webkit-box-pack: justify;
   justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .sidebar {
+    width: 280px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sidebar {
+    width: 300px;
+  }
 }
 
 .sidebar-top {
@@ -86,11 +104,6 @@
 .sidebar-li-a:hover {
   font-weight: 500;
   border-color: black;
-  color: rgb(52, 52, 52);
-}
-
-.sidebar-li-a-current {
-  font-weight: 500;
   color: rgb(52, 52, 52);
 }
 

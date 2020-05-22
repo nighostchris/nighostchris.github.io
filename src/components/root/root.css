@@ -5,5 +5,23 @@
 }
 
 .main-content {
-  width: calc(100% - 300px);
+  width: calc(100% - 260px);
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .main-content {
+    width: calc(100% - 280px);
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-content {
+    width: calc(100% - 300px);
+  }
 }
