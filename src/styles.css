@@ -35,3 +35,66 @@ p {
   border: 2px solid transparent;
   background-color: black;
 }
+
+.main-content-skills {
+  height: fit-content;
+  padding: 48px 96px;
+}
+
+.skills-header {
+  margin-bottom: 32px;
+  width: 350px;
+}
+
+.skills-header span{
+  font-size: 42px;
+  color: rgb(52, 52, 52);
+}
+
+.skills-subheader {
+  width: 700px;
+  font-size: 26px;
+  line-height: 36px;
+  margin-bottom: 32px;
+}
+
+.skills-divider {
+  width: 256px;
+  margin: 48px 0px;
+  border-color: white;
+  background: transparent;
+  border-width: 0px 0px 3px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  flex-direction: row;
+  margin-block-end: unset;
+  margin-block-start: unset;
+  padding-inline-start: unset;
+}
+
+.skills-list li {
+  flex: 0 0 33.3%;
+  margin: 48px 0px;
+  text-align: center;
+  padding-right: 32px;
+  box-sizing: border-box;
+}
+
+.skills-second-header {
+  width: 600px;
+  margin-bottom: 32px;
+}
+
+.skills-second-header span {
+  font-size: 36px;
+  color: rgb(52, 52, 52);
+}
+
+.skills-second-subheader {
+  font-size: 20px;
+  line-height: 36px;
+}

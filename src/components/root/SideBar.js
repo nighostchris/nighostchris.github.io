@@ -19,13 +19,13 @@ const SideBar = () => {
         <nav>
           <ul className="sidebar-ul">
             {
-              ["home", "skills", "projects", "resume"].map((tab, index) => (
+              ["home", "skills", "projects", "work & edu"].map((tab, index) => (
                 <li className="sidebar-li">
-                  <a href={`/${tab === "home" ? "" : tab}`}
+                  <a href={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}`}
                     className={`sidebar-li-a ${((index === 0 && location.pathname === "/")
-                      || (index === 1 && location.pathname === "/skills")
-                      || (index === 2 && location.pathname === "/projects")
-                      || (index === 3 && location.pathname === "/resume"))
+                      || (index === 1 && location.pathname.includes("/skills"))
+                      || (index === 2 && location.pathname.includes("/projects"))
+                      || (index === 3 && location.pathname.includes("/workneducation")))
                       && "sidebar-li-a-current"}
                     `}
                   >{tab}</a>
