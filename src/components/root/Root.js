@@ -4,7 +4,6 @@ import SideBar from "./SideBar";
 import PropTypes from "prop-types";
 
 const Root = ({ children }) => {
-  console.log(children);
   return (
     <div className="root">
       <SideBar />

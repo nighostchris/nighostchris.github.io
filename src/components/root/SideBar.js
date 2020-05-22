@@ -5,12 +5,19 @@ import "./sidebar.css";
 
 const SideBar = () => {
   const { location } = history;
+  
+  console.log(location.pathname);
+  console.log(location.pathname === "/");
+  console.log(location.pathname.includes("/skills"));
+  console.log(location.pathname.includes("/projects"));
+  console.log(location.pathname.includes("/workneducation"));
+
 
   return (
     <div className="sidebar">
       <div className="sidebar-top">
         <a href="/" style={{ textDecoration: "none" }}>
-          <h1 className="sidebar-top-title">Chris  -  Liu</h1>
+          <h1 className="sidebar-top-title">{`Chris  -  Liu`}</h1>
         </a>
         <hr className="sidebar-top-divider" />
         <p className="sidebar-top-subtitle">Software Developer</p>
@@ -20,7 +27,7 @@ const SideBar = () => {
           <ul className="sidebar-ul">
             {
               ["home", "skills", "projects", "work & edu"].map((tab, index) => (
-                <li className="sidebar-li">
+                <li key={`sidebar-tab-${index}`} className="sidebar-li">
                   <a href={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}`}
                     className={`sidebar-li-a ${((index === 0 && location.pathname === "/")
                       || (index === 1 && location.pathname.includes("/skills"))
