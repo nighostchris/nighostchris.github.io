@@ -84,12 +84,12 @@
 }
 
 .topbar-li {
-  margin: 0.8vh 0px;
+  margin: 2vh 0px;
 }
 
 .topbar-li-a {
   font-size: 20px;
-  padding: 10px 0px;
+  padding: 4px 0px;
   line-height: 2em;
   color: currentColor;
   border-style: solid;
