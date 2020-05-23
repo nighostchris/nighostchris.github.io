@@ -4,6 +4,7 @@ html {
 
 body {
   margin: 0px;
+  overflow-y: hidden;
   color: rgb(105, 105, 105);
   background: rgb(211, 211, 211);
 }

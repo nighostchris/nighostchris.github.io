@@ -10,7 +10,10 @@
 
 @media (max-width: 767px) {
   .main-content {
+    top: 64px;
     width: 100%;
+    height: calc(100% - 64px);
+    position: absolute;
   }
 }
 

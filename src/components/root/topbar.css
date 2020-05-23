@@ -1,0 +1,108 @@
+.topbar {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 500;
+  display: flex;
+  position: fixed;
+  box-shadow: none;
+  line-height: 16px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: background-color 0.3s ease 0s, box-shadow 0.3s ease 0s, padding 0.5s ease 0s;
+}
+
+.topbar-hamburger {
+  position: absolute;
+  left: calc(24px + (8 * (100vw - 320px)) / 1120);
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hamburger:hover {
+  color: rgb(52, 52, 52);
+}
+
+.topbar-title-wrapper {
+  width: fit-content;
+}
+
+.topbar-title {
+  font-size: 24px;
+  line-height: 36px;
+  white-space: normal;
+  border-style: solid;
+  border-width: 0 0 2px;
+  color: rgb(52, 52, 52);
+  border-color: transparent;
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+}
+
+@media (min-width: 768px) {
+  .topbar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .topbar {
+    padding-bottom: calc(12px + (4 * (100vw - 320px)) / 1120);
+    padding-top: calc(12px + (4 * (100vw - 320px)) / 1120);
+    padding-right: calc(24px + (8 * (100vw - 320px)) / 1120);
+    padding-left: calc(24px + (8 * (100vw - 320px)) / 1120);
+    font-size: calc(13px + (2 * (100vw - 320px)) / 1120);
+  }
+}
+
+.topbar-menu {
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  justify-content: center;
+  padding-inline-start: 0px;
+  background-color: white;
+}
+
+.topbar-ul {
+  list-style: none;
+  margin-block-end: 16px;
+  margin-block-start: 0px;
+  padding-inline-start: 0px;
+}
+
+.topbar-li {
+  margin: 0.8vh 0px;
+}
+
+.topbar-li-a {
+  font-size: 20px;
+  padding: 10px 0px;
+  line-height: 2em;
+  color: currentColor;
+  border-style: solid;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  border-width: 0px 0px 2px;
+  border-color: transparent;
+  text-transform: uppercase;
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+}
+
+.topbar-li-a:hover {
+  font-weight: 500;
+  border-color: black;
+  color: rgb(52, 52, 52);
+}
