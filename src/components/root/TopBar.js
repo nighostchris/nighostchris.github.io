@@ -20,12 +20,12 @@ const TopBar = () => {
       </div>
       <menu className="topbar-menu" style={{ display: openHamburger ? 'flex' : 'none' }}>
         <nav>
-          <ul className="sidebar-ul">
+          <ul className="topbar-ul">
             {
               ["home", "skills", "projects", "work & edu"].map((tab, index) => (
-                <li className="sidebar-li">
+                <li className="topbar-li">
                   <a
-                    className="sidebar-li-a"
+                    className="topbar-li-a"
                     href={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}`}
                   >
                     {tab}
