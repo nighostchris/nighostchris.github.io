@@ -70,6 +70,10 @@ p {
     padding: 48px 24px;
   }
 
+  .main-content-skills {
+    padding: 48px 24px 24px 24px;
+  }
+
   .main-content-projects {
     padding: 30px 30px 12px 30px;
   }
@@ -93,6 +97,10 @@ p {
 @media (max-width: 1024px) and (min-width: 767px) {
   .skills-header, .wne-header, .projects-header {
     width: 100%;
+  }
+
+  .skills-header {
+    text-align: center;
   }
 }
 
@@ -121,6 +129,13 @@ p {
   border-color: white;
   background: transparent;
   border-width: 0px 0px 3px;
+}
+
+.skills-caption {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: left;
 }
 
 .skills-list {
@@ -154,6 +169,66 @@ p {
 .skills-second-subheader {
   font-size: 20px;
   line-height: 36px;
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+
+}
+
+@media (max-width: 1024px) and (min-width: 767px) {
+  .skills-list {
+    flex-direction: column;
+  }
+
+  .skills-list li {
+    padding-right: 0px;
+  }
+
+  .skills-divider {
+    width: 100%;
+    margin: 48px 0px 0px 0px;
+  }
+
+  .skills-caption {
+    text-align: center;
+  }
+
+  .skills-subheader, .skills-second-header, .skills-second-subheader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-second-subheader {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-list {
+    flex-direction: column;
+  }
+
+  .skills-list li {
+    padding-right: 0px;
+  }
+
+  .skills-divider {
+    width: 100%;
+    margin: 48px 0px 0px 0px;
+  }
+
+  .skills-caption {
+    text-align: center;
+  }
+
+  .skills-subheader, .skills-second-header, .skills-second-subheader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-second-subheader {
+    margin-bottom: 20px;
+  }
 }
 
 .card-wrapper {

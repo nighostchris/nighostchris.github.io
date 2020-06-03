@@ -93,14 +93,14 @@ const ProjectsPage = () => (
                 }
               </div>
               <h2 style={{ marginTop: '16px', color: 'black' }}>{ skill.title }</h2>
-              <p style={{ marginTop: '16px', fontSize: '18px', lineHeight: '26px', textAlign: 'left' }}>
+              <p className="skills-caption">
                 { skill.caption }
               </p>
             </li>
           ))
         }
       </ul>
-      <hr className="skills-divider" />
+      <hr className="skills-divider" style={{ margin: "12px 0px 48px 0px" }} />
       <h1 className="skills-second-header">
         <span>Some more things you may want to know about me...</span>
       </h1>
