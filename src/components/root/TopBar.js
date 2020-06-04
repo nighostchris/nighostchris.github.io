@@ -10,7 +10,6 @@ const TopBar = () => {
       <div className="topbar-hamburger">
         <i
           role="button"
-          tabIndex={0}
           className="fas fa-bars hamburger"
           onClick={() => setOpenHamburger(!openHamburger)}
         />
