@@ -165,6 +165,7 @@ p {
 .homepage-header-description {
   text-align: center;
   line-height: 1.6em;
+  font-family: "Fira Mono", monospace;
 }
 
 .homepage-header-nav {
@@ -365,6 +366,7 @@ p {
   font-size: 18px;
   line-height: 26px;
   text-align: left;
+  font-family: "Fira Mono", monospace;
 }
 
 .skills-list {
