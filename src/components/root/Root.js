@@ -25,6 +25,12 @@ const Root = ({ children }) => {
         className={`main-content ${scrolled ? "main-content-scrolled" : ""}`}
         onScroll={scrollEventHandler}
       >
+        <div className="main-content-alerts">
+          <i className="fas fa-phone-slash alerts-icons" />
+          <i className="fas fa-signal alerts-icons" />
+          <i className="fas fa-wifi alerts-icons" />
+          <i className="fas fa-battery-quarter alerts-icons" />
+        </div>
         { children }
       </div>
     </div>

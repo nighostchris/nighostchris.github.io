@@ -8,6 +8,18 @@
   width: calc(100% - 260px);
 }
 
+.main-content-alerts {
+  top: 12px;
+  right: 14px;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+}
+
+.alerts-icons {
+  margin-right: 7px;
+}
+
 @media (max-width: 767px) {
   .main-content {
     top: calc(60px + (4 * (100vw - 320px)) / 1120 * 2);
