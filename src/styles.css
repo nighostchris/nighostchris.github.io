@@ -90,6 +90,7 @@ p {
   display: flex;
   flex-direction: row;
   align-items: center;
+  min-height: fit-content;
 }
 
 .homepage-avatar {
@@ -194,6 +195,7 @@ p {
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  min-height: fit-content;
   background-color: white;
   padding-top: calc(48px + (16 * (100vw - 320px)) / 1120);
   padding-bottom: calc(48px + (16 * (100vw - 320px)) / 1120);

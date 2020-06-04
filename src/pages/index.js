@@ -9,7 +9,7 @@ const IndexPage = () => {
         <title>Chris Liu - Software Developer</title>
       </Helmet>
       <div className="homepage">
-        <main className="homepage-main">
+        <div className="homepage-main">
           <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="avatar" className="homepage-avatar" />
           <div className="homepage-intro">
             <h1 className="homepage-intro-h1">
@@ -26,8 +26,8 @@ const IndexPage = () => {
               <a href="/projects" className="homepage-header-navlink">See my work</a>
             </div>
           </div>
-        </main>
-        <footer className="homepage-footer">
+        </div>
+        <div className="homepage-footer">
           <div className="homepage-footer-wrapper">
             <h1 className="homepage-footer-title">Know more about me</h1>
             <p className="homepage-footer-description">
@@ -46,7 +46,7 @@ const IndexPage = () => {
               </a>
             </li>
           </ul>
-        </footer>
+        </div>
       </div>
     </Root>
   );
