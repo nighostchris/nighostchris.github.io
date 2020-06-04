@@ -10,10 +10,15 @@
 
 @media (max-width: 767px) {
   .main-content {
-    top: 64px;
+    top: calc(60px + (4 * (100vw - 320px)) / 1120 * 2);
     width: 100%;
-    height: calc(100% - 64px);
+    height: calc(100% - (60px + (4 * (100vw - 320px)) / 1120 * 2));
     position: absolute;
+  }
+
+  .main-content-scrolled {
+    top: calc(44px + (1 * (100vw - 320px)) / 1120 * 2) !important;
+    height: calc(100% - (44px + (1 * (100vw - 320px)) / 1120 * 2)) !important;
   }
 }
 

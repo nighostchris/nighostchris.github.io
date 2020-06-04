@@ -10,8 +10,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: white;
   transition: background-color 0.3s ease 0s, box-shadow 0.3s ease 0s, padding 0.5s ease 0s;
+}
+
+.topbar-scrolled {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 5px 0px;
 }
 
 .topbar-hamburger {
@@ -56,6 +60,11 @@
     padding-right: calc(24px + (8 * (100vw - 320px)) / 1120);
     padding-left: calc(24px + (8 * (100vw - 320px)) / 1120);
     font-size: calc(13px + (2 * (100vw - 320px)) / 1120);
+  }
+
+  .topbar-scrolled {
+    padding-bottom: calc(3px + (1 * (100vw - 320px)) / 1120) !important;
+    padding-top: calc(3px + (1 * (100vw - 320px)) / 1120) !important;
   }
 }
 

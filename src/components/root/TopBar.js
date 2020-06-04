@@ -1,12 +1,12 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 import "./topbar.css";
 
-const TopBar = () => {
+const TopBar = ({ scrolled }) => {
   const [openHamburger, setOpenHamburger] = React.useState(false);
 
   return (
-    <div className="topbar">
+    <div className={`topbar ${scrolled ? "topbar-scrolled" : ""}`}>
       <div className="topbar-hamburger">
         <i
           role="button"
@@ -39,6 +39,10 @@ const TopBar = () => {
       </menu>
     </div>
   );
+};
+
+TopBar.propTypes = {
+  scrolled: PropTypes.bool.isRequired,
 };
 
 export default TopBar;
