@@ -64,6 +64,13 @@
   }
 }
 
+.topbar-alerts {
+  right: 8px;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+}
+
 .topbar-menu {
   top: 0px;
   z-index: -1;

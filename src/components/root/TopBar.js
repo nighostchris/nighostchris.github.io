@@ -15,6 +15,12 @@ const TopBar = ({ scrolled }) => {
         />
       </div>
       <a href="/" style={{ height: '36px' }}><img src="/topbar-logo.png" alt="topbar-logo" /></a>
+      <div className="topbar-alerts">
+        <i className="fas fa-phone-slash alerts-icons" />
+        <i className="fas fa-signal alerts-icons" />
+        <i className="fas fa-wifi alerts-icons" />
+        <i className="fas fa-battery-quarter alerts-icons" />
+      </div>
       <menu className="topbar-menu" style={{ display: openHamburger ? 'flex' : 'none' }}>
         <nav>
           <ul className="topbar-ul">
