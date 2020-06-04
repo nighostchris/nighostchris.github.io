@@ -6,9 +6,7 @@ const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-top">
-        <a href="/" style={{ textDecoration: "none" }}>
-          <h1 className="sidebar-top-title">{`Chris  -  Liu`}</h1>
-        </a>
+        <img src="/sidebar-logo.png" alt="sidebar-logo" />
         <hr className="sidebar-top-divider" />
         <p className="sidebar-top-subtitle">Software Developer</p>
       </div>
