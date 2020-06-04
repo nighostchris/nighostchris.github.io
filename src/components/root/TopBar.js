@@ -14,11 +14,7 @@ const TopBar = ({ scrolled }) => {
           onClick={() => setOpenHamburger(!openHamburger)}
         />
       </div>
-      <div className="topbar-title-wrapper">
-        <a href="/" style={{ textDecoration: "none" }}>
-          <h1 className="topbar-title">{`Chris  -  Liu`}</h1>
-        </a>
-      </div>
+      <a href="/" style={{ height: '36px' }}><img src="/topbar-logo.png" alt="topbar-logo" /></a>
       <menu className="topbar-menu" style={{ display: openHamburger ? 'flex' : 'none' }}>
         <nav>
           <ul className="topbar-ul">

@@ -32,10 +32,6 @@
   color: rgb(52, 52, 52);
 }
 
-.topbar-title-wrapper {
-  width: fit-content;
-}
-
 .topbar-title {
   font-size: 24px;
   line-height: 36px;

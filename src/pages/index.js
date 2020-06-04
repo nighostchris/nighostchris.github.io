@@ -10,6 +10,7 @@ const IndexPage = () => {
       </Helmet>
       <div className="homepage">
         <main className="homepage-main">
+          <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659652_960_720.png" alt="avatar" className="homepage-avatar" />
           <div className="homepage-intro">
             <h1 className="homepage-intro-h1">
               <span className="homepage-header-name">Hello I am Chris.</span>
