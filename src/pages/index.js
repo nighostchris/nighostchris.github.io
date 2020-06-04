@@ -1,10 +1,13 @@
-import React from "react"
-
+import React from "react";
+import { Helmet } from "react-helmet";
 import Root from "../components/root/Root";
 
 const IndexPage = () => {
   return (
     <Root>
+      <Helmet>
+        <title>Chris Liu - Software Developer</title>
+      </Helmet>
       <div className="homepage">
         <main className="homepage-main">
           <div className="homepage-intro">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Root from "../components/root/Root";
 
 const skillsList = [
@@ -68,6 +69,9 @@ const skillsList = [
 
 const ProjectsPage = () => (
   <Root>
+    <Helmet>
+      <title>Chris Liu - Skills</title>
+    </Helmet>
     <div className="main-content-skills">
       <h1 className="skills-header">
         <span>Started coding since 2013.</span>

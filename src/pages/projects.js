@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Root from "../components/root/Root";
 
 const projects = [{
@@ -68,6 +69,9 @@ const projects = [{
 
 const ProjectsPage = () => (
   <Root>
+    <Helmet>
+      <title>Chris Liu - Projects</title>
+    </Helmet>
     <div className="main-content-projects">
       <h1 className="projects-header">
         <span>Some work by me.</span>

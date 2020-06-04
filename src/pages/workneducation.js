@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Root from "../components/root/Root";
 import { VerticalTimeline }  from 'react-vertical-timeline-component';
 
@@ -35,6 +36,9 @@ const experienceList = [
 
 const WorkAndEducationPage = () => (
   <Root>
+    <Helmet>
+      <title>Chris Liu - Work & Education</title>
+    </Helmet>
     <div className="main-content-wne">
       <h1 className="wne-header">
         <span>Work Experience & Education</span>

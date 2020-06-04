@@ -8,6 +8,7 @@ export default function HTML(props) {
         <link href="https://fonts.googleapis.com/css?family=Rubik:400,500|Roboto+Mono:400,500" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
         <link href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" rel="stylesheet" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
         <meta
           name="viewport"
