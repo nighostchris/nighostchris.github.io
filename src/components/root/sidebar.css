@@ -87,26 +87,6 @@
   margin: 0.8vh 0px;
 }
 
-.sidebar-li-a {
-  font-size: 20px;
-  padding: 4px 0px;
-  line-height: 2em;
-  color: currentColor;
-  border-style: solid;
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  border-width: 0px 0px 2px;
-  border-color: transparent;
-  text-transform: uppercase;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
-}
-
-.sidebar-li-a:hover {
-  font-weight: 500;
-  border-color: black;
-  color: rgb(52, 52, 52);
-}
-
 .sidebar-bottom {
   flex: 0 0 25%;
   display: flex;

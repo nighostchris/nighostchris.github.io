@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Link from '../Link';
 import "./topbar.css";
 
 const TopBar = ({ scrolled }) => {
@@ -26,12 +27,7 @@ const TopBar = ({ scrolled }) => {
             {
               ["home", "skills", "projects", "work & edu"].map((tab, index) => (
                 <li className="topbar-li">
-                  <a
-                    className="topbar-li-a"
-                    href={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}`}
-                  >
-                    {tab}
-                  </a>
+                  <Link to={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}/`}>{tab}</Link>
                 </li>
               ))
             }

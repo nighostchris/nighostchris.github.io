@@ -1,4 +1,5 @@
 import React from "react";
+import Link from '../Link';
 
 import "./sidebar.css";
 
@@ -16,12 +17,7 @@ const SideBar = () => {
             {
               ["home", "skills", "projects", "work & edu"].map((tab, index) => (
                 <li className="sidebar-li">
-                  <a
-                    className="sidebar-li-a"
-                    href={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}`}
-                  >
-                    {tab}
-                  </a>
+                  <Link to={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}/`}>{tab}</Link>
                 </li>
               ))
             }
