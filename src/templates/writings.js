@@ -22,26 +22,33 @@ const WritingsTemplate = ({ data, pageContext }) => {
         <div className="main-content-writings">
           <div className="terminal">
             <div className="terminal-top-bar">
-              <p>chris@chris-desktop: ~/Document/writings</p>
+              <p className="terminal-top-bar-title">chris@desktop: ~/writings</p>
               <div className="terminal-top-bar-icons">
                 <i className="fas fa-times-circle terminal-top-bar-icon" />
                 <i className="fas fa-times-circle terminal-top-bar-icon" />
                 <i className="fas fa-times-circle terminal-top-bar-icon" />
               </div>
             </div>
-            <div className="terminal-cards">
-              <div className="terminal-card">
-                <a className="terminal-card-a" href="/posts/developer-interview-tips-that-will-put-you-ahead/">
-                  <h3 className="fonts__Eyebrow-sc-932vb3-3 styled__Date-ak5bda-3 fMGhhd">
-                    February 24, 2020 &nbsp;·&nbsp; 4 min read
-                  </h3>
-                  <h1 className="fonts__Heading-sc-932vb3-1 styled__Heading-ak5bda-4 jCAUdg">
-                    Developer interview tips that will put you ahead
-                  </h1>
-                  <p className="fonts__Body-sc-932vb3-4 styled__Preview-ak5bda-5 etKbjD">
-                    So you've either completed your Computer Science degree, finished a boot camp, or have been learning about the development world for a long…
-                  </p>
-                </a>
+            <div className="terminal-toolbar">
+              {
+                ["File", "Edit", "View", "Search"].map((tab) => (
+                  <p className="terminal-toolbar-button">{tab}</p>
+                ))
+              }
+            </div>
+            <div className="terminal-card-wrapper">
+              <div className="terminal-cards">
+                {
+                  writings.map(({ node }) => (
+                    <a className="terminal-card-a" href={`/writings/${node.title.toLowerCase().split(' ').join('-')}/`}>
+                      <div className="terminal-card">
+                        <h1 className="post-title">{node.title}</h1>
+                        <h4 className="post-date">{node.date}</h4>
+                        <p className="post-description">{node.content}</p>
+                      </div>
+                    </a>
+                  ))
+                }
               </div>
             </div>
           </div>
@@ -58,6 +65,7 @@ export const writingsListQuery = graphql`
     ) {
       edges {
         node {
+          id
           title
           date
           content

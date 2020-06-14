@@ -7,6 +7,7 @@ const CustomLink = ({ children, to }) => {
       to={to}
       className="custom-link"
       activeClassName="custom-link-active"
+      partiallyActive={to !== "/" ? true : false}
     >
       {children}
     </Link>
