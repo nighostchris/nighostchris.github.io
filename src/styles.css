@@ -40,7 +40,7 @@ p {
   background-color: black;
 }
 
-.main-content-skills, .main-content-wne, .main-content-projects {
+.main-content-skills, .main-content-wne, .main-content-projects, .main-content-writings {
   height: fit-content;
   padding: 48px 96px;
 }
@@ -97,6 +97,37 @@ p {
   font-weight: 500;
   border-color: black;
   color: rgb(52, 52, 52);
+}
+
+.terminal-top-bar {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+
+.terminal-top-bar-icons {
+  right: 0px;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+}
+
+.terminal-top-bar-icon:not(:nth-last-of-type(1)) {
+  margin-right: 5px;
+}
+
+.terminal-card {
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  border-image: initial;
+  border-color: rgb(230, 230, 230);
+  transition: background-color 0.3s ease-in-out 0s;
+}
+
+.terminal-card-a {
+  color: unset;
+  text-decoration: none;
 }
 
 .homepage {

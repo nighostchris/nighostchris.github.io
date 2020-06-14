@@ -25,9 +25,9 @@ const TopBar = ({ scrolled }) => {
         <nav>
           <ul className="topbar-ul">
             {
-              ["home", "skills", "projects", "work & edu"].map((tab, index) => (
+              ["home", "skills", "projects", "work & edu", "writings"].map((tab, index) => (
                 <li className="topbar-li">
-                  <Link to={`/${index === 0 ? "" : (index === 3 ? "workneducation" : tab)}/`}>{tab}</Link>
+                  <Link to={`${index === 0 ? "/" : (index === 3 ? "/workneducation/" : `/${tab}/`)}`}>{tab}</Link>
                 </li>
               ))
             }
