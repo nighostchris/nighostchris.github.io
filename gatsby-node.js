@@ -5,12 +5,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   
   const result = await graphql(`
     query queryAllPosts {
-      allPostsJson {
+      allWritingsJson {
         edges {
           node {
             title
             date
-            content
+            description
           }
         }
       }
@@ -21,15 +21,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`);
   }
 
-  const writings = result.data.allPostsJson.edges;
-  const writingsPerPage = 5;
+  const writings = result.data.allWritingsJson.edges;
+  const writingsPerPage = 6;
   const numOfPages = Math.ceil(writings.length / writingsPerPage);
 
   console.log(writings, writingsPerPage, numOfPages);
 
   Array.from({ length: numOfPages }).forEach((_, index) => {
     createPage({
-      path: index === 0 ? "/writings/" : `/writings/${index + 1}/`,
+      path: index === 0 ? "/writings" : `/writings/${index + 1}`,
       component: path.resolve("./src/templates/writings.js"),
       context: {
         limit: writingsPerPage,
