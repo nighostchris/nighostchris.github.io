@@ -6,7 +6,7 @@ import Root from "../components/root/Root";
 
 const WritingsTemplate = ({ data, pageContext }) => {
   const writings = data.allWritingsJson.edges;
-  const { numOfPages } = pageContext;
+  const { numOfPages, currentPage } = pageContext;
 
   const heightBalancing = () => {
     const rowSize = 2;
@@ -54,10 +54,17 @@ const WritingsTemplate = ({ data, pageContext }) => {
           </div>
           <div className="terminal-card-wrapper">
             <div className="terminal-cards">
-              {
-                heightBalancing()
-              }
+              { heightBalancing() }
             </div>
+          </div>
+          <div className="terminal-pagination">
+            <i className="fas fa-chevron-left pagination-icon pagination-left" />
+            {
+              Array(5).fill().map((_, index) => currentPage + index).filter((e) => e <= numOfPages).map((num) => (
+                <p className="pagination-number">{num}</p>
+              ))
+            }
+            <i className="fas fa-chevron-right pagination-icon pagination-right" />
           </div>
         </div>
       </div>
