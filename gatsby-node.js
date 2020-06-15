@@ -25,8 +25,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const writingsPerPage = 6;
   const numOfPages = Math.ceil(writings.length / writingsPerPage);
 
-  console.log(writings, writingsPerPage, numOfPages);
-
   Array.from({ length: numOfPages }).forEach((_, index) => {
     createPage({
       path: index === 0 ? "/writings" : `/writings/${index + 1}`,

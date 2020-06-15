@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from 'gatsby';
+import { Helmet } from "react-helmet";
 import Root from "../components/root/Root";
 
 const WritingsTemplate = ({ data, pageContext }) => {
@@ -8,6 +9,9 @@ const WritingsTemplate = ({ data, pageContext }) => {
 
   return (
     <Root>
+      <Helmet>
+        <title>Chris Liu - Writings</title>
+      </Helmet>
       <div className="main-content-writings">
         <div className="terminal">
           <div className="terminal-top-bar">
