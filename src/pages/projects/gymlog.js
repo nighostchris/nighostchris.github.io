@@ -16,7 +16,7 @@ const ProjectGymlog = () => {
         <h1 className="project-header">
           <span>GymLog</span>
         </h1>
-        <SyntaxHighlighter language="markdown" style={atomDark}>
+        <SyntaxHighlighter language="markdown" style={atomDark} className="syntax-highlighter">
           {`testing testing testing 
             testing testing testing 
             testing testing testing testing testing 
@@ -35,7 +35,7 @@ const ProjectGymlog = () => {
           </div>
         </div>
         <div className="project-conclusion">
-          <h2 className="project-subheader" style={{ width: '90%', marginTop: '0px', alignSelf: 'center' }}>Details</h2>
+          <h2 className="project-subheader project-subheader-conclusion">Details</h2>
           <div className="project-subconclusion">
             <p className="project-subconclusion-title">Type:</p>
             <p className="project-subconclusion-description">Web-App</p>

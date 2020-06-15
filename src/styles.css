@@ -77,6 +77,10 @@ p {
   .main-content-writings {
     padding: 30px 24px;
   }
+
+  .main-content-project {
+    padding: 48px 36px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -94,6 +98,10 @@ p {
 
   .main-content-writings {
     padding: 30px 24px;
+  }
+
+  .main-content-project {
+    padding: 24px 30px;
   }
 }
 
@@ -531,12 +539,37 @@ p {
   .skills-header {
     text-align: center;
   }
+
+  .project-header, .project-subheader {
+    text-align: center;
+    width: 100%;
+  }
+
+  .project-screenshots-row-wrapper {
+    align-items: center;
+    flex-direction: column !important;
+  }
+
+  .project-screenshot {
+    max-width: 100%;
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 767px) {
-  .skills-header, .wne-header, .projects-header {
+  .skills-header, .wne-header, .projects-header, .project-header, .project-subheader {
     text-align: center;
     width: 100%;
+  }
+
+  .project-screenshot {
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .project-screenshots-row-wrapper {
+    align-items: center;
+    flex-direction: column !important;
   }
 }
 
@@ -826,9 +859,38 @@ p {
   justify-content: space-between;
 }
 
+.project-subheader-conclusion {
+  width: 90%;
+  margin-top: 0px;
+  align-self: center;
+}
+
 .project-screenshot {
   width: fit-content;
   margin-bottom: 48px;
+}
+
+@media (max-width: 1024px) and (min-width: 767px) {
+  .project-conclusion {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .project-conclusion {
+    margin-top: 24px;
+  }
+}
+
+.syntax-highlighter::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.syntax-highlighter::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  background-color: white;
 }
  
 .container-fluid .row {

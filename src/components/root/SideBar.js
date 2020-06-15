@@ -1,5 +1,6 @@
 import React from "react";
 import Link from '../Link';
+import ButtonLink from '../ButtonLink';
 
 import "./sidebar.css";
 
@@ -7,7 +8,7 @@ const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-top">
-        <a href="/"><img src="/sidebar-logo.png" alt="sidebar-logo"/></a>
+        <ButtonLink to="/"><img src="/sidebar-logo.png" alt="sidebar-logo"/></ButtonLink>
         <hr className="sidebar-top-divider" />
         <p className="sidebar-top-subtitle">Software Developer</p>
       </div>

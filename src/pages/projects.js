@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Root from "../components/root/Root";
+import ButtonLink from '../components/ButtonLink';
 
 const ProjectsPage = ({ data }) => {
   const projects = data.allProjectsJson.edges;
@@ -20,9 +21,9 @@ const ProjectsPage = ({ data }) => {
             <h2 className="card-title">{projects[0].node.title}</h2>
             <h3 className="card-subtitle">{projects[0].node.subtitle}</h3>
             <p className="card-text">{projects[0].node.description}</p>
-            <a href={projects[0].node.href} className="card-button">
+            <ButtonLink to={projects[0].node.href} className="card-button">
               Know More
-            </a>
+            </ButtonLink>
           </div>
         </div>
         <div className="card-wrapper">
@@ -34,9 +35,9 @@ const ProjectsPage = ({ data }) => {
                   <h2 className="card-title">{projects[projectIndex].node.title}</h2>
                   <h3 className="card-subtitle">{projects[projectIndex].node.subtitle}</h3>
                   <p className="card-text">{projects[projectIndex].node.description}</p>
-                  <a href={projects[projectIndex].node.href} className="card-button">
+                  <ButtonLink to={projects[projectIndex].node.href} className="card-button">
                     Know More
-                  </a>
+                  </ButtonLink>
                 </div>
               </div>
             ))
@@ -56,9 +57,9 @@ const ProjectsPage = ({ data }) => {
                   <h2 className="card-title">{projects[projectIndex].node.title}</h2>
                   <h3 className="card-subtitle">{projects[projectIndex].node.subtitle}</h3>
                   <p className="card-text">{projects[projectIndex].node.description}</p>
-                  <a href={projects[projectIndex].node.href} className="card-button">
+                  <ButtonLink to={projects[projectIndex].node.href} className="card-button">
                     Know More
-                  </a>
+                  </ButtonLink>
                 </div>
               </div>
             </div>
@@ -72,9 +73,9 @@ const ProjectsPage = ({ data }) => {
                 <h2 className="card-title">{projects[6].node.title}</h2>
                 <h3 className="card-subtitle">{projects[6].node.subtitle}</h3>
                 <p className="card-text">{projects[6].node.description}</p>
-                <a href={projects[6].node.href} className="card-button">
+                <ButtonLink to={projects[6].node.href} className="card-button">
                   Know More
-                </a>
+                </ButtonLink>
               </div>
             </div>
             <div className="card" style={{ width: '100%' }}>
@@ -83,9 +84,9 @@ const ProjectsPage = ({ data }) => {
                 <h2 className="card-title">{projects[7].node.title}</h2>
                 <h3 className="card-subtitle">{projects[7].node.subtitle}</h3>
                 <p className="card-text">{projects[7].node.description}</p>
-                <a href={projects[7].node.href} className="card-button">
+                <ButtonLink to={projects[7].node.href} className="card-button">
                   Know More
-                </a>
+                </ButtonLink>
               </div>
             </div>
           </div>
@@ -95,9 +96,9 @@ const ProjectsPage = ({ data }) => {
               <h2 className="card-title">{projects[8].node.title}</h2>
               <h3 className="card-subtitle">{projects[8].node.subtitle}</h3>
               <p className="card-text">{projects[8].node.description}</p>
-              <a href={projects[8].node.href} className="card-button">
+              <ButtonLink to={projects[8].node.href} className="card-button">
                 Know More
-              </a>
+              </ButtonLink>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from '../Link';
+import ButtonLink from '../ButtonLink';
 import "./topbar.css";
 
 const TopBar = ({ scrolled }) => {
@@ -15,7 +16,7 @@ const TopBar = ({ scrolled }) => {
           onClick={() => setOpenHamburger(!openHamburger)}
         />
       </div>
-      <a href="/" style={{ height: '36px' }}><img src="/topbar-logo.png" alt="topbar-logo" /></a>
+      <ButtonLink to="/" style={{ height: '36px' }}><img src="/topbar-logo.png" alt="topbar-logo" /></ButtonLink>
       <div className="topbar-alerts">
         <i className="fas fa-signal alerts-icons" />
         <i className="fas fa-wifi alerts-icons" />
