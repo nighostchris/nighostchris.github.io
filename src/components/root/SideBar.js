@@ -17,7 +17,7 @@ const SideBar = () => {
             {
               ["home", "skills", "projects", "work & edu", "writings"].map((tab, index) => (
                 <li className="sidebar-li">
-                  <Link to={`${index === 0 ? "/" : (index === 3 ? "/workneducation/" : `/${tab}/`)}`}>{tab}</Link>
+                  <Link to={`${index === 0 ? "/" : (index === 3 ? "/workneducation" : `/${tab}`)}`}>{tab}</Link>
                 </li>
               ))
             }

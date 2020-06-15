@@ -46,7 +46,9 @@ p {
 }
 
 .main-content-writings {
+  height: 100%;
   background: #0f1621;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1439px) and (min-width: 1024px) {
@@ -56,6 +58,10 @@ p {
 
   .main-content-projects {
     padding: 48px 72px 24px 72px;
+  }
+
+  .main-content-writings {
+    padding: 48px 60px;
   }
 }
 

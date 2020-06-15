@@ -27,7 +27,7 @@ const TopBar = ({ scrolled }) => {
             {
               ["home", "skills", "projects", "work & edu", "writings"].map((tab, index) => (
                 <li className="topbar-li">
-                  <Link to={`${index === 0 ? "/" : (index === 3 ? "/workneducation/" : `/${tab}/`)}`}>{tab}</Link>
+                  <Link to={`${index === 0 ? "/" : (index === 3 ? "/workneducation" : `/${tab}`)}`}>{tab}</Link>
                 </li>
               ))
             }
