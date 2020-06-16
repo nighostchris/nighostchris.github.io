@@ -3,7 +3,7 @@ version: 2.1
 
 jobs:
   # Name of the job
-  build:
+  deploy-site:
     # Tell CircleCI that I need docker environment
     docker:
       # Specify the image I need
@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - checkout
+
+      - run: sudo npm install -g gh-pages
 
       # Download and cache dependencies to avoid installing package per commit
       - restore_cache:
@@ -30,21 +32,18 @@ jobs:
 
       - run: yarn run build
 
-  deploy-stage:
-    docker:
-      - image: circleci/node:latest
-
-    working_directory: ~/my-portfolio
-    steps:
       - run: git config --global user.email chrisliupascal@gmail.com
 
       - run: git config --global user.name nighostchris
-      
+
       - run: yarn run deploy
 
 workflows:
   main:
     jobs:
-      - build
+      - deploy-site
 
-      - deploy-stage
+general:
+  branches:
+    only:
+      - dev
