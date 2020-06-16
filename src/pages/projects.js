@@ -1,5 +1,7 @@
 import React from "react";
+import { graphql } from 'gatsby';
 import { Helmet } from "react-helmet";
+import "./projects.css";
 import Root from "../components/root/Root";
 import ButtonLink from '../components/ButtonLink';
 
@@ -21,7 +23,10 @@ const ProjectsPage = ({ data }) => {
             <h2 className="card-title">{projects[0].node.title}</h2>
             <h3 className="card-subtitle">{projects[0].node.subtitle}</h3>
             <p className="card-text">{projects[0].node.description}</p>
-            <ButtonLink to={projects[0].node.href} className="card-button">
+            <ButtonLink
+              className="card-button"
+              to={projects[0].node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}
+            >
               Know More
             </ButtonLink>
           </div>
@@ -35,7 +40,10 @@ const ProjectsPage = ({ data }) => {
                   <h2 className="card-title">{projects[projectIndex].node.title}</h2>
                   <h3 className="card-subtitle">{projects[projectIndex].node.subtitle}</h3>
                   <p className="card-text">{projects[projectIndex].node.description}</p>
-                  <ButtonLink to={projects[projectIndex].node.href} className="card-button">
+                  <ButtonLink
+                    className="card-button"
+                    to={projects[projectIndex].node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}
+                  >
                     Know More
                   </ButtonLink>
                 </div>
@@ -57,7 +65,10 @@ const ProjectsPage = ({ data }) => {
                   <h2 className="card-title">{projects[projectIndex].node.title}</h2>
                   <h3 className="card-subtitle">{projects[projectIndex].node.subtitle}</h3>
                   <p className="card-text">{projects[projectIndex].node.description}</p>
-                  <ButtonLink to={projects[projectIndex].node.href} className="card-button">
+                  <ButtonLink
+                    className="card-button"
+                    to={projects[projectIndex].node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}
+                  >
                     Know More
                   </ButtonLink>
                 </div>
@@ -73,7 +84,10 @@ const ProjectsPage = ({ data }) => {
                 <h2 className="card-title">{projects[6].node.title}</h2>
                 <h3 className="card-subtitle">{projects[6].node.subtitle}</h3>
                 <p className="card-text">{projects[6].node.description}</p>
-                <ButtonLink to={projects[6].node.href} className="card-button">
+                <ButtonLink
+                  className="card-button"
+                  to={projects[6].node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}
+                >
                   Know More
                 </ButtonLink>
               </div>
@@ -84,7 +98,10 @@ const ProjectsPage = ({ data }) => {
                 <h2 className="card-title">{projects[7].node.title}</h2>
                 <h3 className="card-subtitle">{projects[7].node.subtitle}</h3>
                 <p className="card-text">{projects[7].node.description}</p>
-                <ButtonLink to={projects[7].node.href} className="card-button">
+                <ButtonLink
+                  className="card-button"
+                  to={projects[7].node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}
+                >
                   Know More
                 </ButtonLink>
               </div>
@@ -96,7 +113,10 @@ const ProjectsPage = ({ data }) => {
               <h2 className="card-title">{projects[8].node.title}</h2>
               <h3 className="card-subtitle">{projects[8].node.subtitle}</h3>
               <p className="card-text">{projects[8].node.description}</p>
-              <ButtonLink to={projects[8].node.href} className="card-button">
+              <ButtonLink
+                className="card-button"
+                to={projects[8].node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}
+              >
                 Know More
               </ButtonLink>
             </div>
@@ -117,7 +137,6 @@ export const projectsListQuery = graphql`
           title
           subtitle
           description
-          href
         }
       }
     }

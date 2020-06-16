@@ -14,6 +14,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
+      allProjectsJson {
+        edges {
+          node {
+            id
+            title
+          }
+        }
+      }
     }
   `);
 
@@ -25,6 +33,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const writingsPerPage = 1;
   const numOfPages = Math.ceil(writings.length / writingsPerPage);
 
+  const projects = result.data.allProjectsJson.edges;
+
   Array.from({ length: numOfPages }).forEach((_, index) => {
     createPage({
       path: index === 0 ? "/writings" : `/writings/${index + 1}`,
@@ -35,6 +45,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         numOfPages,
         currentPage: index + 1
       },
+    });
+  });
+
+  projects.forEach((project) => {
+    createPage({
+      path: `/projects/${project.node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}`,
+      component: path.resolve("./src/templates/project.js"),
+      context: {
+        projectId: project.node.id
+      }
     });
   });
 };

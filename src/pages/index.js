@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import "./index.css"
 import Root from "../components/root/Root";
 
 const IndexPage = () => {

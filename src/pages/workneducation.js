@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import "./workneducation.css";
 import Root from "../components/root/Root";
 import { VerticalTimeline }  from 'react-vertical-timeline-component';
 
