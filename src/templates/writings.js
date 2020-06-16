@@ -1,11 +1,34 @@
 import React from "react";
 import { graphql } from 'gatsby';
 import { Helmet } from "react-helmet";
+import "./writings.css";
 import Root from "../components/root/Root";
 
 const WritingsTemplate = ({ data, pageContext }) => {
   const writings = data.allWritingsJson.edges;
-  const { numOfPages } = pageContext;
+  const { numOfPages, currentPage } = pageContext;
+
+  const heightBalancing = () => {
+    const rowSize = 2;
+
+    const row = writings.map(({ node }) => (
+      <a className="terminal-card-a" href={`/writings/${node.title.toLowerCase().split(' ').join('-')}/`}>
+        <div className="terminal-card">
+          <h1 className="post-title">{node.title}</h1>
+          <h4 className="post-date">{node.date}</h4>
+          <p className="post-description">{node.description}</p>
+        </div>
+      </a>
+    )).reduce((result, element, index) => {
+      index % rowSize === 0 && result.push([]);
+      result[result.length - 1].push(element);
+      return result;
+    }, []).map((newRow) => (
+      <div className="terminal-cards-row">{newRow}</div>
+    ));
+
+    return row;
+  }
 
   return (
     <Root>
@@ -31,18 +54,17 @@ const WritingsTemplate = ({ data, pageContext }) => {
           </div>
           <div className="terminal-card-wrapper">
             <div className="terminal-cards">
-              {
-                writings.map(({ node }) => (
-                  <a className="terminal-card-a" href={`/writings/${node.title.toLowerCase().split(' ').join('-')}/`}>
-                    <div className="terminal-card">
-                      <h1 className="post-title">{node.title}</h1>
-                      <h4 className="post-date">{node.date}</h4>
-                      <p className="post-description">{node.description}</p>
-                    </div>
-                  </a>
-                ))
-              }
+              { heightBalancing() }
             </div>
+          </div>
+          <div className="terminal-pagination">
+            <i className="fas fa-chevron-left pagination-icon pagination-left" />
+            {
+              Array(5).fill().map((_, index) => currentPage + index).filter((e) => e <= numOfPages).map((num) => (
+                <p className="pagination-number">{num}</p>
+              ))
+            }
+            <i className="fas fa-chevron-right pagination-icon pagination-right" />
           </div>
         </div>
       </div>

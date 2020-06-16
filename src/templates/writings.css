@@ -1,0 +1,83 @@
+.terminal-card {
+  margin-bottom: 0px;
+  height: 100%;
+}
+
+.terminal-cards-row {
+  display: flex;
+  min-height: 250px;
+  flex-direction: row;
+  margin-bottom: 36px;
+  height: max-content;
+  justify-content: space-between;
+}
+
+.terminal {
+  background-color: #2d0922;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.terminal-pagination {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 24px;
+  justify-content: center;
+}
+
+.pagination-icon {
+  font-size: 20px;
+  color: rgb(210, 210, 210);
+}
+
+.pagination-left {
+  margin-right: 12px;
+}
+
+.pagination-right {
+  margin-left: 12px;
+}
+
+.pagination-number {
+  width: 36px;
+  height: 36px;
+  color: black;
+  line-height: 36px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: center;
+  background: white;
+  border-color: #f3f5fb;
+  border: 1px solid white;
+}
+
+.pagination-number:not(:last-of-type) {
+  margin-right: 12px;
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+
+}
+
+@media (max-width: 1024px) and (min-width: 767px) {
+  .terminal-card {
+    margin-bottom: 24px;
+  }
+  
+  .terminal-cards-row {
+    margin-bottom: 0px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 767px) {
+  .terminal-card {
+    margin-bottom: 24px;
+  }
+
+  .terminal-cards-row {
+    margin-bottom: 0px;
+    flex-direction: column;
+  }
+}
