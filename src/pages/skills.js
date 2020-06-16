@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import "./skills.css";
 import Root from "../components/root/Root";
 
 const skillsList = [

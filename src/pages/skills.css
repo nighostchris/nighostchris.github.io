@@ -1,0 +1,160 @@
+.main-content-skills {
+  height: fit-content;
+  padding: 48px 96px;
+}
+
+.skills-header {
+  margin-bottom: 32px;
+  width: 350px;
+}
+
+.skills-header span {
+  font-size: 42px;
+  color: rgb(52, 52, 52);
+}
+
+.skills-subheader {
+  width: 700px;
+  font-size: 26px;
+  line-height: 36px;
+  margin-bottom: 32px;
+}
+
+.skills-divider {
+  width: 256px;
+  margin: 48px 0px;
+  border-color: white;
+  background: transparent;
+  border-width: 0px 0px 3px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  flex-direction: row;
+  margin-block-end: unset;
+  margin-block-start: unset;
+  padding-inline-start: unset;
+}
+
+.skills-list li {
+  flex: 0 0 33.3%;
+  margin: 48px 0px;
+  text-align: center;
+  padding-right: 32px;
+  box-sizing: border-box;
+}
+
+.skills-caption {
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: left;
+  font-family: "Fira Mono", monospace;
+}
+
+.skills-second-header {
+  width: 600px;
+  margin-bottom: 32px;
+}
+
+.skills-second-header span {
+  font-size: 36px;
+  color: rgb(52, 52, 52);
+}
+
+.skills-second-subheader {
+  font-size: 20px;
+  line-height: 36px;
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .main-content-skills {
+    padding: 48px 72px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 767px) {
+  .main-content-skills {
+    padding: 48px 48px;
+  }
+
+  .skills-header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-subheader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-divider {
+    width: 100%;
+    margin: 48px 0px 0px 0px;
+  }
+
+  .skills-list {
+    flex-direction: column;
+  }
+
+  .skills-list li {
+    padding-right: 0px;
+  }
+
+  .skills-caption {
+    text-align: center;
+  }
+
+  .skills-second-header, .skills-second-subheader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-second-subheader {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content-skills {
+    padding: 30px 30px 24px 30px;
+  }
+
+  .skills-header {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-subheader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-divider {
+    width: 100%;
+    margin: 48px 0px 0px 0px;
+  }
+
+  .skills-list {
+    flex-direction: column;
+  }
+
+  .skills-list li {
+    padding-right: 0px;
+  }
+
+  .skills-caption {
+    text-align: center;
+  }
+
+  .skills-second-header, .skills-second-subheader {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-second-subheader {
+    margin-bottom: 20px;
+  }
+}

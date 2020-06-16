@@ -1,6 +1,86 @@
-.terminal-card {
-  margin-bottom: 0px;
+.main-content-writings {
+  min-height: 100%;
+  padding: 48px 96px;
+  height: fit-content;
+  background: #0f1621;
+  box-sizing: border-box;
+}
+
+.terminal {
+  background-color: #2d0922;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.terminal-top-bar {
+  height: 30px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #4a4842;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.terminal-top-bar-title {
+  color: white;
+  line-height: 30px;
+  font-family: "Fira Mono", monospace;
+}
+
+.terminal-top-bar-icons {
+  right: 0px;
   height: 100%;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+}
+
+.terminal-top-bar-icon {
+  cursor: pointer;
+  margin-right: 8px;
+  align-self: center;
+}
+
+.terminal-top-bar-icon:nth-last-of-type(3), .terminal-top-bar-icon:nth-last-of-type(2) {
+  color: #7c7f76;
+}
+
+.terminal-top-bar-icon:nth-last-of-type(1) {
+  color: #eb5929;
+}
+
+.terminal-toolbar {
+  height: 30px;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  background-color: #3e3d39;
+  justify-content: flex-start;
+}
+
+.terminal-toolbar-button {
+  color: white;
+  cursor: pointer;
+  margin: 0px 10px;
+  line-height: 30px;
+  font-weight: bold;
+  font-family: "Fira Mono", monospace;
+}
+
+.terminal-card-wrapper {
+  background-color: #2d0922;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.terminal-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 36px 48px 0px 48px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .terminal-cards-row {
@@ -12,10 +92,31 @@
   justify-content: space-between;
 }
 
-.terminal {
-  background-color: #2d0922;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+.terminal-card-a {
+  color: unset;
+  outline: none;
+  text-decoration: none;
+  width: calc(50% - 24px);
+}
+
+.terminal-card {
+  height: 100%;
+  min-height: 250px;
+  padding: 8px 24px;
+  border-width: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  height: fit-content;
+  border-image: initial;
+  box-sizing: border-box;
+  background-color: #3d0c2e;
+  border-color: rgb(230, 230, 230);
+  font-family: "Fira Mono", monospace;
+  transition: background-color 0.3s ease-in-out 0s;
+}
+
+.terminal-card:hover {
+  opacity: 60%;
 }
 
 .terminal-pagination {
@@ -57,27 +158,59 @@
 }
 
 @media (max-width: 1439px) and (min-width: 1024px) {
-
+  .main-content-writings {
+    padding: 48px 60px;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 767px) {
-  .terminal-card {
-    margin-bottom: 24px;
+  .main-content-writings {
+    padding: 30px 24px;
   }
-  
+
+  .terminal-cards {
+    flex-direction: column;
+    padding: 24px 24px 0px 24px;
+  }
+
   .terminal-cards-row {
     margin-bottom: 0px;
     flex-direction: column;
+  }
+
+  .terminal-card-a {
+    width: 100%;
+  }
+
+  .terminal-card {
+    margin-bottom: 24px;
   }
 }
 
 @media (max-width: 767px) {
-  .terminal-card {
-    margin-bottom: 24px;
+  .main-content-writings {
+    padding: 30px 24px;
+  }
+
+  .terminal-cards {
+    flex-direction: column;
+    padding: 24px 24px 0px 24px;
   }
 
   .terminal-cards-row {
     margin-bottom: 0px;
     flex-direction: column;
+  }
+
+  .terminal-card-a {
+    width: 100%;
+  }
+
+  .terminal-card {
+    margin-bottom: 24px;
+  }
+
+  .terminal-top-bar-title {
+    display: none;
   }
 }
