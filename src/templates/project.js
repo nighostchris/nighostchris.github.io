@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import { Helmet } from "react-helmet";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import "./project.css";
 import Root from "../components/root/Root";
 
 const ProjectTemplate = ({ data }) => {
