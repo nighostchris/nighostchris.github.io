@@ -1,0 +1,50 @@
+# Version of CircleCI
+version: 2.1
+
+jobs:
+  # Name of the job
+  build:
+    # Tell CircleCI that I need docker environment
+    docker:
+      # Specify the image I need
+      - image: circleci/node:latest
+    
+    working_directory: ~/my-portfolio
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies to avoid installing package per commit
+      - restore_cache:
+          keys:
+          - dependencies-{{ checksum "package.json" }}
+          # Fallback to using the latest cache if no exact match is found
+          - dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package.json" }}
+
+      - run: yarn run build
+
+  deploy-stage:
+    docker:
+      - image: circleci/node:latest
+
+    working_directory: ~/my-portfolio
+    steps:
+      - run: git config --global user.email chrisliupascal@gmail.com
+
+      - run: git config --global user.name nighostchris
+      
+      - run: yarn run deploy
+
+workflows:
+  main:
+    jobs:
+      - build
+
+      - deploy-stage
