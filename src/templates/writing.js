@@ -1,6 +1,7 @@
 import React from "react";
 import Root from "../components/root/Root";
 import { Code } from "../components/medium/Code";
+import ButtonLink from "../components/ButtonLink";
 import { Image } from "../components/medium/Image";
 import { Details } from "../components/medium/Details";
 import { Container } from "../components/medium/Container";
@@ -9,8 +10,9 @@ import { NormalText, BoldText, HyperLinkText } from "../components/medium/Text";
 import JsxParser from "react-jsx-parser";
 import "./writing.css";
 
-const WritingTemplate = ({ data }) => {
+const WritingTemplate = ({ data, pageContext }) => {
   const writing = data.allWritingsJson.edges[0];
+  const { belongsToPage } = pageContext;
 
   const titleGenerator = (title, subtitle) => {
     return `
@@ -35,13 +37,15 @@ const WritingTemplate = ({ data }) => {
       <div className="main-content-writing-template">
         <Container>
           <JsxParser
-            components={{ Title, Subtitle, Details, BoldText, NormalText, Header, Code, HyperLinkText, Image }}
+            bindings={{ belongsToPage: belongsToPage }}
+            components={{ Title, Subtitle, Details, BoldText, NormalText, Header, Code, HyperLinkText, Image, ButtonLink }}
             jsx={
               titleGenerator(writing.node.title, writing.node.subtitle)
               + detailsGenerator(writing.node.length, writing.node.date, writing.node.author, writing.node.avatarsrc)
               + writing.node.content
+              + "<ButtonLink to={belongsToPage} className=\"card-button writing-card-button\">Back</ButtonLink>"
             }
-          />        
+          />
         </Container>
       </div>
     </Root>

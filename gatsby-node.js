@@ -10,8 +10,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             title
-            date
-            description
           }
         }
       }
@@ -59,12 +57,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  writings.forEach((writing) => {
+  writings.forEach((writing, index) => {
+    const pageNumber = Math.trunc(index / writingsPerPage);
     createPage({
       path: `/writings/${writing.node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}`,
       component: path.resolve("./src/templates/writing.js"),
       context: {
-        writingId: writing.node.id
+        writingId: writing.node.id,
+        belongsToPage: pageNumber === 0 ? "/writings" : `/writings/${pageNumber + 1}`
       }
     });
   });
