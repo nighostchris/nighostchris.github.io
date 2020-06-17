@@ -98,13 +98,17 @@
     "subtitle": "Sept 2017 - Dec 2017",
     "description": "Our team implemented this LINE chatbot in the notorious course COMP3111. That's the first time I need to learn new framework in a pretty short time and implement the features from scratch.",
     "longerDescription": "Testing\nTesting",
-    "type": "Web-App",
+    "type": "Chatbot",
     "screenshots": [
-      { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
-      { "src": "/gymlog/workout-plan-selector.png", "alt": "gymlog-screenshot-2" }
+      { "src": "/chatbot/bus.png", "alt": "campus-bus" },
+      { "src": "/chatbot/campus-eta.png", "alt": "chatbot-campus-eta" },
+      { "src": "/chatbot/recreation.png", "alt": "chatbot-recreation" },
+      { "src": "/chatbot/societies.png", "alt": "chatbot-societies" },
+      { "src": "/chatbot/staff.png", "alt": "chatbot-staff" },
+      { "src": "/chatbot/uml-diagram.jpg", "alt": "chatbot-uml-diagram" }
     ],
-    "lnl": "Node.js, Vue.js, Express, Axios, Sequelize, PostgreSQL",
-    "srcLink": ["https://github.com/nighostchris/gymlog", "Github Repository"]
+    "lnl": "Java, Spring, PostgreSQL",
+    "srcLink": ["https://github.com/nighostchris/ust-freshman-chatbot", "Github Repository"]
   },
   {
     "imgsrc": "../poa/cbc.png",
