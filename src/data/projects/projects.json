@@ -113,13 +113,14 @@
     "subtitle": "November 2017",
     "description": "A COMP3632 assignment about decrypting AES. This is a hard assignment with complicated concepts. But the course is inspiring undoubtedly.",
     "longerDescription": "Testing\nTesting",
-    "type": "Web-App",
+    "type": "Application",
     "screenshots": [
-      { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
-      { "src": "/gymlog/workout-plan-selector.png", "alt": "gymlog-screenshot-2" }
+      { "src": "/poa/poa-assignment-1.jpg", "alt": "poa-assignment-1" },
+      { "src": "/poa/poa-assignment-2.jpg", "alt": "poa-assignment-2" },
+      { "src": "/poa/poa-assignment-3.jpg", "alt": "poa-assignment-3" }
     ],
-    "lnl": "Node.js, Vue.js, Express, Axios, Sequelize, PostgreSQL",
-    "srcLink": ["https://github.com/nighostchris/gymlog", "Github Repository"]
+    "lnl": "Python",
+    "srcLink": ["https://github.com/nighostchris/COMP3632-Assignment-2-Py", "Github Repository"]
   },
   {
     "imgsrc": "../girvan-newman/people-network.png",

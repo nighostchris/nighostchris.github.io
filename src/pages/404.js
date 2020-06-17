@@ -1,11 +1,14 @@
 import React from "react"
-
-//import Layout from "../components/layout"
+import { NormalText } from "../components/medium/Text"
 
 const NotFoundPage = () => (
   <>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <NormalText>
+      One of the questions, which rise in search for a good template is what is React.js.
+      This technology was developed by Jordan Walke and is an open-source JavaScript library
+       for creating user interfaces for applications, which use one single page. First React was applied in 
+       2011 on Facebook newsfeed and in 2012 on Instagram, so you definitely have seen pages made with React.
+    </NormalText>
   </>
 )
 
