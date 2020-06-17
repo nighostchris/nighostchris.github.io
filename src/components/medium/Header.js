@@ -12,3 +12,9 @@ export const Subtitle = ({ children }) => {
     <h4 className="medium-subtitle">{children}</h4>
   )
 }
+
+export const Header = ({ children }) => {
+  return (
+    <h1 className="medium-header">{children}</h1>
+  )
+}

@@ -1,0 +1,14 @@
+.medium-code {
+  margin: 36px 0px 0px 0px !important;
+}
+
+.medium-code::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.medium-code::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  background-color: white;
+}
