@@ -15,7 +15,9 @@
 * [React Bootstrap](https://react-bootstrap.github.io/) - The most popular front-end framework. Rebuilt for React.
 
 ## To-do List
-- [ ] A template for writing
+- [x] A template for writing
+- [ ] Dark Mode
+- [ ] Footer and pagination for writing template
 
 ### Installation
 Setup
