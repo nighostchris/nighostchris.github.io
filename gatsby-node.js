@@ -8,6 +8,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allWritingsJson {
         edges {
           node {
+            id
             title
             date
             description
@@ -54,6 +55,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: path.resolve("./src/templates/project.js"),
       context: {
         projectId: project.node.id
+      }
+    });
+  });
+
+  writings.forEach((writing) => {
+    createPage({
+      path: `/writings/${writing.node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}`,
+      component: path.resolve("./src/templates/writing.js"),
+      context: {
+        writingId: writing.node.id
       }
     });
   });
