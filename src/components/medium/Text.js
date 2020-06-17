@@ -6,3 +6,9 @@ export const NormalText = ({ children }) => {
     <p className="medium-normal-text">{children}</p>
   );
 };
+
+export const BoldText = ({ children }) => {
+  return (
+    <strong className="medium-bold-text">{children}</strong>
+  )
+}

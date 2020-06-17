@@ -15,6 +15,15 @@ module.exports = {
         name: "projects",
         path: "./src/data/projects"
       }
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["KievitOT, KievitOT-Book, KievitOT-BookItalic"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
     }
   ]
 }

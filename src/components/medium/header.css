@@ -1,0 +1,48 @@
+.medium-title {
+  margin: 0;
+  font-style: normal;
+  letter-spacing: 0px;
+  word-break: break-word;
+  margin-bottom: -0.27em;
+  color: rgba(41, 41, 41, 1);
+  font-family: "KievitOT", sans-serif;
+}
+
+.medium-subtitle {
+  margin: 0;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0px;
+  word-break: break-word;
+  margin-bottom: -0.42em;
+  color: rgba(117, 117, 117, 1);
+  font-family: "KievitOT", sans-serif;
+}
+
+@media (min-width: 1080px) {
+  .medium-title {
+    font-size: 40px;
+    line-height: 48px;
+    margin-top: 0.29em;
+  }
+
+  .medium-subtitle {
+    font-size: 24px;
+    line-height: 32px;
+    margin-top: 0.79em;
+  }
+}
+
+@media (max-width: 728px) {
+  .medium-title {
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 0.59em;
+  }
+
+  .medium-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 0.79em;
+  }
+}
