@@ -83,13 +83,12 @@
     "subtitle": "February 2018",
     "description": "At that time I was pretty obsessed about making a desktop app for myself to monitor stock price. That's why this product was born and implementing UI through Python QT is definitely not a good experience.",
     "longerDescription": "Testing\nTesting",
-    "type": "Web-App",
+    "type": "Application",
     "screenshots": [
-      { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
-      { "src": "/gymlog/workout-plan-selector.png", "alt": "gymlog-screenshot-2" }
+      { "src": "/stock/real-time-stock.png", "alt": "stock-screenshot-1" }
     ],
-    "lnl": "Node.js, Vue.js, Express, Axios, Sequelize, PostgreSQL",
-    "srcLink": ["https://github.com/nighostchris/gymlog", "Github Repository"]
+    "lnl": "Python, PyQt",
+    "srcLink": ["https://github.com/nighostchris/stock", "Github Repository"]
   },
   {
     "imgsrc": "../chatbot/bus.png",
@@ -133,12 +132,11 @@
     "subtitle": "March 2017",
     "description": "A COMP4641 assignment about social network information analysis. Girvan Newman is an algorithm to detect communities in systems by progressively removing edges from a network.",
     "longerDescription": "Testing\nTesting",
-    "type": "Web-App",
+    "type": "Application",
     "screenshots": [
-      { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
-      { "src": "/gymlog/workout-plan-selector.png", "alt": "gymlog-screenshot-2" }
+      { "src": "/girvan-newman/girvan-newman.png", "alt": "girvan-newman" }
     ],
-    "lnl": "Node.js, Vue.js, Express, Axios, Sequelize, PostgreSQL",
-    "srcLink": ["https://github.com/nighostchris/gymlog", "Github Repository"]
+    "lnl": "C++",
+    "srcLink": ["https://github.com/nighostchris/GirvanNewman", "Github Repository"]
   }
 ]
