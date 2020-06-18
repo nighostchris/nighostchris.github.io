@@ -12,6 +12,10 @@
   min-height: fit-content;
 }
 
+body.dark-mode .homepage-main {
+  background: #0f1621;
+}
+
 .homepage-avatar {
   width: 250px;
   height: 250px;
@@ -46,10 +50,18 @@
   font-family: "Roboto Mono", monospace;
 }
 
+body.dark-mode .homepage-header-job {
+  color: #b2b2b2;
+}
+
 .homepage-header-description {
   text-align: center;
   line-height: 1.6em;
   font-family: "Fira Mono", monospace;
+}
+
+body.dark-mode .homepage-header-description {
+  color: #7f7f7f;
 }
 
 .homepage-header-nav {
@@ -72,6 +84,11 @@
   text-transform: uppercase;
   border-color: rgb(52, 52, 52);
   transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+}
+
+body.dark-mode .homepage-header-navlink {
+  color: #cccccc;
+  border-color: #cccccc;
 }
 
 .homepage-footer {

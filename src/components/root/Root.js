@@ -21,7 +21,7 @@ const Root = ({ children }) => {
   return (
     <div className="root">
       <SideBar />
-      <TopBar scrolled={scrolled} />
+      <TopBar scrolled={scrolled} darkMode={darkMode} />
       <div
         ref={mainContentRef}
         className={`main-content ${scrolled ? "main-content-scrolled" : ""}`}

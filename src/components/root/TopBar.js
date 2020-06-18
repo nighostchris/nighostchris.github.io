@@ -4,7 +4,7 @@ import Link from '../Link';
 import ButtonLink from '../ButtonLink';
 import "./topbar.css";
 
-const TopBar = ({ scrolled }) => {
+const TopBar = ({ scrolled, darkMode }) => {
   const [openHamburger, setOpenHamburger] = React.useState(false);
 
   return (
@@ -16,8 +16,9 @@ const TopBar = ({ scrolled }) => {
           onClick={() => setOpenHamburger(!openHamburger)}
         />
       </div>
-      <ButtonLink to="/" style={{ height: '36px' }}><img src="/topbar-logo.png" alt="topbar-logo" /></ButtonLink>
-      <div className="topbar-alerts">
+      <ButtonLink to="/" style={{ height: '36px' }}><img src="/topbar-logo.png" alt="topbar-logo" className="topbar-logo" /></ButtonLink>
+      <ButtonLink to="/" style={{ height: '36px' }}><img src="/topbar-logo-dark-mode.png" alt="topbar-logo" className="topbar-logo-dark-mode" /></ButtonLink>
+      <div className="topbar-alerts" onClick={darkMode.toggle}>
         <i className="fas fa-signal alerts-icons" />
         <i className="fas fa-wifi alerts-icons" />
         <i className="fas fa-battery-quarter alerts-icons" />
@@ -41,6 +42,7 @@ const TopBar = ({ scrolled }) => {
 
 TopBar.propTypes = {
   scrolled: PropTypes.bool.isRequired,
+  darkMode: PropTypes.any.isRequired
 };
 
 export default TopBar;

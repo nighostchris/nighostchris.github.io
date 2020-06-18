@@ -8,7 +8,10 @@ const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-top">
-        <ButtonLink to="/"><img src="/sidebar-logo.png" alt="sidebar-logo"/></ButtonLink>
+        <ButtonLink to="/"><img src="/sidebar-logo.png" alt="sidebar-logo" className="sidebar-logo"/></ButtonLink>
+        <ButtonLink to="/">
+          <img src="/sidebar-logo-dark-mode.png" alt="sidebar-logo-dark-mode" className="sidebar-logo-dark-mode"/>
+        </ButtonLink>
         <hr className="sidebar-top-divider" />
         <p className="sidebar-top-subtitle">Software Developer</p>
       </div>

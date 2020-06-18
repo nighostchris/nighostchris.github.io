@@ -97,7 +97,7 @@ const ProjectsPage = () => (
                   )
                 }
               </div>
-              <h2 style={{ marginTop: '16px', color: 'black' }}>{ skill.title }</h2>
+              <h2 className="skill-title">{ skill.title }</h2>
               <p className="skills-caption">
                 { skill.caption }
               </p>

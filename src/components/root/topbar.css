@@ -13,6 +13,10 @@
   transition: background-color 0.3s ease 0s, box-shadow 0.3s ease 0s, padding 0.5s ease 0s;
 }
 
+body.dark-mode .topbar {
+  background-color: #3e444d;
+}
+
 .topbar-scrolled {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 5px 0px;
@@ -28,8 +32,28 @@
   cursor: pointer;
 }
 
+body.dark-mode .hamburger {
+  color: #b2b2b2;
+}
+
 .hamburger:hover {
   color: rgb(52, 52, 52);
+}
+
+body.dark-mode .hamburger:hover {
+  color: #cccccc;
+}
+
+body.dark-mode .topbar-logo {
+  display: none;
+}
+
+.topbar-logo-dark-mode {
+  display: none;
+}
+
+body.dark-mode .topbar-logo-dark-mode {
+  display: unset;
 }
 
 .topbar-title {
@@ -86,6 +110,10 @@
   justify-content: center;
   padding-inline-start: 0px;
   background-color: white;
+}
+
+body.dark-mode .topbar-menu {
+  background-color: #3e444d;
 }
 
 .topbar-ul {
