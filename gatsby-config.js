@@ -2,6 +2,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-json",
+    "gatsby-plugin-use-dark-mode",
     {
       resolve: "gatsby-source-filesystem",
       options: {

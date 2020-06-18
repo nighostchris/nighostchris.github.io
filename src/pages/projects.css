@@ -3,6 +3,10 @@
   padding: 48px 96px;
 }
 
+body.dark-mode .main-content-projects {
+  background: #0f1621;
+}
+
 .projects-header {
   margin-bottom: 32px;
   width: 650px;

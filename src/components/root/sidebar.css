@@ -16,6 +16,10 @@
   justify-content: space-between;
 }
 
+body.dark-mode .sidebar {
+  background-color: #262d37;
+}
+
 @media (max-width: 767px) {
   .sidebar {
     display: none;
