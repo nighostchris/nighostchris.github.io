@@ -12,6 +12,10 @@ body {
   background: rgb(211, 211, 211);
 }
 
+body.dark-mode {
+  background: #0f1621;
+}
+
 h1,
 h2,
 h3,
@@ -29,6 +33,10 @@ p {
   overflow-y: auto;
 }
 
+body.dark-mode .main-content {
+  background-color: #0f1621;
+}
+
 .main-content::-webkit-scrollbar {
   width: 0.9rem;
 }
@@ -38,6 +46,10 @@ p {
   background-clip: padding-box;
   border: 2px solid transparent;
   background-color: black;
+}
+
+body.dark-mode .main-content::-webkit-scrollbar-thumb {
+  background-color: #cccccc;
 }
 
 .custom-link {
@@ -54,10 +66,19 @@ p {
   transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
 }
 
+body.dark-mode .custom-link {
+  color: #b2b2b2;
+}
+
 .custom-link:hover, .custom-link-active {
   font-weight: 500;
   border-color: black;
   color: rgb(52, 52, 52);
+}
+
+body.dark-mode .custom-link:hover, body.dark-mode .custom-link-active {
+  border-color: #cccccc;
+  color: #cccccc !important;
 }
 
 .post-title {
@@ -108,6 +129,10 @@ p {
 
 .vertical-timeline-element-date {
   font-weight: bold !important;
+}
+
+body.dark-mode .vertical-timeline-element-date {
+  color: #7f7f7f;
 }
 
 .vertical-timeline * {
@@ -291,6 +316,10 @@ p {
   border-radius: .25em;
   padding: 1em;
   box-shadow: 2px 4px 10px grey;
+}
+
+body.dark-mode .vertical-timeline-element-content {
+  background-color: #e5e5e5;
 }
 
 .vertical-timeline-element--no-children .vertical-timeline-element-content {

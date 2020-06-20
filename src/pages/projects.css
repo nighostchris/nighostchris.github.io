@@ -3,6 +3,10 @@
   padding: 48px 96px;
 }
 
+body.dark-mode .main-content-projects {
+  background: #0f1621;
+}
+
 .projects-header {
   margin-bottom: 32px;
   width: 650px;
@@ -13,6 +17,10 @@
   color: rgb(52, 52, 52);
 }
 
+body.dark-mode .projects-header span {
+  color: #cccccc;
+}
+
 .card {
   width: 250px;
   min-width: 250px;
@@ -21,9 +29,18 @@
   background: white;
   box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.25) !important;
 }
+
+body.dark-mode .card {
+  background: #4c4c4c;
+  box-shadow: 5px 5px 10px 1px #7f7f7f !important;
+}
  
 .card:hover {
   box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.4) !important;
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 5px 8px 15px 1px #b2b2b2 !important;
 }
 
 .card-img {
@@ -54,15 +71,27 @@
   border-top: 1px solid rgb(210, 210, 210);
 }
 
+body.dark-mode .card-title {
+  color: #b2b2b2;
+}
+
 .card-subtitle {
   margin-top: 8px;
   font-weight: 100;
   color: rgb(150, 150, 150);
 }
 
+body.dark-mode .card-subtitle {
+  color: #999999;
+}
+
 .card-text {
   font-size: 16px;
   padding: 24px 0px;
+}
+
+body.dark-mode .card-text {
+  color: #999999;
 }
 
 .card-button {

@@ -16,6 +16,10 @@
   justify-content: space-between;
 }
 
+body.dark-mode .sidebar {
+  background-color: #262d37;
+}
+
 @media (max-width: 767px) {
   .sidebar {
     display: none;
@@ -39,15 +43,16 @@
   padding: 0px 32px;
 }
 
-.sidebar-top-title {
-  font-size: 24px;
-  line-height: 36px;
-  white-space: normal;
-  border-style: solid;
-  border-width: 0 0 2px;
-  color: rgb(52, 52, 52);
-  border-color: transparent;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+body.dark-mode .sidebar-logo {
+  display: none;
+}
+
+.sidebar-logo-dark-mode {
+  display: none;
+}
+
+body.dark-mode .sidebar-logo-dark-mode {
+  display: unset;
 }
 
 .sidebar-top-divider {
@@ -66,6 +71,10 @@
   font-size: 15px;
   line-height: 1.6em;
   font-family: Rubik, Arial, sans-serif;
+}
+
+body.dark-mode .sidebar-top-subtitle {
+  color: #b2b2b2;
 }
 
 .sidebar-middle {
@@ -100,6 +109,10 @@
   line-height: 1.6em;
 }
 
+body.dark-mode .sidebar-bottom-email {
+  color: #b2b2b2;
+}
+
 .sidebar-bottom-ul {
   display: flex;
   flex-direction: row;
@@ -113,4 +126,8 @@
 .sidebar-icon {
   font-size: 20px;
   margin-left: 8px;
+}
+
+body.dark-mode .sidebar-icon {
+  color: #b2b2b2;
 }
