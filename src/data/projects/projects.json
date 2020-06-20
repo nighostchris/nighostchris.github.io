@@ -1,18 +1,28 @@
 [
   {
-    "imgsrc": "/",
+    "imgsrc": "/oap/test-case-creator.png",
     "imgalt": "oap",
     "title": "Online Assessment Platform",
     "subtitle": "July 2019 - July 2020",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam distinctio maxime, sapiente temporibus cum quisquam totam voluptatum",
-    "longerDescription": "Testing\nTesting",
+    "description": "The big project I involved in my first full-time job.",
+    "longerDescription": "The Online Assessment Platform is designed to lower workload of teaching assistant\nand encourage them to spend more time interacting with students, while helping\nstudents to debug and check their assignments and labworks before submission.\nCurrently the system will only be supporting auto-grading of Java, C++ and Python\nassignments, while the next year goal will probably be GUI grading(which I will be\nleaving the position already). I mainly in charge of designing and implementing the\nfrontend user interface, setting up the backend GraphQL server, writing reflection\nand linting checking of Java + Python and constructing a Drag-and-Drop test cases creator.",
     "type": "Web-App",
     "screenshots": [
-      { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
-      { "src": "/gymlog/workout-plan-selector.png", "alt": "gymlog-screenshot-2" }
+      { "src": "/oap/dashboard-desktop.png", "alt": "dashboard-desktop" },
+      { "src": "/oap/course-desktop.png", "alt": "course-desktop" },
+      { "src": "/oap/create-new-announcement-desktop.png", "alt": "create-new-announcement-desktop" },
+      { "src": "/oap/coursework-tab-desktop.png", "alt": "coursework-tab-desktop" },
+      { "src": "/oap/conversation-desktop.png", "alt": "conversation-desktop" },
+      { "src": "/oap/course-management-desktop.png", "alt": "course-management-desktop" },
+      { "src": "/oap/sync-new-course.png", "alt": "sync-new-course" },
+      { "src": "/oap/test-case-creator.png", "alt": "test-case-creator" },
+      { "src": "/oap/test-case-editor.png", "alt": "test-case-editor" },
+      { "src": "/oap/dashboard-mobile-mixed.png", "alt": "dashboard-mobile-mixed" },
+      { "src": "/oap/course-management-mobile-mixed.png", "alt": "course-management-mobile-mixed" },
+      { "src": "/oap/conversation-mobile.png", "alt": "conversation-mobile" }
     ],
-    "lnl": "Node.js, Vue.js, Express, Axios, Sequelize, PostgreSQL",
-    "srcLink": ["https://github.com/nighostchris/gymlog", "Github Repository"]
+    "lnl": "Node.js, React.js, Next.js, Axios, GraphQL, React Bootstrap, React DND, Java, Docker, Python",
+    "srcLink": ["https://github.com/nighostchris/oap-next", "Github Repository"]
   },
   {
     "imgsrc": "/data-vis-ideas/stacked_chart.png",
