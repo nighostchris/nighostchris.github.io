@@ -5,7 +5,7 @@
     "title": "Online Assessment Platform",
     "subtitle": "July 2019 - July 2020",
     "description": "The big project I involved in my first full-time job.",
-    "longerDescription": "The Online Assessment Platform is designed to lower workload of teaching assistant\nand encourage them to spend more time interacting with students, while helping\nstudents to debug and check their assignments and labworks before submission.\nCurrently the system will only be supporting auto-grading of Java, C++ and Python\nassignments, while the next year goal will probably be GUI grading(which I will be\nleaving the position already). I mainly in charge of designing and implementing the\nfrontend user interface, setting up the backend GraphQL server, writing reflection\nand linting checking of Java + Python and constructing a Drag-and-Drop test cases creator.",
+    "longerDescription": "The Online Assessment Platform is designed to lower workload of teaching assistant and encourage them to spend more time interacting with students, while helping students to debug and check their assignments and labworks before submission. Currently the system will only be supporting auto-grading of Java, C++ and Python assignments, while the next year goal will probably be GUI grading(which I will be leaving the position already). I mainly in charge of designing and implementing the frontend user interface, setting up the backend GraphQL server, writing reflection and linting checking of Java + Python and constructing a Drag-and-Drop test cases creator.",
     "type": "Web-App",
     "screenshots": [
       { "src": "/oap/dashboard-desktop.png", "alt": "dashboard-desktop" },
@@ -77,14 +77,18 @@
     "title": "Zombie Survival Collaborative Game with Leap Motion( FYP )",
     "subtitle": "Sept 2018 - Apr 2019",
     "description": "This is my final year project about writing a Virtual-Reality game with Leap Motion control. Our team implemented it in Unity.",
-    "longerDescription": "Testing\nTesting",
-    "type": "Web-App",
+    "longerDescription": "",
+    "type": "Game",
     "screenshots": [
-      { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
-      { "src": "/gymlog/workout-plan-selector.png", "alt": "gymlog-screenshot-2" }
+      { "src": "/fyp/outside-supermarket.png", "alt": "outside-supermarket" },
+      { "src": "/fyp/supermarket-entrance.png", "alt": "supermarket-entrance" },
+      { "src": "/fyp/zombie-supermarket.png", "alt": "zombie-supermarket" },
+      { "src": "/fyp/city-scene.png", "alt": "city-scene" },
+      { "src": "/fyp/gun-shooting.png", "alt": "gun-shooting" },
+      { "src": "/fyp/poster.png", "alt": "poster" }
     ],
-    "lnl": "Node.js, Vue.js, Express, Axios, Sequelize, PostgreSQL",
-    "srcLink": ["https://github.com/nighostchris/gymlog", "Github Repository"]
+    "lnl": "Unity, Leap Motion",
+    "srcLink": ["https://github.com/nighostchris/fyp", "Github Repository"]
   },
   {
     "imgsrc": "../stock/real-time-stock.png",

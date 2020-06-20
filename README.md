@@ -16,8 +16,10 @@
 
 ## To-do List
 - [x] A template for writing
-- [ ] Dark Mode
-- [ ] Footer and pagination for writing template
+- [x] Dark Mode
+- [x] Footer and pagination for writing template
+- [ ] Writing "longer description" for all projects
+- [ ] Add tag for writing
 
 ### Installation
 Setup

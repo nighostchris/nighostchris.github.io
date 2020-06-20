@@ -21,6 +21,10 @@ body.dark-mode .project-header span {
   color: #cccccc;
 }
 
+.syntax-highlighter code {
+  white-space: normal !important;
+}
+
 .syntax-highlighter::-webkit-scrollbar {
   width: 0.5rem;
 }
