@@ -1,0 +1,44 @@
+.main-content-write-passage {
+  display: flex;
+  padding: 48px 96px;
+  flex-direction: row;
+  height: fit-content;
+}
+
+.passage-editor {
+  width: 50%;
+  font-size: 24px;
+  height: calc(100vh - 102px);
+  font-family: "KievitOT", sans-serif;
+}
+
+.passage-preview {
+  border: 1px solid black;
+}
+
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .main-content-wne {
+    padding: 48px 72px;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 767px) {
+  .main-content-wne {
+    padding: 48px 48px;
+  }
+
+  .wne-header {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content-wne {
+    padding: 30px 24px 48px 24px;
+  }
+
+  .wne-header {
+    text-align: center;
+    width: 100%;
+  }
+}
