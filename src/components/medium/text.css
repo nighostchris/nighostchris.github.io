@@ -7,6 +7,10 @@
   font-family: "KievitOT", sans-serif;
 }
 
+body.dark-mode .medium-normal-text {
+  color: #999999;
+}
+
 .medium-bold-text {
   font-weight: 900;
 }
@@ -19,6 +23,10 @@
   background-position: 0 calc(1em + 1px);
   -webkit-tap-highlight-color: transparent;
   background-image: linear-gradient(to right,rgba(41, 41, 41, 1) 100%,rgba(41, 41, 41, 1) 0);
+}
+
+body.dark-mode .medium-hyper-link-text {
+  background-image: linear-gradient(to right,#999999 100%,#999999 0);
 }
 
 @media (min-width: 728px) {

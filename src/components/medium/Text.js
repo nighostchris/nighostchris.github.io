@@ -16,8 +16,8 @@ export const BoldText = ({ children }) => {
 
 export const HyperLinkText = ({ href, children }) => {
   return (
-    <ButtonLink to={href} className="medium-hyper-link-text">
+    <a href={href} className="medium-hyper-link-text">
       {children}
-    </ButtonLink>
+    </a>
   )
 }

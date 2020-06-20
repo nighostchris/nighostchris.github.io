@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 const Root = ({ children }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const mainContentRef = React.createRef(null);
-  const darkMode = useDarkMode(false);
+  const darkMode = useDarkMode(true);
 
   const scrollEventHandler = () => {
     if (mainContentRef.current.scrollTop > 0) {

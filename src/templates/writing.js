@@ -13,6 +13,7 @@ import "./writing.css";
 const WritingTemplate = ({ data, pageContext }) => {
   const writing = data.allWritingsJson.edges[0];
   const { belongsToPage } = pageContext;
+  console.log(writing.node.content);
 
   const titleGenerator = (title, subtitle) => {
     return `
