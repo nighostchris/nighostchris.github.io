@@ -30,7 +30,7 @@
     "title": "Data Visualization Ideas",
     "subtitle": "Feb 2020",
     "description": "This is a very simple project for me to test out combination of web-crawling and data visualization. I have implemented it by making use of Japan sakura blossom data.",
-    "longerDescription": "Testing\nTesting",
+    "longerDescription": "This is a very simple project for me to test out combination of web-crawling and data visualization. I have implemented it by making use of Japan sakura blossom data.",
     "type": "Web-App",
     "screenshots": [
       { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
@@ -45,7 +45,7 @@
     "title": "GymLog",
     "subtitle": "August 2019",
     "description": "It is a self-entertained project for me to record personal workout data. I also want to know more about Vue.JS and backend API server construction through coding this web app.",
-    "longerDescription": "Testing\nTesting",
+    "longerDescription": "It is a self-entertained project for me to record personal workout data. I also want to know more about Vue.JS and backend API server construction through coding this web app. Although I didn't finish the project at last but I got quite a level of understanding in Vue and designing backend api now.",
     "type": "Web-App",
     "screenshots": [
       { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
@@ -60,7 +60,7 @@
     "title": "Fablead",
     "subtitle": "July 2018 - August 2018",
     "description": "This is the first React.JS project I was involved. I did this as a website prototype for full-time programmer when I was an intern in Joy Aether Ltd.",
-    "longerDescription": "Testing\nTesting",
+    "longerDescription": "This is the first React.JS project I was involved. I did this as a website prototype for full-time programmer when I was an intern in Joy Aether Ltd. I was very impressed by the logic flow of React and how the library take care of state management in websites when I learnt it for the first time.",
     "type": "Web-App",
     "screenshots": [
       { "src": "/fablead/login-dashboard.png", "alt": "fablead-screenshot-1" },
@@ -77,7 +77,7 @@
     "title": "Zombie Survival Collaborative Game with Leap Motion( FYP )",
     "subtitle": "Sept 2018 - Apr 2019",
     "description": "This is my final year project about writing a Virtual-Reality game with Leap Motion control. Our team implemented it in Unity.",
-    "longerDescription": "",
+    "longerDescription": "This is my final year project about writing a Virtual-Reality game with Leap Motion control and our team implemented it in Unity. We choose zombie and survival as the 2 main core game elements as they are some popular and common themes in game market.",
     "type": "Game",
     "screenshots": [
       { "src": "/fyp/outside-supermarket.png", "alt": "outside-supermarket" },
@@ -96,7 +96,7 @@
     "title": "HK Stock Real-Time Monitoring Desktop App",
     "subtitle": "February 2018",
     "description": "At that time I was pretty obsessed about making a desktop app for myself to monitor stock price. That's why this product was born and implementing UI through Python QT is definitely not a good experience.",
-    "longerDescription": "Testing\nTesting",
+    "longerDescription": "At that time I was pretty obsessed about making a desktop app for myself to monitor stock price. That's why this product was born and implementing UI through Python QT is definitely not a good experience. The best part would be I am able to download a csv files about all stocks within certain percentage range from their 52-weeks low price.",
     "type": "Application",
     "screenshots": [
       { "src": "/stock/real-time-stock.png", "alt": "stock-screenshot-1" }
@@ -110,7 +110,7 @@
     "title": "UST Freshman Chatbot( COMP3111 Project )",
     "subtitle": "Sept 2017 - Dec 2017",
     "description": "Our team implemented this LINE chatbot in the notorious course COMP3111. That's the first time I need to learn new framework in a pretty short time and implement the features from scratch.",
-    "longerDescription": "Testing\nTesting",
+    "longerDescription": "Our team implemented this LINE chatbot in the notorious course COMP3111. That's the first time I need to learn new framework in a pretty short time and implement the features from scratch. At last we got quite a number of expected features done despite the stone-age like standard IO interface restricted by LINE. Users can ask about the bus ETA, contact information of departments staffs and even rough estimation of time to go from one place to another within campus.",
     "type": "Chatbot",
     "screenshots": [
       { "src": "/chatbot/bus.png", "alt": "campus-bus" },
@@ -129,7 +129,7 @@
     "title": "Padding Oracle Attack",
     "subtitle": "November 2017",
     "description": "A COMP3632 assignment about decrypting AES. This is a hard assignment with complicated concepts. But the course is inspiring undoubtedly.",
-    "longerDescription": "Testing\nTesting",
+    "longerDescription": "A COMP3632 assignment about decrypting AES. This is a hard assignment with complicated concepts. But the course is inspiring undoubtedly.",
     "type": "Application",
     "screenshots": [
       { "src": "/poa/poa-assignment-1.jpg", "alt": "poa-assignment-1" },
@@ -145,7 +145,7 @@
     "title": "Girvan-Newman Implementation",
     "subtitle": "March 2017",
     "description": "A COMP4641 assignment about social network information analysis. Girvan Newman is an algorithm to detect communities in systems by progressively removing edges from a network.",
-    "longerDescription": "Testing\nTesting",
+    "longerDescription": "A COMP4641 assignment about social network information analysis. Girvan Newman is an algorithm to detect communities in systems by progressively removing edges from a network.",
     "type": "Application",
     "screenshots": [
       { "src": "/girvan-newman/girvan-newman.png", "alt": "girvan-newman" }
