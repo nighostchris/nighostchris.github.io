@@ -8,6 +8,8 @@ import { Details } from "../components/medium/Details";
 import { Container } from "../components/medium/Container";
 import { Title, Subtitle, Header } from "../components/medium/Header";
 import { NormalText, BoldText, HyperLinkText } from "../components/medium/Text";
+import { NumberedList, BulletList } from "../components/medium/List";
+import { Breakline } from "../components/medium/Breakline";
 import Root from "../components/root/Root";
 import "./writepassage.css";
 
@@ -45,7 +47,19 @@ const WritePassagePage = () => {
             <i
               className="fas fa-file-image jsx-block-icon"
               onClick={() => setRawPassage(rawPassage + "<Image src=\"\" alt=\"\" />")}
-            /> 
+            />
+            <i
+              className="fas fa-list-ul jsx-block-icon"
+              onClick={() => setRawPassage(rawPassage + "<BulletList listItems={[]}></BulletList>")}
+            />
+            <i
+              className="fas fa-list-ol jsx-block-icon"
+              onClick={() => setRawPassage(rawPassage + "<NumberedList listItems={[]}></NumberedList>")}
+            />
+            <i
+              className="fas fa-greater-than jsx-block-icon"
+              onClick={() => setRawPassage(rawPassage + "<Breakline />")}
+            />
           </div>
           <textarea
             className="passage-editor"
@@ -55,7 +69,7 @@ const WritePassagePage = () => {
         </div>
         <Container>
           <JsxParser
-            components={{ Title, Subtitle, Details, BoldText, NormalText, Header, Code, HyperLinkText, Image, ButtonLink }}
+            components={{ Title, Subtitle, Details, BoldText, NormalText, Header, Code, HyperLinkText, Image, ButtonLink, NumberedList, BulletList, Breakline }}
             jsx={rawPassage}
           />
         </Container>

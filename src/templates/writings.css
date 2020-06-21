@@ -115,10 +115,6 @@
   transition: background-color 0.3s ease-in-out 0s;
 }
 
-.terminal-card:hover {
-  opacity: 60%;
-}
-
 .terminal-pagination {
   display: flex;
   align-items: center;

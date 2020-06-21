@@ -7,6 +7,8 @@ import { Details } from "../components/medium/Details";
 import { Container } from "../components/medium/Container";
 import { Title, Subtitle, Header } from "../components/medium/Header";
 import { NormalText, BoldText, HyperLinkText } from "../components/medium/Text";
+import { NumberedList, BulletList } from "../components/medium/List";
+import { Breakline } from "../components/medium/Breakline";
 import JsxParser from "react-jsx-parser";
 import "./writing.css";
 
@@ -39,7 +41,7 @@ const WritingTemplate = ({ data, pageContext }) => {
         <Container>
           <JsxParser
             bindings={{ belongsToPage: belongsToPage }}
-            components={{ Title, Subtitle, Details, BoldText, NormalText, Header, Code, HyperLinkText, Image, ButtonLink }}
+            components={{ Title, Subtitle, Details, BoldText, NormalText, Header, Code, HyperLinkText, Image, ButtonLink, NumberedList, BulletList, Breakline }}
             jsx={
               titleGenerator(writing.node.title, writing.node.subtitle)
               + detailsGenerator(writing.node.length, writing.node.date, writing.node.author, writing.node.avatarsrc)

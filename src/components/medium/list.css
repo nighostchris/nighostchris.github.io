@@ -1,0 +1,37 @@
+.medium-numbered-list, .medium-bullet-list {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  word-break: break-word;
+  list-style-image: none;
+  color: rgba(41, 41, 41, 1);
+  font-family: "KievitOT", sans-serif;
+}
+
+.medium-numbered-list li {
+  padding-left: 0px;
+  margin-left: 48px;
+  letter-spacing: -0.003em;
+  list-style-type: decimal;
+}
+
+.medium-bullet-list li {
+  padding-left: 0px;
+  margin-left: 48px;
+  list-style-type: disc;
+  letter-spacing: -0.003em;
+}
+
+@media (min-width: 1080px) {
+  .medium-numbered-list li {
+    font-size: 21px;
+    margin-top: 36px;
+    line-height: 32px;
+  }
+
+  .medium-bullet-list li {
+    font-size: 21px;
+    margin-top: 36px;
+    line-height: 32px;
+  }
+}
