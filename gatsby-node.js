@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   const writings = result.data.allWritingsJson.edges;
-  const writingsPerPage = 1;
+  const writingsPerPage = 5;
   const numOfPages = Math.ceil(writings.length / writingsPerPage);
 
   const projects = result.data.allProjectsJson.edges;
