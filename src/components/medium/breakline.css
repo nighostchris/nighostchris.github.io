@@ -8,6 +8,10 @@
   font-family: "KievitOT", sans-serif;
 }
 
+body.dark-mode .medium-breakline {
+  color: #b2b2b2;
+}
+
 .medium-breakline::before {
   content: "...";
   line-height: 1.4;

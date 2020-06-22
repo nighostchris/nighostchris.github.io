@@ -8,6 +8,10 @@
   font-family: "KievitOT", sans-serif;
 }
 
+body.dark-mode .medium-numbered-list, body.dark-mode .medium-bullet-list {
+  color: #999999;
+}
+
 .medium-numbered-list li {
   padding-left: 0px;
   margin-left: 48px;
@@ -33,5 +37,19 @@
     font-size: 21px;
     margin-top: 36px;
     line-height: 32px;
+  }
+}
+
+@media (max-width: 728px) {
+  .medium-numbered-list li {
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 1.56em;
+  }
+
+  .medium-bullet-list li {
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 1.56em;
   }
 }
