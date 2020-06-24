@@ -33,11 +33,12 @@
     "longerDescription": "This is a very simple project for me to test out combination of web-crawling and data visualization. I have implemented it by making use of Japan sakura blossom data.",
     "type": "Web-App",
     "screenshots": [
-      { "src": "/gymlog/dashboard-calendar.png", "alt": "gymlog-screenshot-1" },
-      { "src": "/gymlog/workout-plan-selector.png", "alt": "gymlog-screenshot-2" }
+      { "src": "/data-vis-ideas/choosing_sakura.png", "alt": "choosing_sakura" },
+      { "src": "/data-vis-ideas/full_page.png", "alt": "full_page" },
+      { "src": "/data-vis-ideas/timeline.png", "alt": "timeline" }
     ],
-    "lnl": "Node.js, Vue.js, Express, Axios, Sequelize, PostgreSQL",
-    "srcLink": ["https://github.com/nighostchris/gymlog", "Github Repository"]
+    "lnl": "Node.js, React.js, Next.js, Axios, Cheerio, Lodash",
+    "srcLink": ["https://github.com/nighostchris/data-visualization-ideas", "Github Repository"]
   },
   {
     "imgsrc": "/gymlog/intro-pic.png",

@@ -18,7 +18,7 @@ const IndexPage = () => {
               <span className="homepage-header-job">I am currently working as a web developer.</span>
             </h1>
             <p className="homepage-header-description">
-              As a programmer that was born in Hong Kong, I enjoy designing user-friendly interactive web app.
+              As a programmer born in Hong Kong, I enjoy designing user-friendly interactive web app.
               I am equipped with solid knowledge of OOP concepts, frontend frameworks and backend implementation.
               I am also enthusiastic in trying and learning latest technology.
             </p>
