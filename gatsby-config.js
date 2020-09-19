@@ -2,6 +2,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-json",
+    "gatsby-plugin-postcss",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -24,6 +25,6 @@ module.exports = {
           urls: ["/fonts/fonts.css"],
         },
       },
-    }
+    },
   ]
 }

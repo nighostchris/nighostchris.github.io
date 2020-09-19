@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "./skills.css";
 import Root from "../components/root/Root";
+import SkillCard from "../components/cards/SkillCard";
 
 const skillsList = [
   {
@@ -85,9 +86,10 @@ const ProjectsPage = () => (
       </p>
       <hr className="skills-divider" />
       <ul className="skills-list">
+        <SkillCard />
         {
           skillsList.map((skill, skillIndex) => (
-            <li key={`skill-${skillIndex}`}>
+            <li key={`skill-${skillIndex}`} style={{ backgroundColor: 'white', borderRadius: '15px' }}>
               <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
                 {
                   skill.svgs.map((svg, svgIndex) => 
