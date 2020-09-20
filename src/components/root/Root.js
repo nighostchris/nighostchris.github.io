@@ -19,7 +19,7 @@ const Root = ({ children }) => {
   }
 
   return (
-    <div className="root">
+    <div className="root bg-custom-grey-100">
       <SideBar />
       <TopBar scrolled={scrolled} darkMode={darkMode} />
       <div

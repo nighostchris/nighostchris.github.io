@@ -26,5 +26,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "Nighost",
+        fieldName: "nighost",
+        url: "https://nighostchris-github-io-backend.herokuapp.com/graphql",
+      },
+    },
   ]
 }
