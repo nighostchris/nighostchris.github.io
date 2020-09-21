@@ -2,8 +2,8 @@ import React from "react";
 
 const SkillCard = ({ language, icon, description, type, className }) => {
   return (
-    <div className={`${className} relative w-mobile-skill-card md:w-md-skill-card lg:w-lg-skill-card xl:w-xl-skill-card bg-white rounded-card border border-solid border-custom-grey-200 shadow-md zoom hover:shadow-xl`}>
-      <div className={`flex flex-row items-center justify-end px-30px h-skill-card-header border-solid border-b border-custom-grey-100 rounded-t-card
+    <div className={`${className} relative w-mobile-skill-card md:w-md-skill-card lg:w-lg-skill-card xl:w-xl-skill-card bg-white rounded-card border border-solid border-custom-grey-200 shadow-lg zoom hover:shadow-xl`}>
+      <div className={`flex flex-row items-center justify-end px-30px h-skill-card-header border-solid border-2 border-b border-custom-grey-100 rounded-t-card
         ${type === "general" ? "bg-skill-card-header-blue" : type === "web" ? "bg-skill-card-header-red" : type === "devops" ? "bg-skill-card-header-green" : type === "backend" ? "bg-skill-card-header-purple" : "bg-skill-card-header-yellow"}
       `}>
         <h1 className="font-bold text-h3 md:text-h2 xl:text-h1 text-custom-grey-500 z-10">

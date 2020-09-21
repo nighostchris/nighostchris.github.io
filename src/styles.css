@@ -124,6 +124,30 @@ body.dark-mode .custom-link:hover, body.dark-mode .custom-link-active {
 .zoom:hover {
   transform: scale(1.05);
 }
+
+.skew-left {
+  transform: skewY(-10deg);
+}
+
+.skew-left-half {
+  transform: skewY(-5deg);
+}
+
+.skew-left-quarter {
+  transform: skewY(-2.5deg);
+}
+
+.skew-right {
+  transform: skewY(10deg);
+}
+
+.skew-right-half {
+  transform: skewY(5deg);
+}
+
+.skew-right-quarter {
+  transform: skewY(2.5deg);
+}
  
 .container-fluid .row {
   padding-top: 6rem;

@@ -28,6 +28,9 @@ module.exports = {
         'skill-card-header-yellow': '#FFFFB2',
         'header-blue': '#1FA2F2',
         'header-blue-grey': '#262D37',
+        'background-blue-100': '#56667D',
+        'background-blue-200': '#465365',
+        'background-blue-300': '#36404E',
       },
       fontFamily: {
         'fira-mono': "Fira Mono",
@@ -40,6 +43,7 @@ module.exports = {
         'h5': '18px',
         'h6': '16px',
         'p': '14px',
+        'lg-header-title': '48px',
         'xl-header-title': '64px',
       },
       height: {
@@ -56,6 +60,12 @@ module.exports = {
         '80px': '80px',
         '90px': '90px',
         '100px': '100px',
+      },
+      maxWidth: {
+        'mobile-body': '300px',
+        'md-body': '600px',
+        'lg-body': '800px',
+        'xl-body': '1280px',
       },
       padding: {
         '10px': '10px',

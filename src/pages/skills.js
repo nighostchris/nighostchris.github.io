@@ -13,20 +13,20 @@ const SkillsPage = ({ data }) => {
       <Helmet>
         <title>Chris Liu - Skills</title>
       </Helmet>
-      <div className="flex flex-col items-center w-full">
-        <div className="flex flex-col items-center w-full bg-header-blue-grey py-100px">
-          <h1 className="text-xl-header-title text-header-blue font-bold tracking-wide">
+      <div className="flex flex-col items-center w-full bg-background-blue-100">
+        <div className="flex flex-col items-center w-full bg-header-blue-grey px-20px py-60px lg:py-100px skew-left lg:mt-30px xl:mt-60px">
+          <h1 className="text-h1 lg:text-lg-header-title xl:text-xl-header-title text-header-blue font-bold tracking-wide skew-right text-center">
             Started coding since 2013
           </h1>
-          <p className="text-custom-grey-200 text-h3 whitespace-pre-line text-center mt-30px leading-10 w-full">
+          <p className="text-custom-grey-200 text-h5 lg:text-h4 xl:text-h3 whitespace-pre-line text-center mt-30px leading-10 w-full skew-right">
             {`Now mainly focus on Web Development.\nLearning and Growing everyday.`}
           </p>
         </div>
-        <div className="flex flex-row justify-center w-full md:w-md-body lg:w-lg-body xl:w-xl-body my-80px">
+        <div className="flex flex-row justify-center w-full md:max-w-md-body lg:max-w-lg-body xl:max-w-xl-body mb-50px lg:mb-80px lg:mt-80px">
           <div className="xl:flex flex-col w-full hidden">
             {
               createSubgroup(skills, 3).map((row, rowIndex) => (
-                <div className={`flex flex-col md:flex-row ${rowIndex !== 0 ? "mt-60px" : ""}`}>
+                <div className={`flex flex-col md:flex-row w-full ${rowIndex !== 0 ? "mt-60px" : ""}`}>
                   {
                     row.map((skill, skillIndex) => (
                       <div className={`flex flex-row justify-center w-1/3 ${skillIndex !== 0 ? "mt-60px md:mt-0" : ""}`}>
@@ -46,7 +46,7 @@ const SkillsPage = ({ data }) => {
           <div className="hidden md:flex flex-col w-full xl:hidden">
             {
               createSubgroup(skills, 2).map((row, rowIndex) => (
-                <div className={`flex flex-col md:flex-row ${rowIndex !== 0 ? "mt-60px" : ""}`}>
+                <div className={`flex flex-col md:flex-row w-full ${rowIndex !== 0 ? "mt-60px" : ""}`}>
                   {
                     row.map((skill, skillIndex) => (
                       <div className={`flex flex-row justify-center w-1/2 ${skillIndex !== 0 ? "mt-60px md:mt-0" : ""}`}>
