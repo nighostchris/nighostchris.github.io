@@ -16,7 +16,7 @@ module.exports = {
         'card': '8px',
       },
       colors: {
-        'custom-grey-100': '#E0E0E0',
+        'custom-grey-100': '#E0E0E0 !important',
         'custom-grey-200': '#C0C0C0',
         'custom-grey-300': '#A0A0A0',
         'custom-grey-400': '#808080',
@@ -47,6 +47,7 @@ module.exports = {
         'xl-header-title': '64px',
       },
       height: {
+        'fit-content': 'fit-content',
         'skill-card-header': '64px',
       },
       margin: {
@@ -83,6 +84,7 @@ module.exports = {
         'xl': '1440px',
       },
       width: {
+        'fit-content': 'fit-content',
         'mobile-skill-icon': '60px',
         'md-skill-icon': '72px',
         'xl-skill-icon': '96px',

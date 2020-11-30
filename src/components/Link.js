@@ -5,8 +5,8 @@ const CustomLink = ({ children, to }) => {
   return (
     <Link
       to={to}
-      className="custom-link"
-      activeClassName="custom-link-active"
+      className="text-h2 uppercase text-custom-grey-300 tracking-wider hover:text-custom-grey-100 hover:font-bold"
+      activeClassName="text-custom-grey-100 font-bold border-b-4 border-solid"
       partiallyActive={to !== "/" ? true : false}
     >
       {children}

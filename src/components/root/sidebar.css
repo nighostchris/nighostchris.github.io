@@ -11,13 +11,9 @@
   padding: 48px 0px 32px;
   flex-direction: column;
   vertical-align: baseline;
-  background-color: white;
+  background-color: black;
   -webkit-box-pack: justify;
   justify-content: space-between;
-}
-
-body.dark-mode .sidebar {
-  background-color: #262d37;
 }
 
 @media (max-width: 767px) {
@@ -121,11 +117,6 @@ body.dark-mode .sidebar-bottom-email {
 .sidebar-bottom-li-a {
   color: black;
   text-decoration: none;
-}
-
-.sidebar-icon {
-  font-size: 20px;
-  margin-left: 8px;
 }
 
 body.dark-mode .sidebar-icon {
