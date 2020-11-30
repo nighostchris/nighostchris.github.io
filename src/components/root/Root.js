@@ -5,6 +5,9 @@ import SideBar from "./SideBar";
 import TopBar from "./TopBar";
 import PropTypes from "prop-types";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhoneSlash, faSignal, faWifi, faBatteryQuarter } from "@fortawesome/free-solid-svg-icons";
+
 const Root = ({ children }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const mainContentRef = React.createRef(null);
@@ -27,11 +30,11 @@ const Root = ({ children }) => {
         className={`main-content ${scrolled ? "main-content-scrolled" : ""}`}
         onScroll={scrollEventHandler}
       >
-        <div className="main-content-alerts" onClick={darkMode.toggle}>
-          <i className="fas fa-phone-slash alerts-icons" />
-          <i className="fas fa-signal alerts-icons" />
-          <i className="fas fa-wifi alerts-icons" />
-          <i className="fas fa-battery-quarter alerts-icons" />
+        <div className="main-content-alerts">
+          <FontAwesomeIcon icon={faPhoneSlash} />
+          <FontAwesomeIcon icon={faSignal} className="ml-2" />
+          <FontAwesomeIcon icon={faWifi} className="ml-2" />
+          <FontAwesomeIcon icon={faBatteryQuarter} className="ml-2" />
         </div>
         { children }
       </div>

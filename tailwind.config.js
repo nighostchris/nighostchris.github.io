@@ -31,6 +31,7 @@ module.exports = {
         'background-blue-100': '#56667D',
         'background-blue-200': '#465365',
         'background-blue-300': '#36404E',
+        'background-blue-400': '#161A20',
       },
       fontFamily: {
         'fira-mono': "Fira Mono",

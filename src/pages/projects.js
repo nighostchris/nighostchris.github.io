@@ -16,7 +16,7 @@ const ProjectsPage = ({ data }) => {
       </Helmet>
       <div className="flex flex-col items-center w-full bg-background-blue-100">
         <div className="flex flex-col items-center w-full bg-header-blue-grey py-60px lg:py-100px">
-          <h1 className="text-h2 sm:text-h1 lg:text-lg-header-title text-custom-grey-200 font-bold tracking-wide text-center">
+          <h1 className="text-xl sm:text-3xl lg:text-4xl text-custom-grey-200 font-bold tracking-wide text-center">
             Some work by me...
           </h1>
         </div>
@@ -25,7 +25,7 @@ const ProjectsPage = ({ data }) => {
             <div className="bg-background-blue-100 h-1/3 sm:h-2/3"></div>
           </div>
           <div className="relative max-w-7xl mx-auto">
-            <div className="max-w-lg mx-auto grid gap-6 lg:grid-cols-3 lg:max-w-none">
+            <div className="max-w-lg mx-auto grid gap-6 xl:grid-cols-2 2xl:grid-cols-3 lg:max-w-none">
               {
                 projects.map((project) => (
                   <ProjectCard

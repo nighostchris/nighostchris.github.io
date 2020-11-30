@@ -1,37 +1,37 @@
 import React from "react";
+import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import Link from '../Link';
-import ButtonLink from '../ButtonLink';
-
-import "./sidebar.css";
-
 const SideBar = () => {
   return (
-    <div className="sidebar">
-      <div className="sidebar-top">
-        <ButtonLink to="/">
-          <img src="/sidebar-logo-dark-mode.png" alt="sidebar-logo-dark-mode" className="sidebar-logo"/>
-        </ButtonLink>
-        <hr className="sidebar-top-divider" />
-        <p className="text-h4 text-custom-grey-300">Software Developer</p>
+    <div className="w-60 xl:w-72 h-full hidden md:flex flex-col justify-between px-6 xl:px-8 py-12 bg-background-blue-400">
+      <div className="flex flex-col">
+        <Link to="/">
+          <img src="/sidebar-logo-dark-mode.png" alt="logo" />
+        </Link>
+        <p className="mt-3 text-md text-custom-grey-300">Software Developer</p>
       </div>
-      <div className="flex flex-col px-6">
-        <nav>
-          <ul className="sidebar-ul">
-            {
-              ["home", "skills", "projects", "work & edu", "writings"].map((tab, index) => (
-                <li className="mt-6">
-                  <Link to={`${index === 0 ? "/" : (index === 3 ? "/workneducation" : `/${tab}`)}`}>{tab}</Link>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
+      <div className="flex flex-col">
+        <ul>
+          {
+            ["home", "skills", "projects", "work & edu", "writings"].map((tab, index) => (
+              <li className={index !== 0 ? "mt-6" : ""}>
+                <Link
+                  to={`${index === 0 ? "/" : (index === 3 ? "/workneducation" : `/${tab}`)}`}
+                  className="text-h2 uppercase text-custom-grey-300 tracking-wider hover:text-custom-grey-100 hover:font-bold"
+                  activeClassName="text-custom-grey-100 font-bold border-b-4 border-solid"
+                  partiallyActive={index !== 0 ? true : false}
+                >
+                  {tab}
+                </Link>
+              </li>
+            ))
+          }
+        </ul>
       </div>
-      <div className="flex flex-col px-6">
-        <p className="text-h5 mb-3 text-custom-grey-300">In case you want to contact me, just go for <strong>chrisliupascal@gmail.com</strong></p>
+      <div className="flex flex-col">
+        <p className="text-sm mb-3 text-custom-grey-300">In case you want to contact me, just go for <strong>chrisliupascal@gmail.com</strong></p>
         <ul className="list-none flex flex-row">
           <li>
             <a href="https://github.com/nighostchris" className="no-underline text-white">
