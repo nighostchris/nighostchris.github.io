@@ -13,9 +13,9 @@ const SkillsPage = ({ data }) => {
       <Helmet>
         <title>Chris Liu - Skills</title>
       </Helmet>
-      <div className="flex flex-col items-center w-full bg-background-blue-100 skills">
-        <div className="flex flex-col items-center w-full bg-header-blue-grey px-20px py-60px lg:py-100px skew-left lg:mt-30px xl:mt-60px">
-          <h1 className="text-h1 lg:text-lg-header-title xl:text-xl-header-title text-header-blue font-bold tracking-wide skew-right text-center">
+      <div className="flex flex-col items-center w-full bg-background-blue-100">
+        <div className="flex flex-col items-center w-full bg-header-blue-grey px-20px py-60px lg:py-100px skew-left mt-30px xl:mt-60px">
+          <h1 className="text-3xl lg:text-5xl xl:text-6xl text-header-blue font-bold tracking-wide skew-right text-center">
             Started coding since 2013
           </h1>
           <p className="text-custom-grey-200 text-h5 lg:text-h4 xl:text-h3 whitespace-pre-line text-center mt-30px leading-10 w-full skew-right">

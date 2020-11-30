@@ -6,6 +6,9 @@ module.exports = {
   purge: [],
   theme: {
     extend: {
+      zIndex: {
+        '-10': '-10',
+      },
       inset: {
         'mobile-skill-icon-top': '34px',
         'md-skill-icon-top': '28px',

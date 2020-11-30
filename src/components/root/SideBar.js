@@ -19,7 +19,7 @@ const SideBar = () => {
               <li className={index !== 0 ? "mt-6" : ""}>
                 <Link
                   to={`${index === 0 ? "/" : (index === 3 ? "/workneducation" : `/${tab}`)}`}
-                  className="text-h2 uppercase text-custom-grey-300 tracking-wider hover:text-custom-grey-100 hover:font-bold"
+                  className="text-xl uppercase text-custom-grey-300 tracking-widest hover:text-custom-grey-100 hover:font-bold"
                   activeClassName="text-custom-grey-100 font-bold border-b-4 border-solid"
                   partiallyActive={index !== 0 ? true : false}
                 >
@@ -31,7 +31,9 @@ const SideBar = () => {
         </ul>
       </div>
       <div className="flex flex-col">
-        <p className="text-sm mb-3 text-custom-grey-300">In case you want to contact me, just go for <strong>chrisliupascal@gmail.com</strong></p>
+        <p className="text-sm mb-3 text-custom-grey-300">
+          {`Contact me by\n`}<strong>chrisliupascal@gmail.com</strong>
+        </p>
         <ul className="list-none flex flex-row">
           <li>
             <a href="https://github.com/nighostchris" className="no-underline text-white">

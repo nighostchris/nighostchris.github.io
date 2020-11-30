@@ -1,9 +1,7 @@
 import React from "react";
-import useDarkMode from "use-dark-mode";
 import "./root.css";
 import SideBar from "./SideBar";
 import TopBar from "./TopBar";
-import PropTypes from "prop-types";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneSlash, faSignal, faWifi, faBatteryQuarter } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +9,6 @@ import { faPhoneSlash, faSignal, faWifi, faBatteryQuarter } from "@fortawesome/f
 const Root = ({ children }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const mainContentRef = React.createRef(null);
-  const darkMode = useDarkMode(true);
 
   const scrollEventHandler = () => {
     if (mainContentRef.current.scrollTop > 0) {
@@ -22,15 +19,15 @@ const Root = ({ children }) => {
   }
 
   return (
-    <div className="root bg-custom-grey-100">
+    <div className="flex flex-row h-screen bg-custom-grey-100">
       <SideBar />
-      <TopBar scrolled={scrolled} darkMode={darkMode} />
+      <TopBar scrolled={scrolled} />
       <div
         ref={mainContentRef}
-        className={`main-content ${scrolled ? "main-content-scrolled" : ""}`}
+        className="w-full overflow-y-auto"
         onScroll={scrollEventHandler}
       >
-        <div className="main-content-alerts">
+        <div className="hidden md:flex flex-row absolute top-4 right-4 text-white z-10">
           <FontAwesomeIcon icon={faPhoneSlash} />
           <FontAwesomeIcon icon={faSignal} className="ml-2" />
           <FontAwesomeIcon icon={faWifi} className="ml-2" />
@@ -41,9 +38,5 @@ const Root = ({ children }) => {
     </div>
   );
 }
-
-Root.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export default Root;

@@ -5,13 +5,13 @@ const SkillCard = ({ thumbnail, imgalt, type, title, link, subtitle, abstract, c
   const getTextColorByType = () => {
     switch(type) {
       case 'Web-App':
-        return "bg-blue-100 text-blue-800";
+        return "bg-blue-200 text-blue-800";
       case 'Application':
-        return "bg-red-100 text-red-800";
+        return "bg-red-200 text-red-800";
       case 'Game':
-        return "bg-green-100 text-green-800";
+        return "bg-green-200 text-green-800";
       case 'Chatbot':
-        return "bg-indigo-100 text-indigo-800";
+        return "bg-indigo-200 text-indigo-800";
     }
   }
 
@@ -29,7 +29,7 @@ const SkillCard = ({ thumbnail, imgalt, type, title, link, subtitle, abstract, c
             <p className="text-xl font-semibold text-gray-900">
               { title }
             </p>
-            <p className="mt-1 text-sm font-medium text-gray-400">
+            <p className="mt-1 text-sm font-medium text-gray-600">
               { subtitle }
             </p>
             <p className="mt-3 text-base text-gray-500">

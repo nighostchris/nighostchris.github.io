@@ -15,15 +15,12 @@ const ProjectsPage = ({ data }) => {
         <title>Chris Liu - Projects</title>
       </Helmet>
       <div className="flex flex-col items-center w-full bg-background-blue-100">
-        <div className="flex flex-col items-center w-full bg-header-blue-grey py-60px lg:py-100px">
-          <h1 className="text-xl sm:text-3xl lg:text-4xl text-custom-grey-200 font-bold tracking-wide text-center">
+        <div className="flex flex-col items-center w-full bg-header-blue-grey py-16 md:py-24 lg:py-40 skew-left mt-6 md:mt-10">
+          <h1 className="text-3xl lg:text-5xl xl:text-6xl text-header-blue font-bold tracking-wide skew-right text-center">
             Some work by me...
           </h1>
         </div>
-        <div className="relative bg-gray-50 py-10 px-4 sm:px-6 lg:py-12 lg:px-8">
-          <div className="absolute inset-0 bg-background-blue-100">
-            <div className="bg-background-blue-100 h-1/3 sm:h-2/3"></div>
-          </div>
+        <div className="relative bg-transparent pb-10 px-8 sm:px-10 lg:pb-12 lg:px-12">
           <div className="relative max-w-7xl mx-auto">
             <div className="max-w-lg mx-auto grid gap-6 xl:grid-cols-2 2xl:grid-cols-3 lg:max-w-none">
               {
