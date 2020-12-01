@@ -14,8 +14,17 @@ html {
 body {
   margin: 0px;
   height: 100%;
-  overflow-y: auto;
   color: rgb(105, 105, 105);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body {
+    overflow-y: auto;
+  }
 }
 
 body.dark-mode {
@@ -34,9 +43,8 @@ p {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-
-.overflow-y-auto::-webkit-scrollbar {
-  display: none;
+*::-webkit-scrollbar {
+  display: none !important;
 }
 
 .main-content {

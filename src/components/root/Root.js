@@ -8,25 +8,27 @@ import { faPhoneSlash, faSignal, faWifi, faBatteryQuarter } from "@fortawesome/f
 
 const Root = ({ children }) => {
   const [scrolled, setScrolled] = React.useState(false);
-  const mainContentRef = React.createRef(null);
 
-  const scrollEventHandler = () => {
-    if (mainContentRef.current.scrollTop > 0) {
+  const updateScrolled = () => {
+    if (document.body.scrollTop !== 0 ) {
       setScrolled(true);
     } else {
       setScrolled(false);
     }
   }
 
+  React.useEffect(() => {
+    document.getElementsByTagName('body')[0].addEventListener("scroll", updateScrolled);
+    return () => {
+      document.getElementsByTagName('body')[0].removeEventListener("scroll", updateScrolled);
+    }
+  }, []);
+
   return (
     <div className="flex flex-row h-screen bg-custom-grey-100">
       <SideBar />
       <TopBar scrolled={scrolled} />
-      <div
-        ref={mainContentRef}
-        className="w-full h-full"
-        onScroll={scrollEventHandler}
-      >
+      <div className="w-full h-full md:overflow-y-auto">
         <div className="hidden md:flex flex-row absolute top-4 right-4 text-white z-10">
           <FontAwesomeIcon icon={faPhoneSlash} />
           <FontAwesomeIcon icon={faSignal} className="ml-2" />
