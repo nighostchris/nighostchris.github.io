@@ -46,6 +46,9 @@ const SideBar = () => {
             </a>
           </li>
         </ul>
+        <p className="text-sm mt-3 text-custom-grey-100">
+          Maintained and Owned by CHRIS LIU
+        </p>
       </div>
     </div>
   );

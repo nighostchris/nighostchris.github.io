@@ -12,11 +12,13 @@ const SkillCard = ({ thumbnail, imgalt, type, title, link, subtitle, abstract, c
         return "bg-green-200 text-green-800";
       case 'Chatbot':
         return "bg-indigo-200 text-indigo-800";
+      default:
+        return "";
     }
   }
 
   return (
-    <div className={`flex flex-col rounded-lg shadow-lg overflow-hidden zoom hover:shadow-xl ${className}`}>
+    <div className={`flex flex-col rounded-lg shadow-lg overflow-hidden ${className}`}>
       <div className="flex-shrink-0">
         <img className="h-48 w-full object-cover" src={thumbnail} alt={imgalt} />
       </div>

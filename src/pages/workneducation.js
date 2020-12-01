@@ -7,16 +7,23 @@ import { VerticalTimeline }  from 'react-vertical-timeline-component';
 const experienceList = [
   {
     category: 'work',
+    title: 'Programmer (4-month contract)',
+    subtitle: 'Chiron Healthcare Group Limited',
+    description: ["— Revamped the company's website with great enhancement in SEO and stability", '— In-house applications maintainance'],
+    time: 'August 2020 - November 2020'
+  },
+  {
+    category: 'work',
     title: 'Assistant Software Developer',
     subtitle: 'HKUST',
-    description: ['Designed and implemented frontend interface for the Online Assessment Platform'],
-    time: 'July 2019 - Present'
+    description: ['— Designed and implemented frontend interface for the Online Assessment Platform', "— Helped in programming languages' reflection and static code analysis"],
+    time: 'July 2019 - July 2020'
   },
   {
     category: 'work',
     title: 'Software Developer Intern',
     subtitle: 'Joy Aether Ltd.',
-    description: ['Fixed bugs and managed database for TastAR', 'Built a teachers and seminars management web app prototype'],
+    description: ['— Fixed bugs and managed database for TastAR', '— Built a teachers and seminars management web app prototype'],
     time: 'June 2018 - August 2018'
   },
   {
@@ -40,35 +47,27 @@ const WorkAndEducationPage = () => (
     <Helmet>
       <title>Chris Liu - Work & Education</title>
     </Helmet>
-    <div className="main-content-wne">
-      <h1 className="wne-header">
-        <span>Work Experience & Education</span>
-      </h1>
+    <div className="flex flex-col items-center w-full bg-background-blue-100 pb-8">
+      <div className="flex flex-col items-center w-full bg-header-blue-grey py-16 md:py-24 lg:py-40 skew-left mt-6 md:mt-10">
+        <h1 className="text-3xl lg:text-5xl xl:text-6xl text-header-blue font-bold tracking-wide skew-right text-center">
+          Work Experience & Education
+        </h1>
+      </div>
       <VerticalTimeline>
         {
           experienceList.map((experience) => (
             <div className="vertical-timeline-element--work vertical-timeline-element">
-              <span
-                className="vertical-timeline-element-icon bounce-in"
-                style={{
-                  color: 'rgb(255, 255, 255)',
-                  background: `${experience.category === 'work' ? "rgb(33, 150, 243)" : "rgb(233, 30, 99)"}`,
-                  boxShadow: `0 0 0 4px ${experience.category === 'work' ? "#1976d2" : "#c2185b"}`
-                }}
-              />
-              <div
-                className="vertical-timeline-element-content bounce-in"
-                style={{ borderTop: `3px solid ${experience.category === 'work' ? "rgb(33, 150, 243)" : "rgb(233, 30, 99)"}` }}
-              >
+              <span className={`vertical-timeline-element-icon bounce-in ${experience.category === 'work' ? "bg-blue-500" : "bg-pink-500"}`} />
+              <div className={`vertical-timeline-element-content bounce-in border-t-8 ${experience.category === 'work' ? "border-blue-500" : "border-pink-500"}`}>
                 <div className="vertical-timeline-element-content-arrow" />
-                <h2 className="timeline-element-title">{ experience.title }</h2>
-                <h4>{ experience.subtitle }</h4>
+                <h3 className="text-2xl text-gray-700 font-bold">{ experience.title }</h3>
+                <h4 className="text-xl text-gray-600 mt-2">{ experience.subtitle }</h4>
                 {
-                  experience.description.map((descript) => (
-                    <p className="timeline-element-description">{ descript }</p>
+                  experience.description.map((descript, index) => (
+                    <h5 className={`text-lg text-gray-500 ${index === 0 ? "mt-4" : ""}`}>{ descript }</h5>
                   ))
                 }
-                <span className="vertical-timeline-element-date">{ experience.time }</span>
+                <span className="vertical-timeline-element-date text-white">{ experience.time }</span>
               </div>
             </div>
           ))

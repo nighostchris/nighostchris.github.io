@@ -38,6 +38,7 @@ module.exports = {
       },
       fontFamily: {
         'fira-mono': "Fira Mono",
+        'roboto-mono': "Roboto Mono"
       },
       fontSize: {
         'h1': '36px',
