@@ -19,7 +19,7 @@ const Root = ({ children }) => {
   }
 
   return (
-    <div className="flex flex-row h-screen overflow-y-auto bg-custom-grey-100">
+    <div className="flex flex-row h-screen bg-custom-grey-100">
       <SideBar />
       <TopBar scrolled={scrolled} />
       <div
