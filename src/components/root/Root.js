@@ -22,20 +22,18 @@ const Root = ({ children }) => {
     <div className="flex flex-row h-screen bg-custom-grey-100">
       <SideBar />
       <TopBar scrolled={scrolled} />
-      <div className="w-full">
+      <div
+        ref={mainContentRef}
+        className="w-full h-full overflow-y-auto"
+        onScroll={scrollEventHandler}
+      >
         <div className="hidden md:flex flex-row absolute top-4 right-4 text-white z-10">
           <FontAwesomeIcon icon={faPhoneSlash} />
           <FontAwesomeIcon icon={faSignal} className="ml-2" />
           <FontAwesomeIcon icon={faWifi} className="ml-2" />
           <FontAwesomeIcon icon={faBatteryQuarter} className="ml-2" />
         </div>
-        <div
-          ref={mainContentRef}
-          className="h-full overflow-y-auto"
-          onScroll={scrollEventHandler}
-        >
-          { children }
-        </div>
+        { children }
       </div>
     </div>
   );
