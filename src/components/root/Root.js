@@ -19,12 +19,12 @@ const Root = ({ children }) => {
   }
 
   return (
-    <div className="flex flex-row h-screen bg-custom-grey-100">
+    <div className="flex flex-row h-screen overflow-y-auto bg-custom-grey-100">
       <SideBar />
       <TopBar scrolled={scrolled} />
       <div
         ref={mainContentRef}
-        className="w-full h-full overflow-y-auto"
+        className="w-full h-full"
         onScroll={scrollEventHandler}
       >
         <div className="hidden md:flex flex-row absolute top-4 right-4 text-white z-10">
