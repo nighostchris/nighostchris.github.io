@@ -6,19 +6,15 @@
 @tailwind utilities;
 
 html {
-  height: 100%;
-  overflow-y: hidden;
   font-family: Rubik, Arial, sans-serif;
 }
 
 body {
   margin: 0px;
-  height: 100%;
-  color: rgb(105, 105, 105);
 }
 
-body::-webkit-scrollbar {
-  display: none;
+html, body, #___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
 }
 
 /* @media (max-width: 767px) {
@@ -26,10 +22,6 @@ body::-webkit-scrollbar {
     overflow-y: auto;
   }
 } */
-
-body.dark-mode {
-  background: #0f1621;
-}
 
 h1,
 h2,

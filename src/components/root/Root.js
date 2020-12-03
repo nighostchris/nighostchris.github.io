@@ -25,7 +25,7 @@ const Root = ({ children }) => {
   }, []);
 
   return (
-    <div className="flex flex-row w-full h-screen bg-custom-grey-100">
+    <div className="flex flex-row w-full h-full bg-custom-grey-100">
       <SideBar />
       <TopBar scrolled={scrolled} />
       <div className="hidden md:flex flex-row absolute top-4 right-4 text-white z-10">
