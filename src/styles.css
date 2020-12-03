@@ -17,12 +17,6 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
   height: 100%;
 }
 
-/* @media (max-width: 767px) {
-  body {
-    overflow-y: auto;
-  }
-} */
-
 h1,
 h2,
 h3,
@@ -38,35 +32,6 @@ p {
 
 *::-webkit-scrollbar {
   display: none;
-}
-
-.custom-link {
-  font-size: 20px;
-  padding: 4px 0px;
-  line-height: 2em;
-  color: currentColor;
-  border-style: solid;
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  border-width: 0px 0px 2px;
-  border-color: transparent;
-  text-transform: uppercase;
-  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
-}
-
-body.dark-mode .custom-link {
-  color: #b2b2b2;
-}
-
-.custom-link:hover, .custom-link-active {
-  font-weight: 500;
-  border-color: black;
-  color: rgb(52, 52, 52);
-}
-
-body.dark-mode .custom-link:hover, body.dark-mode .custom-link-active {
-  border-color: #cccccc;
-  color: #cccccc !important;
 }
 
 .post-title {
@@ -103,10 +68,6 @@ body.dark-mode .custom-link:hover, body.dark-mode .custom-link-active {
   }
 }
 
-.zoom:hover {
-  transform: scale(1.05);
-}
-
 .skew-left {
   transform: skewY(-10deg);
 }
@@ -130,10 +91,6 @@ body.dark-mode .custom-link:hover, body.dark-mode .custom-link-active {
 .skew-right-quarter {
   transform: skewY(2.5deg);
 }
- 
-.container-fluid .row {
-  padding-top: 6rem;
-}
 
 .timeline-element-title {
   margin-bottom: 10px;
@@ -145,10 +102,6 @@ body.dark-mode .custom-link:hover, body.dark-mode .custom-link-active {
 
 .vertical-timeline-element-date {
   font-weight: bold !important;
-}
-
-body.dark-mode .vertical-timeline-element-date {
-  color: #7f7f7f;
 }
 
 .vertical-timeline * {
