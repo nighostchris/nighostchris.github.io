@@ -59,7 +59,7 @@ const ChironWebsiteProjectPage = () => (
                 Chiron Website
               </h1>
               <p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+                I updated the website for Chiron Healthcare Ltd. with the help of Gatsby and GraphQL, enhancing the overall website speed, performance, stability and SEO. This is the first full-time project that I am playing a full-stack role, which is challenging and fun at the same time.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="mt-3 sm:mt-0 w-full lg:w-3/4 sm:max-w-xl">
