@@ -10,24 +10,36 @@ const descriptionList = [
   },
   {
     image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fspecialists.png?alt=media&token=ae9615d1-6062-43ac-8224-2ec98d9dd0aa",
-    description: "Specialists List"
+    description: "Specialists List",
+    remarks: "Neat categorization of specialists with one-click phone call and Vcard display"
   },
   {
     image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fbranch.png?alt=media&token=f02389ca-4566-4ff6-bb28-123a66c6a10a",
-    description: "Branch Page"
+    description: "Branch Page",
+    remarks: "Featuring common issues with quick overview of clinics' details and services offered"
   },
   {
     image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fbody-check-plans.png?alt=media&token=88159e93-d032-4d15-a91b-8a8af5903ecc",
-    description: "Body Check Plans"
+    description: "Body Check Plans",
+    remarks: "User-Friendly interface to view and compare all plans"
   },
   {
     image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Flanding-page.png?alt=media&token=b924925a-7bb5-4914-ad90-bd55c70d6371",
-    description: "Landing Page"
+    description: "Landing Page",
+    remarks: "Featuring a specific health info topic to raise readers' knowledge"
   },
   {
     image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Frelated-passages.png?alt=media&token=4dc335a4-872e-4f40-9c50-8566267c00e8",
-    description: "Related Passages"
+    description: "Related Passages",
+    remarks: "One of the carousels used in website that enable easy navigation of lengthy data"
   }
+];
+
+const videoList = [
+  "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fspecialists-list.mp4?alt=media&token=11121600-5e09-4aa5-8825-87f92fa44d93",
+  "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fbranch.mp4?alt=media&token=ff5ec981-ca69-4ac5-bdf2-cedce908edee",
+  "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fbody-check.mp4?alt=media&token=976f4674-7f37-4628-bdbd-fd8fc8efc8e2",
+  "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Flanding-page.mp4?alt=media&token=53b0bc70-6ecc-43a4-85c4-6babb301c6f6"
 ];
 
 const ChironWebsiteProjectPage = () => (
@@ -75,17 +87,17 @@ const ChironWebsiteProjectPage = () => (
         {
           descriptionList.map((description, index) => (
             index % 2 === 0 ? (
-              <div className="flex flex-row bg-gray-800">
-                <div className="h-56 bg-white sm:h-72 md:h-full w-full md:w-3/5">
+              <div className="flex flex-row bg-gray-700">
+                <div className="h-56 bg-white sm:h-72 md:h-full w-full md:w-1/2">
                   <img className="w-full h-full object-scale-down" src={description.image} alt="" />
                 </div>
-                <div className="w-full md:w-2/5 flex flex-col justify-center items-center">
-                  <p className="text-white text-3xl font-bold tracking-wider sm:text-5xl">
+                <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-4 lg:px-10">
+                  <p className="text-white text-2xl lg:text-3xl xl:text-5xl font-extrabold tracking-wider">
                     { description.description }
                   </p>
                   {
                     description.remarks && (
-                      <p className="mt-3 text-lg text-gray-300">
+                      <p className="mt-3 text-md lg:text-lg text-justify text-gray-300 max-w-lg">
                         { description.remarks }
                       </p>
                     )
@@ -93,20 +105,20 @@ const ChironWebsiteProjectPage = () => (
                 </div>
               </div>
             ) : (
-              <div className="flex flex-row bg-gray-800">
-                <div className="w-full md:w-2/5 flex flex-col justify-center items-center">
-                  <p className="text-white text-3xl font-bold tracking-wider sm:text-5xl">
+              <div className="flex flex-row bg-gray-700">
+                <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-4 lg:px-10">
+                  <p className="text-white text-2xl lg:text-3xl xl:text-5xl font-extrabold tracking-wider">
                     { description.description }
                   </p>
                   {
                     description.remarks && (
-                      <p className="mt-3 text-lg text-gray-300">
+                      <p className="mt-3 text-md lg:text-lg text-justify text-gray-300 max-w-lg">
                         { description.remarks }
                       </p>
                     )
                   }
                 </div>
-                <div className="h-56 bg-white sm:h-72 md:h-full w-full md:w-3/5">
+                <div className="h-56 bg-white sm:h-72 md:h-full w-full md:w-1/2">
                   <img className="w-full h-full object-scale-down" src={description.image} alt="" />
                 </div>
               </div>
@@ -117,14 +129,14 @@ const ChironWebsiteProjectPage = () => (
       <div className="flex flex-col md:hidden">
         {
           descriptionList.map((description) => (
-            <div className="flex flex-col bg-gray-800">
-              <div className="h-36 w-full flex flex-col justify-center items-center">
+            <div className="flex flex-col bg-gray-700">
+              <div className="h-56 w-full flex flex-col justify-center items-center px-10">
                 <p className="text-white text-3xl font-bold tracking-wider">
                   { description.description }
                 </p>
                 {
                   description.remarks && (
-                    <p className="mt-3 text-lg text-gray-300">
+                    <p className="mt-3 text-lg text-gray-300 text-justify">
                       { description.remarks }
                     </p>
                   )
@@ -136,6 +148,18 @@ const ChironWebsiteProjectPage = () => (
             </div>
           ))
         }
+      </div>
+      <div className="flex flex-col items-center bg-indigo-300 py-10 lg:py-20 px-10">
+        <h1 className="text-center text-4xl tracking-tight font-extrabold text-indigo-800 md:text-5xl lg:text-6xl">
+          Responsive Design
+        </h1>
+        <div className="flex flex-col md:flex-row mt-10 lg:mt-20">
+          {
+            videoList.map((v, index) => (
+              <video loop muted autoPlay src={v} preload="auto" type="video/mp4" className={`w-full md:w-1/4 md:px-4 ${index !== 0 ? "mt-10 md:mt-0" : ""}`} />
+            ))
+          }
+        </div>
       </div>
     </div>
   </Root>
