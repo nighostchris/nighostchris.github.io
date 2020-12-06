@@ -18,6 +18,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             title
+            imgalt
           }
         }
       }
@@ -49,7 +50,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   projects.forEach((project) => {
     createPage({
-      path: `/projects/${project.node.title.toLowerCase().replace(/\([^)]*\)/, "").split(' ').join('-')}`,
+      path: `/projects/${project.node.imgalt}`,
       component: path.resolve("./src/templates/project.js"),
       context: {
         projectId: project.node.id

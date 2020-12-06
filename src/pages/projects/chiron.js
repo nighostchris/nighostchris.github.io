@@ -1,5 +1,7 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faProjectDiagram, faClock, faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 import Root from "../../components/root/Root";
 
@@ -42,11 +44,31 @@ const videoList = [
   "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Flanding-page.mp4?alt=media&token=53b0bc70-6ecc-43a4-85c4-6babb301c6f6"
 ];
 
+const detailsList = [
+  "Web-App",
+  "Aug 2020 - Nov 2020",
+  "Node.js, React.js, Next.js, Tailwind, GraphQL, Firebase, Gatsby"
+];
+
 const ChironWebsiteProjectPage = () => (
   <Root>
-    <Helmet>
-      <title>Chris Liu - Chiron Website</title>
-    </Helmet>
+    <GatsbySeo
+      title="Chris Liu - Chiron Website"
+      description="Chris Liu | Chiron Website | SEO friendly website made for replacing old website of Chiron Healthcare Ltd. Please refer to chiron.care for more details."
+      openGraph={{
+        url: 'https://chrisliu.ml/projects/chiron/',
+        title: 'Chris Liu - Chiron Website',
+        description: 'Chris Liu | Chiron Website | SEO friendly website made for replacing old website of Chiron Healthcare Ltd. Please refer to chiron.care for more details.',
+        images: [
+          {
+            url: 'https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fchiron-opengraph.jpg?alt=media&token=d654a8c4-52db-469c-a578-ede2354849e2',
+            width: 1200,
+            height: 630,
+            alt: 'Chris Liu - Chiron Website'
+          }
+        ]
+      }}
+    />
     <div className="flex flex-col w-full">
       <div className="w-full relative">
         <div className="relative z-10 pb-8 bg-gray-800 sm:pb-16 md:pb-20 lg:w-1/2 lg:pb-28 xl:pb-32 pt-6 md:mt-0">
@@ -160,6 +182,33 @@ const ChironWebsiteProjectPage = () => (
             ))
           }
         </div>
+      </div>
+      <div className="py-8 lg:py-16 px-10 bg-gray-800 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          detailsList.map((details, index) => (
+            <div className="bg-white overflow-hidden shadow rounded-lg">
+              <div className="px-4 py-5 sm:p-6">
+                <div className="flex items-center md:items-start">
+                  <div className="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                    <FontAwesomeIcon icon={index === 0 ? faProjectDiagram : index === 1 ? faClock : faLanguage} size="lg" className="text-white" />
+                  </div>
+                  <div className="ml-5 w-0 flex-1">
+                    <dl>
+                      <dt className="text-sm leading-5 font-medium text-gray-500 truncate">
+                        { index === 0 ? "Project Type" : index === 1 ? "When" : "Languages & Libraries" }
+                      </dt>
+                      <dd className="flex items-baseline">
+                        <div className="text-2xl leading-8 font-semibold text-gray-900">
+                          { details }
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
   </Root>

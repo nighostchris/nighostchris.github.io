@@ -3,6 +3,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-json",
     "gatsby-plugin-postcss",
+    "gatsby-plugin-next-seo",
     {
       resolve: "gatsby-source-filesystem",
       options: {
