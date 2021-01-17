@@ -27,6 +27,8 @@
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
+    "react-grid-heatmap": "^1.0.1",
+    "react-heatmap-grid": "^0.8.2",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.0.7",
     "react-hyphen": "^1.4.0",

@@ -10956,6 +10956,16 @@ react-focus-lock@^2.3.1:
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
 
+react-grid-heatmap@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-grid-heatmap/-/react-grid-heatmap-1.0.1.tgz#f68dcebf4488a6d45876e7d258328f6e8246fec5"
+  integrity sha512-0kc5FKqBdo3aqZjTRbOPw6+EkLAAxmHLE2Y1QGnX4Qyd1d30kWj5QPXMfukPmQvt4ZJNz7msFRW2ZXxxqKy8Tw==
+
+react-heatmap-grid@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/react-heatmap-grid/-/react-heatmap-grid-0.8.2.tgz#4548fea78b980cb005f64f9b3919aeff8f992a26"
+  integrity sha512-kvBGf4s3OZvXCgmLdh6CG2n0s1GZN1EAwBf8SRGHgFQmBKFhjp1pDMRw3fDm9OD83A1/rCqyyuVd4yODx7n0vA==
+
 react-helmet-async@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/react-helmet-async/-/react-helmet-async-1.0.7.tgz#b988fbc3abdc4b704982bb74b9cb4a08fcf062c1"
