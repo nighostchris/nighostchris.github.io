@@ -26,7 +26,7 @@ const descriptionList = [
     remarks: "User-Friendly interface to view and compare all plans"
   },
   {
-    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Flanding-page.png?alt=media&token=b924925a-7bb5-4914-ad90-bd55c70d6371",
+    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Flanding-page.png?alt=media&token=9ad76bd2-484e-44b6-94a0-62304dd408a3",
     description: "Landing Page",
     remarks: "Featuring a specific health info topic to raise readers' knowledge"
   },
