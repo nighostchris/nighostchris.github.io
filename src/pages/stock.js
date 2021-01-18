@@ -1,24 +1,28 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { HeatMapGrid } from 'react-grid-heatmap';
-import { Bar, Heatmap, Line } from '@ant-design/charts';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
+const industryNamesMappingInTrend = new Map([
+  ['communication', 'XLC'],
+  ['consumer_discretionary', 'XLY'],
+  ['consumer_staples', 'XLP'],
+  ['energy', 'XLE'],
+  ['financials', 'XLF'],
+  ['health_care', 'XLV'],
+  ['industrials', 'XLI'],
+  ['materials', 'XLB'],
+  ['real_estate', 'XLRE'],
+  ['technology', 'XLK'],
+  ['utilities', 'XLU']
+]);
+
 const StockPage = ({ data }) => {
-  const industryNamesMappingInTrend = new Map([
-    ['communication', 'XLC'],
-    ['consumer_discretionary', 'XLY'],
-    ['consumer_staples', 'XLP'],
-    ['energy', 'XLE'],
-    ['financials', 'XLF'],
-    ['health_care', 'XLV'],
-    ['industrials', 'XLI'],
-    ['materials', 'XLB'],
-    ['real_estate', 'XLRE'],
-    ['technology', 'XLK'],
-    ['utilities', 'XLU']
-  ]);
+  let antDesignCharts;
+  if (process.browser) {
+    antDesignCharts = require('@ant-design/charts');
+  }
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -101,127 +105,133 @@ const StockPage = ({ data }) => {
         <p className={`px-4 mt-2 whitespace-pre-wrap font-bold ${expanded ? 'block mb-4 md:mb-8' : 'hidden'}`}>
           {`XLC - 通訊服務\nXLY - 非必需消費品\nXLP - 必需消費品\nXLE - 能源\nXLF - 金融\nXLV - 醫療\nXLI - 工業\nXLB - 物料\nXLRE - 房地產\nXLK - 科技\nXLU - 公共`}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
-          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm flex-col">
-            <p className="mb-4 mx-auto">
-              Last Trading Day S&P Breadth
-            </p>
-            <Bar
-              data={lastBreadth}
-              xField='value'
-              xAxis={{ position: 'right' }}
-              yField='industry'
-              legend={false}
-              color={['#5B8FF9']}
-              label={{
-                style: { textAlign: 'center', fontWeight: 'bold' }
-              }}
-            />
-          </div>
-          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm flex-col mt-8 md:mt-0">
-            <p className="mb-4 mx-auto">
-              S&P Breadth Trend
-            </p>
-            <Line
-              data={marketTrend}
-              xField='date'
-              yField='total'
-              xAxis={{ type: 'time' }}
-              yAxis={{ maxLimit: 1100 }}
-              annotations={[
-                {
-                  type: 'text',
-                  position: ['10%', '79%'],
-                  content: 'Oversell Threshold',
-                  style: {
-                    fontWeight: 'bold'
-                  }
-                },
-                {
-                  type: 'text',
-                  position: ['10%', '15%'],
-                  content: 'Overheat Threshold',
-                  style: {
-                    fontWeight: 'bold'
-                  }
-                },
-                {
-                  type: 'line',
-                  start: ['0%', '82%'],
-                  end: ['100%', '82%'],
-                  style: {
-                    stroke: '#F3323A',
-                    lineDash: [1, 1],
-                    lineWidth: 2
-                  },
-                },
-                {
-                  type: 'line',
-                  start: ['0%', '18%'],
-                  end: ['100%', '18%'],
-                  style: {
-                    stroke: '#149D38',
-                    lineDash: [1, 1],
-                    lineWidth: 2
-                  },
-                }
-              ]}
-            />
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 md:mt-8">
-          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8 md:mt-0 flex-col">
-            <p className="mb-4 mx-auto">
-              S&P Breadth Trend by Industry
-            </p>
-            <Line
-              data={industryTrendData}
-              xField='date'
-              yField='value'
-              seriesField='industry'
-              xAxis={{ type: 'time' }}
-              yAxis={{ tickInterval: 25 }}
-              color={['#0963EF', '#4645F6', '#AB32F1', '#F62575', '#F3323A', '#E6520E', '#C96E06', '#9B7F05', '#149D38', '#0D87BE', '#000000']}
-            />
-          </div>
-          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8 md:mt-0 flex-col">
-            <p className="mb-4 mx-auto">
-              S&P Breadth Heatmap by Industry
-            </p>
-            <Heatmap
-              data={industryTrendData}
-              xField='date'
-              yField='industry'
-              colorField='value'
-              color={(v) => calculateHeatmapColor(v / 100)}
-            />
-          </div>
-        </div>
-        <div className="w-full hidden md:flex px-6 py-8 bg-white rounded-sm shadow-sm mt-8 flex-col">
-          <p className="mb-4 mx-auto">
-            S&P Breadth Heatmap by Industry (Detailed)
-          </p>
-          <HeatMapGrid
-            data={heatmapData}
-            xLabels={xLabels}
-            xLabelsStyle={(index) => ({
-              fontSize: '14px',
-              marginLeft: index === 11 && '16px'
-            })}
-            yLabels={yLabels}
-            yLabelsStyle={() => ({
-              fontSize: '14px',
-              marginRight: '16px',
-              textAlign: 'justify'
-            })}
-            cellHeight='36px'
-            cellStyle={(x, y, _ratio) => ({
-              marginLeft: y === 11 && '16px',
-              background: y !== 11 ? calculateHeatmapColor(heatmapData[x][y] / 100) : calculateHeatmapColor(heatmapData[x][y] / 1100)
-            })}
-            cellRender={(x, y, value) => <div title={`Pos(${x}, ${y}) = ${value}`} style={{ fontWeight: 'bold', fontSize: '14px' }}>{value}</div>}
-          />
-        </div>
+        {
+          process.browser && (
+            <>
+              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+                <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm flex-col">
+                  <p className="mb-4 mx-auto">
+                    Last Trading Day S&P Breadth
+                  </p>
+                  <antDesignCharts.Bar
+                    data={lastBreadth}
+                    xField='value'
+                    xAxis={{ position: 'right' }}
+                    yField='industry'
+                    legend={false}
+                    color={['#5B8FF9']}
+                    label={{
+                      style: { textAlign: 'center', fontWeight: 'bold' }
+                    }}
+                  />
+                </div>
+                <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm flex-col mt-8 md:mt-0">
+                  <p className="mb-4 mx-auto">
+                    S&P Breadth Trend
+                  </p>
+                  <antDesignCharts.Line
+                    data={marketTrend}
+                    xField='date'
+                    yField='total'
+                    xAxis={{ type: 'time' }}
+                    yAxis={{ maxLimit: 1100 }}
+                    annotations={[
+                      {
+                        type: 'text',
+                        position: ['10%', '79%'],
+                        content: 'Oversell Threshold',
+                        style: {
+                          fontWeight: 'bold'
+                        }
+                      },
+                      {
+                        type: 'text',
+                        position: ['10%', '15%'],
+                        content: 'Overheat Threshold',
+                        style: {
+                          fontWeight: 'bold'
+                        }
+                      },
+                      {
+                        type: 'line',
+                        start: ['0%', '82%'],
+                        end: ['100%', '82%'],
+                        style: {
+                          stroke: '#F3323A',
+                          lineDash: [1, 1],
+                          lineWidth: 2
+                        },
+                      },
+                      {
+                        type: 'line',
+                        start: ['0%', '18%'],
+                        end: ['100%', '18%'],
+                        style: {
+                          stroke: '#149D38',
+                          lineDash: [1, 1],
+                          lineWidth: 2
+                        },
+                      }
+                    ]}
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 md:mt-8">
+                <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8 md:mt-0 flex-col">
+                  <p className="mb-4 mx-auto">
+                    S&P Breadth Trend by Industry
+                  </p>
+                  <antDesignCharts.Line
+                    data={industryTrendData}
+                    xField='date'
+                    yField='value'
+                    seriesField='industry'
+                    xAxis={{ type: 'time' }}
+                    yAxis={{ tickInterval: 25 }}
+                    color={['#0963EF', '#4645F6', '#AB32F1', '#F62575', '#F3323A', '#E6520E', '#C96E06', '#9B7F05', '#149D38', '#0D87BE', '#000000']}
+                  />
+                </div>
+                <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8 md:mt-0 flex-col">
+                  <p className="mb-4 mx-auto">
+                    S&P Breadth Heatmap by Industry
+                  </p>
+                  <antDesignCharts.Heatmap
+                    data={industryTrendData}
+                    xField='date'
+                    yField='industry'
+                    colorField='value'
+                    color={(v) => calculateHeatmapColor(v / 100)}
+                  />
+                </div>
+              </div>
+              <div className="w-full hidden md:flex px-6 py-8 bg-white rounded-sm shadow-sm mt-8 flex-col">
+                <p className="mb-4 mx-auto">
+                  S&P Breadth Heatmap by Industry (Detailed)
+                </p>
+                <HeatMapGrid
+                  data={heatmapData}
+                  xLabels={xLabels}
+                  xLabelsStyle={(index) => ({
+                    fontSize: '14px',
+                    marginLeft: index === 11 && '16px'
+                  })}
+                  yLabels={yLabels}
+                  yLabelsStyle={() => ({
+                    fontSize: '14px',
+                    marginRight: '16px',
+                    textAlign: 'justify'
+                  })}
+                  cellHeight='36px'
+                  cellStyle={(x, y, _ratio) => ({
+                    marginLeft: y === 11 && '16px',
+                    background: y !== 11 ? calculateHeatmapColor(heatmapData[x][y] / 100) : calculateHeatmapColor(heatmapData[x][y] / 1100)
+                  })}
+                  cellRender={(x, y, value) => <div title={`Pos(${x}, ${y}) = ${value}`} style={{ fontWeight: 'bold', fontSize: '14px' }}>{value}</div>}
+                />
+              </div>
+            </>
+          )
+        }
       </div>
     </div>
   );
