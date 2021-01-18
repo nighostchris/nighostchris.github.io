@@ -1,12 +1,30 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { HeatMapGrid } from 'react-grid-heatmap';
+import { Bar, Heatmap, Line } from '@ant-design/charts';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 const StockPage = ({ data }) => {
+  const industryNamesMappingInTrend = new Map([
+    ['communication', 'XLC'],
+    ['consumer_discretionary', 'XLY'],
+    ['consumer_staples', 'XLP'],
+    ['energy', 'XLE'],
+    ['financials', 'XLF'],
+    ['health_care', 'XLV'],
+    ['industrials', 'XLI'],
+    ['materials', 'XLB'],
+    ['real_estate', 'XLRE'],
+    ['technology', 'XLK'],
+    ['utilities', 'XLU']
+  ]);
+
+  const [expanded, setExpanded] = React.useState(false);
+
   const breadths = data.nighost.snp_breadths.sort((a, b) => new Date(a.date) > new Date(b.date) ? -1 : 1);
-  
-  //XLC (通訊服務)", "XLY (非切需消費品)", "XLP (必需消費品)", "XLE (能源)", "XLF (金融)", "XLV (醫療)", "XLI (工業)", "XLB (物料)", "XLRE (房地產)", "XLK (科技)", "XLU (公共)
-  const xLabels = ["XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLB", "XLRE", "XLK", "XLU"];
+
+  const xLabels = ["XLC", "XLY", "XLP", "XLE", "XLF", "XLV", "XLI", "XLB", "XLRE", "XLK", "XLU", "Total"];
   const yLabels = breadths.map((b) => b.date);
 
   const yHeatmapData = breadths.map((b) => [
@@ -23,10 +41,22 @@ const StockPage = ({ data }) => {
     b.utilities
   ]);
 
-  const heatmapData = yLabels.map((_, index) => yHeatmapData[index]);
-  const summedHeatmapData = yLabels.map((_, index) => [yHeatmapData[index].reduce((acc, current) => acc + current)]);
+  const heatmapData = yLabels.map((_, index) => [...yHeatmapData[index], yHeatmapData[index].reduce((acc, current) => acc + current)]);
 
-  console.log(summedHeatmapData);
+  const marketTrend = yHeatmapData.map((day, index) => ({ date: breadths[index].date, total: day.reduce((acc, current) => acc + current) }));
+
+  const industryTrendData = [].concat(...breadths.map((b) => Object.keys(b).map((industry) => ({
+      date: b.date,
+      value: b[industry],
+      industry: industryNamesMappingInTrend.get(industry)
+    }))))
+    .filter((record) => record.industry);
+
+  const lastBreadth = Object.keys(breadths[0]).map((industry) => ({
+      value: breadths[0][industry],
+      industry: industryNamesMappingInTrend.get(industry)
+    }))
+    .filter((record) => record.industry);
 
   const calculateHeatmapColor = (ratio) => {
     const red = [250, 87, 87];
@@ -45,17 +75,138 @@ const StockPage = ({ data }) => {
   }
 
   return (
-    <div className="w-full h-full bg-gray-400">
+    <div className="w-full h-full bg-gray-200 overflow-y-auto">
       <Helmet>
         <title>Chris Liu - US Stock Market</title>
       </Helmet>
-      <div className="w-full h-full md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col mx-auto">
-        <div className="w-full hidden md:block px-6 py-8 bg-gray-200 rounded-sm shadow-sm mt-8">
+      <div className="w-full h-fit-content md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col mx-auto py-6 md:py-8 px-6 md:px-0">
+        <h1 className="text-xl lg:text-3xl font-bold mb-2">
+          What's S&P Breadth ?
+        </h1>
+        <p className="text-lg lg:text-xl text-gray-600 mb-2">
+          Any S&P constitue that has it's last updated price <strong>{`>`} 20 MA</strong> will get 1 mark.
+        </p>
+        <p className="text-lg lg:text-xl text-gray-600 mb-4">
+          We will define the market trend as <strong>OVERHEAT</strong> when the sum of marks are {`>`} 900, <strong>OVERSELL</strong> when the sum {`>`} 200
+        </p>
+        <div
+          className={`flex flex-row justify-between items-center px-4 bg-gray-400 w-full tracking-widest cursor-pointer h-8 ${expanded ? "" : "mb-4 md:mb-8"}`}
+          onClick={() => setExpanded(!expanded)}
+        >
+          <h6 className="">
+            Industry Abbreviation
+          </h6>
+          <FontAwesomeIcon icon={expanded ? faCaretUp : faCaretDown} size="lg" className="text-white" />
+        </div>
+        <p className={`px-4 mt-2 whitespace-pre-wrap font-bold ${expanded ? 'block mb-4 md:mb-8' : 'hidden'}`}>
+          {`XLC - 通訊服務\nXLY - 非必需消費品\nXLP - 必需消費品\nXLE - 能源\nXLF - 金融\nXLV - 醫療\nXLI - 工業\nXLB - 物料\nXLRE - 房地產\nXLK - 科技\nXLU - 公共`}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm flex-col">
+            <p className="mb-4 mx-auto">
+              Last Trading Day S&P Breadth
+            </p>
+            <Bar
+              data={lastBreadth}
+              xField='value'
+              xAxis={{ position: 'right' }}
+              yField='industry'
+              legend={false}
+              color={['#5B8FF9']}
+              label={{
+                style: { textAlign: 'center', fontWeight: 'bold' }
+              }}
+            />
+          </div>
+          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm flex-col mt-8 md:mt-0">
+            <p className="mb-4 mx-auto">
+              S&P Breadth Trend
+            </p>
+            <Line
+              data={marketTrend}
+              xField='date'
+              yField='total'
+              xAxis={{ type: 'time' }}
+              yAxis={{ maxLimit: 1100 }}
+              annotations={[
+                {
+                  type: 'text',
+                  position: ['10%', '79%'],
+                  content: 'Oversell Threshold',
+                  style: {
+                    fontWeight: 'bold'
+                  }
+                },
+                {
+                  type: 'text',
+                  position: ['10%', '15%'],
+                  content: 'Overheat Threshold',
+                  style: {
+                    fontWeight: 'bold'
+                  }
+                },
+                {
+                  type: 'line',
+                  start: ['0%', '82%'],
+                  end: ['100%', '82%'],
+                  style: {
+                    stroke: '#F3323A',
+                    lineDash: [1, 1],
+                    lineWidth: 2
+                  },
+                },
+                {
+                  type: 'line',
+                  start: ['0%', '18%'],
+                  end: ['100%', '18%'],
+                  style: {
+                    stroke: '#149D38',
+                    lineDash: [1, 1],
+                    lineWidth: 2
+                  },
+                }
+              ]}
+            />
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 md:mt-8">
+          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8 md:mt-0 flex-col">
+            <p className="mb-4 mx-auto">
+              S&P Breadth Trend by Industry
+            </p>
+            <Line
+              data={industryTrendData}
+              xField='date'
+              yField='value'
+              seriesField='industry'
+              xAxis={{ type: 'time' }}
+              yAxis={{ tickInterval: 25 }}
+              color={['#0963EF', '#4645F6', '#AB32F1', '#F62575', '#F3323A', '#E6520E', '#C96E06', '#9B7F05', '#149D38', '#0D87BE', '#000000']}
+            />
+          </div>
+          <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8 md:mt-0 flex-col">
+            <p className="mb-4 mx-auto">
+              S&P Breadth Heatmap by Industry
+            </p>
+            <Heatmap
+              data={industryTrendData}
+              xField='date'
+              yField='industry'
+              colorField='value'
+              color={(v) => calculateHeatmapColor(v / 100)}
+            />
+          </div>
+        </div>
+        <div className="w-full hidden md:flex px-6 py-8 bg-white rounded-sm shadow-sm mt-8 flex-col">
+          <p className="mb-4 mx-auto">
+            S&P Breadth Heatmap by Industry (Detailed)
+          </p>
           <HeatMapGrid
             data={heatmapData}
             xLabels={xLabels}
-            xLabelsStyle={() => ({
-              fontSize: '14px'
+            xLabelsStyle={(index) => ({
+              fontSize: '14px',
+              marginLeft: index === 11 && '16px'
             })}
             yLabels={yLabels}
             yLabelsStyle={() => ({
@@ -63,11 +214,12 @@ const StockPage = ({ data }) => {
               marginRight: '16px',
               textAlign: 'justify'
             })}
-            cellHeight='48px'
+            cellHeight='36px'
             cellStyle={(x, y, _ratio) => ({
-              background: calculateHeatmapColor(heatmapData[x][y] / 100)
+              marginLeft: y === 11 && '16px',
+              background: y !== 11 ? calculateHeatmapColor(heatmapData[x][y] / 100) : calculateHeatmapColor(heatmapData[x][y] / 1100)
             })}
-            cellRender={(x, y, value) => <div title={`Pos(${x}, ${y}) = ${value}`} style={{ fontWeight: 'bold', fontSize: '16px' }}>{value}</div>}
+            cellRender={(x, y, value) => <div title={`Pos(${x}, ${y}) = ${value}`} style={{ fontWeight: 'bold', fontSize: '14px' }}>{value}</div>}
           />
         </div>
       </div>
