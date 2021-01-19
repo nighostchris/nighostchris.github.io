@@ -4,6 +4,8 @@ import { HeatMapGrid } from 'react-grid-heatmap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
+import Footer from '../components/stonksviz/Footer';
+
 const industryNamesMappingInTrend = new Map([
   ['communication', 'XLC'],
   ['consumer_discretionary', 'XLY'],
@@ -17,6 +19,8 @@ const industryNamesMappingInTrend = new Map([
   ['technology', 'XLK'],
   ['utilities', 'XLU']
 ]);
+
+const abbreviation = ["XLC - 通訊服務", "XLY - 非必需消費品", "XLP - 必需消費品", "XLE - 能源", "XLF - 金融", "XLV - 醫療", "XLI - 工業", "XLB - 物料", "XLRE - 房地產", "XLK - 科技", "XLU - 公共"];
 
 const StockPage = ({ data }) => {
   let antDesignCharts;
@@ -94,17 +98,21 @@ const StockPage = ({ data }) => {
           We will define the market trend as <strong>OVERHEAT</strong> when the sum of marks are {`>`} 900, <strong>OVERSELL</strong> when the sum {`>`} 200
         </p>
         <div
-          className={`flex flex-row justify-between items-center px-4 bg-gray-400 w-full tracking-widest cursor-pointer h-8 ${expanded ? "" : "mb-4 md:mb-8"}`}
+          className={`flex flex-row justify-between items-center px-4 bg-gray-400 w-full tracking-widest rounded-sm cursor-pointer h-8 ${expanded ? "" : "mb-4 md:mb-8"}`}
           onClick={() => setExpanded(!expanded)}
         >
-          <h6 className="">
+          <h6 className="text-gray-100">
             Industry Abbreviation
           </h6>
           <FontAwesomeIcon icon={expanded ? faCaretUp : faCaretDown} size="lg" className="text-white" />
         </div>
-        <p className={`px-4 mt-2 whitespace-pre-wrap font-bold ${expanded ? 'block mb-4 md:mb-8' : 'hidden'}`}>
-          {`XLC - 通訊服務\nXLY - 非必需消費品\nXLP - 必需消費品\nXLE - 能源\nXLF - 金融\nXLV - 醫療\nXLI - 工業\nXLB - 物料\nXLRE - 房地產\nXLK - 科技\nXLU - 公共`}
-        </p>
+        <div className={`grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4 py-4 mt-2 rounded-sm bg-gray-300 font-bold ${expanded ? 'block mb-4 md:mb-8' : 'hidden'}`}>
+          {
+            abbreviation.map((abbr) => (
+              <p className="text-center text-gray-700 hover:bg-gray-200 rounded-md">{abbr}</p>
+            ))
+          }
+        </div>
         {
           process.browser && (
             <>
@@ -233,6 +241,13 @@ const StockPage = ({ data }) => {
           )
         }
       </div>
+      <Footer
+        props={{
+          logo: '/stonksviz-logo.svg',
+          background: 'bg-gray',
+          bottomText: 'text-gray'
+        }} 
+      />
     </div>
   );
 }
