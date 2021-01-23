@@ -87,7 +87,7 @@ const StockPage = ({ data }) => {
     <Root>
       <div className="w-full h-full bg-gray-200 overflow-y-auto">
         <Helmet>
-          <title>Chris Liu - US Stock Market</title>
+          <title>StonksViz - S&P Breadth</title>
         </Helmet>
         <div className="w-full h-fit-content md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col mx-auto py-6 md:py-8 px-6 md:px-0">
           <h1 className="text-xl lg:text-3xl font-bold mb-2">
