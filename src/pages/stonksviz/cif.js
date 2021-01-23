@@ -1,7 +1,8 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import * as moment from 'moment';
 
 import Root from '../../components/stonksviz/Root';
+import Select from "../../components/stonksviz/general/Select";
 
 const CIFPage = ({ data }) => {
   let antDesignCharts;
@@ -18,19 +19,71 @@ const CIFPage = ({ data }) => {
   ]);
 
   const selectBoxRef = React.useRef(null);
+  const selectStartYearRef = React.useRef(null);
+  const selectEndYearRef = React.useRef(null);
+  const selectStartMonthRef = React.useRef(null);
+  const selectEndMonthRef = React.useRef(null);
+
   const [selectGraph, setSelectGraph] = React.useState(false);
+  const [openStartYear, setOpenStartYear] = React.useState(false);
+  const [openStartMonth, setOpenStartMonth] = React.useState(false);
+  const [openEndYear, setOpenEndYear] = React.useState(false);
+  const [openEndMonth, setOpenEndMonth] = React.useState(false);
+
   const [selectedGraph, setSelectedGraph] = React.useState("dxy");
+  const [selectedStartYear, setSelectedStartYear] = React.useState(2020);
+  const [selectedEndYear, setSelectedEndYear] = React.useState(moment().year());
+  const [selectedStartMonth, setSelectedStartMonth] = React.useState(1);
+  const [selectedEndMonth, setSelectedEndMonth] = React.useState(moment(data.nighost.allDXYRecords[0].date).month() + 1);
 
-  console.log(data.nighost);
+  const cifData = () => {
+    let reversedData = {};
 
-  //const breadths = data.nighost.snp_breadths.sort((a, b) => new Date(a.date) > new Date(b.date) ? -1 : 1);
+    Object.keys(data.nighost).forEach((key) => {
+      reversedData[key] = data.nighost[key]
+        .map((record) => ({ date: moment(record.date).format('YYYY-MM-DD'), value: record.price }))
+        .filter((record) => {
+          if (moment(record.date).diff(moment().year(selectedStartYear).month(selectedStartMonth - 1).date(1)) >= 0 && moment(record.date).diff(moment().year(selectedEndYear).month(selectedEndMonth - 1).date(30)) <= 0) {
+            return true;
+          } else {
+            return false;
+          }
+        })
+        .sort((a, b) => moment(a.date).diff(moment(b.date)) > 0 ? 1 : -1);
+    });
+    
+    return new Map([
+      ['dxy', reversedData.allDXYRecords],
+      ['oil', reversedData.allOilRecords],
+      ['gold', reversedData.allGoldRecords],
+      ['silver', reversedData.allSilverRecords],
+      ['copper', reversedData.allCopperRecords]
+    ]);
+  };
+
+  const cifDataMin = new Map([
+    ['dxy', Math.min(...data.nighost.allDXYRecords.map((record) => record.price))],
+    ['oil', Math.min(...data.nighost.allOilRecords.map((record) => record.price))],
+    ['gold', Math.min(...data.nighost.allGoldRecords.map((record) => record.price))],
+    ['silver', Math.min(...data.nighost.allSilverRecords.map((record) => record.price))],
+    ['copper', Math.min(...data.nighost.allCopperRecords.map((record) => record.price))]
+  ]);
+
+  const oilGoldRatio = data.nighost.allOilRecords
+    .map((r) => ({ date: r.date, value: r.price / data.nighost.allGoldRecords.filter((rec) => rec.date === r.date)[0].price }))
+    .sort((a, b) => moment(a.date).diff(moment(b.date)) > 0 ? 1 : -1);
+
+  const copperGoldRatio = data.nighost.allCopperRecords
+    .map((r) => ({ date: r.date, value: r.price / data.nighost.allGoldRecords.filter((rec) => rec.date === r.date)[0].price }))
+    .sort((a, b) => moment(a.date).diff(moment(b.date)) > 0 ? 1 : -1);
 
   React.useEffect(() => {
     const handleClickOutside = (event) => {
-      if (selectBoxRef.current && !selectBoxRef.current.contains(event.target)) {
-        //console.log("cliked outside");
-        setSelectGraph(false);
-      }
+      if (selectBoxRef.current && !selectBoxRef.current.contains(event.target)) { setSelectGraph(false); }
+      if (selectStartYearRef.current && !selectStartYearRef.current.contains(event.target)) { setOpenStartYear(false); }
+      if (selectStartMonthRef.current && !selectStartMonthRef.current.contains(event.target)) { setOpenStartMonth(false); }
+      if (selectEndYearRef.current && !selectEndYearRef.current.contains(event.target)) { setOpenEndYear(false); }
+      if (selectEndMonthRef.current && !selectEndMonthRef.current.contains(event.target)) { setOpenEndMonth(false); }
     }
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -38,60 +91,114 @@ const CIFPage = ({ data }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [selectBoxRef]);
+  }, [selectBoxRef, selectStartYearRef, selectStartMonthRef, selectEndYearRef, selectEndMonthRef]);
 
   return (
-    <Root>
-      <div className="w-full h-full bg-gray-200 overflow-y-auto">
-        <Helmet>
-          <title>Chris Liu - Commodities, Indices and Futures</title>
-        </Helmet>
-        <div className="w-full h-fit-content md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col mx-auto py-6 md:py-8 px-6 md:px-0">
-          <div className="w-full lg:w-1/3 sm:mr-auto flex flex-row justify-center" ref={selectBoxRef}>
-            <div className="relative w-inline md:w-md-card lg:w-lg-card xl:w-xl-card">
-              <button
-                type="button"
-                onClick={(e) => setSelectGraph(!selectGraph)}
-                className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              >
-                <span className="block truncate">
-                  { graphAbbrMapping.get(selectedGraph) }
-                </span>
-                <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <svg className="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fillRule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </span>
-              </button>
-              <div className={`absolute mt-1 w-full rounded-md bg-white shadow-lg z-40 ${!selectGraph ? "hidden" : ""}`}>
-                <ul
-                  tabIndex={-1}
-                  role="listbox"
-                  className="max-h-health-info-select rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
-                >
-                  {
-                    ["dxy", "oil", "gold", "silver", "copper"].map((option, optionIndex) => (
-                      <li
-                        id={`listbox-option-${optionIndex}`}
-                        role="option"
-                        className="text-gray-900 cursor-default select-none relative py-2 pl-3 pr-9 hover:bg-gray-200"
-                        onClick={(e) => { setSelectedGraph(option); setSelectGraph(false); }}
-                      >
-                        <span className="font-normal block truncate">
-                          { graphAbbrMapping.get(option) }
-                        </span>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
+    <Root props={{ title: "StonksViz - Commodities, Indices and Futures" }}>
+      <div className="w-full h-fit-content md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col mx-auto py-6 md:py-8 px-6 md:px-0">
+        <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            <Select
+              props={{
+                ref: selectBoxRef,
+                title: "Data Source",
+                open: selectGraph,
+                setOpen: setSelectGraph,
+                selected: selectedGraph,
+                setSelected: setSelectedGraph,
+                options: ["dxy", "oil", "gold", "silver", "copper"],
+                abbrMapping: graphAbbrMapping
+              }}
+            />
+            <div className="grid grid-cols-2 gap-4 items-end">
+              <Select
+                props={{
+                  ref: selectStartYearRef,
+                  title: "Start",
+                  open: openStartYear,
+                  setOpen: setOpenStartYear,
+                  selected: selectedStartYear,
+                  setSelected: setSelectedStartYear,
+                  options: ["2020", "2021"],
+                }}
+              />
+              <Select
+                props={{
+                  ref: selectStartMonthRef,
+                  open: openStartMonth,
+                  setOpen: setOpenStartMonth,
+                  selected: selectedStartMonth,
+                  setSelected: setSelectedStartMonth,
+                  options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                }}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4 items-end">
+              <Select
+                props={{
+                  ref: selectEndYearRef,
+                  title: "End",
+                  open: openEndYear,
+                  setOpen: setOpenEndYear,
+                  selected: selectedEndYear,
+                  setSelected: setSelectedEndYear,
+                  options: ["2020", "2021"],
+                }}
+              />
+              <Select
+                props={{
+                  ref: selectEndMonthRef,
+                  open: openEndMonth,
+                  setOpen: setOpenEndMonth,
+                  selected: selectedEndMonth,
+                  setSelected: setSelectedEndMonth,
+                  options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                }}
+              />
             </div>
           </div>
+          <p className="text-md md:text-lg mb-6 mx-auto">
+            {`${graphAbbrMapping.get(selectedGraph)} Trend`}
+          </p>
+          <antDesignCharts.Line
+            data={cifData().get(selectedGraph)}
+            xField='date'
+            yField='value'
+            yAxis={{ min: cifDataMin.get(selectedGraph) }}
+          />
+        </div>
+        <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
+          <p className="text-md md:text-lg mb-6 mx-auto">
+            Oil-Gold Ratio
+          </p>
+          <antDesignCharts.Line
+            data={oilGoldRatio}
+            xField='date'
+            yField='value'
+            color={'#F3323A'}
+          />
+        </div>
+        <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
+          <p className="text-md md:text-lg mb-6 mx-auto">
+            Copper-Gold Ratio
+          </p>
+          <antDesignCharts.Line
+            data={copperGoldRatio}
+            xField='date'
+            yField='value'
+            color={'#0963EF'}
+          />
         </div>
       </div>
     </Root>
   );
 };
+
+{/* <div class="flex flex-row justify-end items-end">
+  <button type="submit" class="inline-flex justify-center py-2 px-6 border border-transparent shadow-sm text-sm font-medium rounded-md text-indigo-500 hover:text-indigo-600 bg-indigo-100 hover:bg-indigo-200 focus:outline-none">
+    Apply
+  </button>
+</div> */}
 
 export const cifQuery = graphql`
   query cifQuery {

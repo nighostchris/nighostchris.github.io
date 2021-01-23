@@ -23,6 +23,7 @@
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-graphql": "^2.7.4",
     "gatsby-transformer-json": "^2.4.5",
+    "moment": "^2.29.1",
     "node-sass": "^4.14.1",
     "postcss": "^7",
     "prop-types": "^15.7.2",

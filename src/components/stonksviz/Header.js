@@ -8,6 +8,11 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 const Header = ({ props }) => {
   const { logo } = props;
 
+  const linkList = [
+    { title: "S&P Breadth", link: "/stonksviz/snpbreadth" },
+    { title: "CIF", link: "/stonksviz/cif" }
+  ];
+
   const [openHamburger, setOpenHamburger] = React.useState(false);
 
   return (
@@ -19,7 +24,11 @@ const Header = ({ props }) => {
             <span className="ml-3 text-xl">StonksViz</span>
           </Link>
           <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-            <Link to="/" className="mr-5 hover:text-gray-900">S&P Breadth</Link>
+            {
+              linkList.map((tab) => (
+                <Link to={tab.link} className="mr-5 hover:text-gray-900">{tab.title}</Link>
+              ))
+            }
           </nav>
         </div>
       </header>
@@ -44,15 +53,15 @@ const Header = ({ props }) => {
         >
           <ul>
             {
-              ["S&P Breadth"].map((tab, index) => (
+              linkList.map((tab, index) => (
                 <li className={index !== 0 ? "mt-6" : ""}>
                   <Link
-                    to={`${index === 0 ? "/stocks/snpbreadth" : "/"}`}
+                    to={tab.link}
                     className="text-xl uppercase text-black tracking-widest"
                     activeClassName="text-black font-bold border-b-4 border-solid border-black"
                     partiallyActive={index !== 0 ? true : false}
                   >
-                    { tab }
+                    { tab.title }
                   </Link>
                 </li>
               ))
