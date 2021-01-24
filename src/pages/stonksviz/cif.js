@@ -2,6 +2,7 @@ import React from "react";
 import * as moment from 'moment';
 
 import Root from '../../components/stonksviz/Root';
+import Footer from '../../components/stonksviz/Footer';
 import Select from "../../components/stonksviz/general/Select";
 
 const CIFPage = ({ data }) => {
@@ -196,6 +197,13 @@ const CIFPage = ({ data }) => {
           )
         }
       </div>
+      <Footer
+        props={{
+          logo: '/stonksviz-logo.svg',
+          background: 'bg-gray',
+          bottomText: 'text-gray'
+        }} 
+      />
     </Root>
   );
 };

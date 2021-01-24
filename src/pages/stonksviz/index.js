@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Root from '../../components/stonksviz/Root';
+import Footer from '../../components/stonksviz/Footer';
 
 const StonksVizIndexPage = () => {
   return (
@@ -98,6 +99,13 @@ const StonksVizIndexPage = () => {
           </div>
         </div>
       </div>
+      <Footer
+        props={{
+          logo: '/stonksviz-logo.svg',
+          background: 'bg-gray',
+          bottomText: 'text-gray'
+        }} 
+      />
     </Root>
   );
 }

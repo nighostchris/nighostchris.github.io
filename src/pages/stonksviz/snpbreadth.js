@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 import Root from '../../components/stonksviz/Root';
+import Footer from '../../components/stonksviz/Footer';
 
 const industryNamesMappingInTrend = new Map([
   ['communication', 'XLC'],
@@ -237,6 +238,13 @@ const StockPage = ({ data }) => {
           )
         }
       </div>
+      <Footer
+        props={{
+          logo: '/stonksviz-logo.svg',
+          background: 'bg-gray',
+          bottomText: 'text-gray'
+        }} 
+      />
     </Root>
   );
 }
