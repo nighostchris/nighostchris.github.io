@@ -100,98 +100,104 @@ const CIFPage = ({ data }) => {
         {
           process.browser && (
             <>
-              <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm">
-                <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <Select
-                    props={{
-                      ref: selectBoxRef,
-                      title: "Data Source",
-                      open: selectGraph,
-                      setOpen: setSelectGraph,
-                      selected: selectedGraph,
-                      setSelected: setSelectedGraph,
-                      options: ["dxy", "oil", "gold", "silver", "copper"],
-                      abbrMapping: graphAbbrMapping
-                    }}
+              <div className="grid grid-cols-1">
+                <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm">
+                  <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <Select
+                      props={{
+                        ref: selectBoxRef,
+                        title: "Data Source",
+                        open: selectGraph,
+                        setOpen: setSelectGraph,
+                        selected: selectedGraph,
+                        setSelected: setSelectedGraph,
+                        options: ["dxy", "oil", "gold", "silver", "copper"],
+                        abbrMapping: graphAbbrMapping
+                      }}
+                    />
+                    <div className="grid grid-cols-2 gap-4 items-end">
+                      <Select
+                        props={{
+                          ref: selectStartYearRef,
+                          title: "Start",
+                          open: openStartYear,
+                          setOpen: setOpenStartYear,
+                          selected: selectedStartYear,
+                          setSelected: setSelectedStartYear,
+                          options: ["2020", "2021"],
+                        }}
+                      />
+                      <Select
+                        props={{
+                          ref: selectStartMonthRef,
+                          open: openStartMonth,
+                          setOpen: setOpenStartMonth,
+                          selected: selectedStartMonth,
+                          setSelected: setSelectedStartMonth,
+                          options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                        }}
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4 items-end">
+                      <Select
+                        props={{
+                          ref: selectEndYearRef,
+                          title: "End",
+                          open: openEndYear,
+                          setOpen: setOpenEndYear,
+                          selected: selectedEndYear,
+                          setSelected: setSelectedEndYear,
+                          options: ["2020", "2021"],
+                        }}
+                      />
+                      <Select
+                        props={{
+                          ref: selectEndMonthRef,
+                          open: openEndMonth,
+                          setOpen: setOpenEndMonth,
+                          selected: selectedEndMonth,
+                          setSelected: setSelectedEndMonth,
+                          options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <p className="text-md md:text-lg mb-6 mx-auto">
+                    {`${graphAbbrMapping.get(selectedGraph)} Trend`}
+                  </p>
+                  <antDesignCharts.Line
+                    data={cifData().get(selectedGraph)}
+                    xField='date'
+                    yField='value'
+                    yAxis={{ min: cifDataMin.get(selectedGraph) }}
                   />
-                  <div className="grid grid-cols-2 gap-4 items-end">
-                    <Select
-                      props={{
-                        ref: selectStartYearRef,
-                        title: "Start",
-                        open: openStartYear,
-                        setOpen: setOpenStartYear,
-                        selected: selectedStartYear,
-                        setSelected: setSelectedStartYear,
-                        options: ["2020", "2021"],
-                      }}
-                    />
-                    <Select
-                      props={{
-                        ref: selectStartMonthRef,
-                        open: openStartMonth,
-                        setOpen: setOpenStartMonth,
-                        selected: selectedStartMonth,
-                        setSelected: setSelectedStartMonth,
-                        options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
-                      }}
-                    />
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 items-end">
-                    <Select
-                      props={{
-                        ref: selectEndYearRef,
-                        title: "End",
-                        open: openEndYear,
-                        setOpen: setOpenEndYear,
-                        selected: selectedEndYear,
-                        setSelected: setSelectedEndYear,
-                        options: ["2020", "2021"],
-                      }}
-                    />
-                    <Select
-                      props={{
-                        ref: selectEndMonthRef,
-                        open: openEndMonth,
-                        setOpen: setOpenEndMonth,
-                        selected: selectedEndMonth,
-                        setSelected: setSelectedEndMonth,
-                        options: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
-                      }}
-                    />
-                  </div>
                 </div>
-                <p className="text-md md:text-lg mb-6 mx-auto">
-                  {`${graphAbbrMapping.get(selectedGraph)} Trend`}
-                </p>
-                <antDesignCharts.Line
-                  data={cifData().get(selectedGraph)}
-                  xField='date'
-                  yField='value'
-                  yAxis={{ min: cifDataMin.get(selectedGraph) }}
-                />
               </div>
-              <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
-                <p className="text-md md:text-lg mb-6 mx-auto">
-                  Oil-Gold Ratio
-                </p>
-                <antDesignCharts.Line
-                  data={oilGoldRatio}
-                  xField='date'
-                  yField='value'
-                  color={'#F3323A'}
-                />
+              <div className="grid grid-cols-1">
+                <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
+                  <p className="text-md md:text-lg mb-6 mx-auto">
+                    Oil-Gold Ratio
+                  </p>
+                  <antDesignCharts.Line
+                    data={oilGoldRatio}
+                    xField='date'
+                    yField='value'
+                    color={'#F3323A'}
+                  />
+                </div>
               </div>
-              <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
-                <p className="text-md md:text-lg mb-6 mx-auto">
-                  Copper-Gold Ratio
-                </p>
-                <antDesignCharts.Line
-                  data={copperGoldRatio}
-                  xField='date'
-                  yField='value'
-                  color={'#0963EF'}
-                />
+              <div className="grid grid-cols-1">
+                <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
+                  <p className="text-md md:text-lg mb-6 mx-auto">
+                    Copper-Gold Ratio
+                  </p>
+                  <antDesignCharts.Line
+                    data={copperGoldRatio}
+                    xField='date'
+                    yField='value'
+                    color={'#0963EF'}
+                  />
+                </div>
               </div>
             </>
           )
