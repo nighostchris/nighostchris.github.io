@@ -19,7 +19,7 @@ const Header = ({ props }) => {
     <>
       <header className="text-gray-600 body-font border-b-2 border-gray-300 hidden md:block">
         <div className="container mx-auto flex flex-wrap px-4 py-4 lg:py-5 flex-col md:flex-row items-center">
-          <Link to="/" className="flex font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <Link to="/stonksviz" className="flex font-medium items-center text-gray-900 mb-4 md:mb-0">
             <img src={logo} alt="header-logo" /> 
             <span className="ml-3 text-xl">StonksViz</span>
           </Link>
@@ -35,7 +35,7 @@ const Header = ({ props }) => {
       <header>
         <div className="flex flex-row items-center h-14 justify-center md:hidden border-b-2 border-gray-300 z-20">
           <FontAwesomeIcon icon={faBars} onClick={() => setOpenHamburger(!openHamburger)} className="absolute right-6 z-20" size="lg" />
-          <Link to="/" className="flex font-medium items-center text-gray-900 z-20">
+          <Link to="/stonksviz" className="flex font-medium items-center text-gray-900 z-20">
             <img src={logo} alt="header-logo" />
             <span className="ml-3 text-xl">StonksViz</span>
           </Link>
