@@ -6,7 +6,7 @@ const Footer = ({ props }) => {
   const { logo, background, bottomText } = props;
 
   return (
-    <footer className={`text-gray-600 body-font ${background}-500`}>
+    <footer className={`w-full text-gray-600 body-font ${background}-500`}>
       {/* <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
           <div className="lg:w-1/3 md:w-1/2 w-full px-4">

@@ -96,11 +96,11 @@ const CIFPage = ({ data }) => {
 
   return (
     <Root props={{ title: "StonksViz - Commodities, Indices and Futures" }}>
-      <div className="w-full h-fit-content md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col mx-auto py-6 md:py-8 px-6 md:px-0">
+      <div className="w-full h-fit-content flex flex-col items-center mx-auto pt-6 md:pt-8">
         {
           process.browser && (
             <>
-              <div className="grid grid-cols-1">
+              <div className="grid grid-cols-1 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl px-6 md:px-0 w-full">
                 <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm">
                   <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <Select
@@ -173,7 +173,7 @@ const CIFPage = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-1">
+              <div className="grid grid-cols-1 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl px-6 md:px-0 w-full">
                 <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
                   <p className="text-md md:text-lg mb-6 mx-auto">
                     Oil-Gold Ratio
@@ -186,7 +186,7 @@ const CIFPage = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-1">
+              <div className="grid grid-cols-1 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mb-6 md:mb-8 px-6 md:px-0 w-full">
                 <div className="w-full flex flex-col p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8">
                   <p className="text-md md:text-lg mb-6 mx-auto">
                     Copper-Gold Ratio
@@ -199,17 +199,17 @@ const CIFPage = ({ data }) => {
                   />
                 </div>
               </div>
+              <Footer
+                props={{
+                  logo: '/stonksviz-logo.svg',
+                  background: 'bg-gray',
+                  bottomText: 'text-gray'
+                }} 
+              />
             </>
           )
         }
       </div>
-      <Footer
-        props={{
-          logo: '/stonksviz-logo.svg',
-          background: 'bg-gray',
-          bottomText: 'text-gray'
-        }} 
-      />
     </Root>
   );
 };

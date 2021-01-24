@@ -84,36 +84,38 @@ const StockPage = ({ data }) => {
 
   return (
     <Root props={{ title: "StonksViz - S&P Breadth" }}>
-      <div className="w-full h-fit-content md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl flex flex-col mx-auto py-6 md:py-8 px-6 md:px-0">
-        <h1 className="text-xl lg:text-3xl font-bold mb-2">
+      <div className="w-full h-fit-content flex flex-col mx-auto pt-6 md:pt-8 items-center">
+        <h1 className="text-xl lg:text-3xl font-bold mb-2 w-full md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl px-6 md:px-0">
           What's S&P Breadth ?
         </h1>
-        <p className="text-lg lg:text-xl text-gray-600 mb-2">
+        <p className="text-lg lg:text-xl text-gray-600 mb-2 w-full md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl px-6 md:px-0">
           Any S&P constitue that has it's last updated price <strong>{`>`} 20 MA</strong> will get 1 mark.
         </p>
-        <p className="text-lg lg:text-xl text-gray-600 mb-4">
+        <p className="text-lg lg:text-xl text-gray-600 mb-4 w-full md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl px-6 md:px-0">
           We will define the market trend as <strong>OVERHEAT</strong> when the sum of marks are {`>`} 900, <strong>OVERSELL</strong> when the sum {`>`} 200
         </p>
-        <div
-          className={`flex flex-row justify-between items-center px-4 bg-gray-400 w-full tracking-widest rounded-sm cursor-pointer h-8 ${expanded ? "" : "mb-4 md:mb-8"}`}
-          onClick={() => setExpanded(!expanded)}
-        >
-          <h6 className="text-gray-100">
-            Industry Abbreviation
-          </h6>
-          <FontAwesomeIcon icon={expanded ? faCaretUp : faCaretDown} size="lg" className="text-white" />
-        </div>
-        <div className={`grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4 py-4 mt-2 rounded-sm bg-gray-300 font-bold ${expanded ? 'block mb-4 md:mb-8' : 'hidden'}`}>
-          {
-            abbreviation.map((abbr) => (
-              <p className="text-center text-gray-700 hover:bg-gray-200 rounded-md">{abbr}</p>
-            ))
-          }
+        <div className="w-full md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl px-6 md:px-0">
+          <div
+            className={`flex flex-row justify-between items-center px-4 bg-gray-400 w-full tracking-widest rounded-sm cursor-pointer h-8 ${expanded ? "" : "mb-4 md:mb-8"}`}
+            onClick={() => setExpanded(!expanded)}
+          >
+            <h6 className="text-gray-100">
+              Industry Abbreviation
+            </h6>
+            <FontAwesomeIcon icon={expanded ? faCaretUp : faCaretDown} size="lg" className="text-white" />
+          </div>
+          <div className={`grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4 py-4 mt-2 rounded-sm bg-gray-300 font-bold ${expanded ? 'block mb-4 md:mb-8' : 'hidden'}`}>
+            {
+              abbreviation.map((abbr) => (
+                <p className="text-center text-gray-700 hover:bg-gray-200 rounded-md">{abbr}</p>
+              ))
+            }
+          </div>
         </div>
         {
           process.browser && (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4">
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-4 px-6 md:px-0 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl">
                 <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm flex-col">
                   <p className="text-md md:text-lg mb-4 md:mb-6 mx-auto">
                     Last Trading Day S&P Breadth
@@ -181,7 +183,7 @@ const StockPage = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-4 md:mt-8">
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 md:gap-4 md:mt-8 px-6 md:px-0 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mb-6 md:mb-0">
                 <div className="w-full flex p-4 md:p-6 bg-white rounded-sm shadow-sm mt-8 md:mt-0 flex-col">
                   <p className="text-md md:text-lg mb-4 md:mb-6 mx-auto">
                     S&P Breadth Trend by Industry
@@ -209,7 +211,7 @@ const StockPage = ({ data }) => {
                   />
                 </div>
               </div>
-              <div className="w-full hidden md:flex px-6 py-8 bg-white rounded-sm shadow-sm mt-8 flex-col">
+              <div className="w-full hidden md:flex px-6 py-8 bg-white rounded-sm shadow-sm mt-8 flex-col mb-8 md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl">
                 <p className="text-md md:text-lg mb-4 md:mb-6 mx-auto">
                   S&P Breadth Heatmap by Industry (Detailed)
                 </p>
@@ -237,14 +239,14 @@ const StockPage = ({ data }) => {
             </>
           )
         }
+        <Footer
+          props={{
+            logo: '/stonksviz-logo.svg',
+            background: 'bg-gray',
+            bottomText: 'text-gray'
+          }} 
+        />
       </div>
-      <Footer
-        props={{
-          logo: '/stonksviz-logo.svg',
-          background: 'bg-gray',
-          bottomText: 'text-gray'
-        }} 
-      />
     </Root>
   );
 }
