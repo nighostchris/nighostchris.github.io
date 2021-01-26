@@ -19,6 +19,7 @@
     "gatsby-plugin-offline": "^3.2.10",
     "gatsby-plugin-postcss": "^2.3.12",
     "gatsby-plugin-react-helmet": "^3.3.4",
+    "gatsby-plugin-sitemap": "^2.11.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.11",
     "gatsby-source-graphql": "^2.7.4",

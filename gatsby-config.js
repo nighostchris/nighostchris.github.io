@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'https://chrisliu.ml/',
+  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-json",
@@ -35,5 +38,11 @@ module.exports = {
         url: "https://nighostchris-github-io-backend.herokuapp.com/graphql",
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/stonksviz/*`]
+      }
+    }
   ]
 }
