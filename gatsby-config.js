@@ -12,6 +12,7 @@ module.exports = {
         openGraph: {
           type: 'website',
           url: 'https://chrisliu.ml',
+          description: 'Software Developer from Hong Kong. Enthusiast of meaningful and user-friendly applications. Expert in Web Dev.',
           images: [
             {
               url: 'https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/website-og-image.jpg?alt=media&token=5b018f72-574f-41cf-9d91-4fa4b4981076',
@@ -20,6 +21,9 @@ module.exports = {
               alt: 'Chris Liu - Software Developer',
             }
           ]
+        },
+        twitter: {
+          cardType: 'summary_large_image'
         }
       },
     },
