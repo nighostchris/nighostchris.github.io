@@ -14,15 +14,16 @@ const ProjectsPage = ({ data }) => {
       <Helmet>
         <title>Chris Liu - Projects</title>
       </Helmet>
-      <div className="flex flex-col items-center w-full bg-background-blue-100">
-        <div className="flex flex-col items-center w-full bg-header-blue-grey py-16 md:py-24 lg:py-40 skew-left mt-6 md:mt-10">
-          <h1 className="text-3xl lg:text-5xl xl:text-6xl text-header-blue font-bold tracking-wide skew-right text-center">
-            Some work by me...
-          </h1>
+      <div className="flex flex-col items-center w-full bg-gray-800">
+        <div className="relative w-full h-screen">
+          <img className="w-full h-full object-cover" src="https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects-header.webp?alt=media&token=db58cb57-3a30-4d9a-9790-ae19395d4282" alt="projects-header" />
+          <div className="absolute w-full h-full top-0 flex flex-row items-center justify-center">
+            <h1 className="text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold tracking-wide">PROJECTS</h1>
+          </div>
         </div>
-        <div className="relative bg-transparent pb-10 px-8 sm:px-10 lg:pb-12 lg:px-12">
-          <div className="relative max-w-7xl mx-auto">
-            <div className="max-w-lg mx-auto grid gap-6 xl:grid-cols-2 2xl:grid-cols-3 lg:max-w-none">
+        <div className="py-12 md:py-20 px-8 sm:px-10 lg:px-12">
+          <div className="max-w-7xl mx-auto">
+            <div className="max-w-lg mx-auto grid gap-8 xl:grid-cols-2 2xl:grid-cols-3 lg:max-w-none">
               {
                 projects.map((project) => (
                   <ProjectCard
