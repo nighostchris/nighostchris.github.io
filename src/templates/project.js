@@ -53,10 +53,10 @@ const ProjectTemplate = ({ data }) => {
             />
           </div>
         </div>
-        <div className="flex-col bg-gray-700 p-8 md:p-12">
+        <div className="flex flex-col items-center bg-gray-700 p-8 md:p-12">
           {
             project.node.screenshots.map((description, index) => (
-              <img className={`w-full h-full ${index !== 0 ? "pt-8 md:pt-12" : ""}`} src={description.src} alt={description.alt} />
+              <img className={`w-fit-content ${index !== 0 ? "pt-8 md:pt-12" : ""}`} src={description.src} alt={description.alt} />
             ))
           }
         </div>

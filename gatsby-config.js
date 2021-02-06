@@ -6,7 +6,23 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-json",
     "gatsby-plugin-postcss",
-    "gatsby-plugin-next-seo",
+    {
+      resolve: 'gatsby-plugin-next-seo',
+      options: {
+        openGraph: {
+          type: 'website',
+          url: 'https://chrisliu.ml',
+          images: [
+            {
+              url: 'https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/website-og-image.jpg?alt=media&token=5b018f72-574f-41cf-9d91-4fa4b4981076',
+              width: 1200,
+              height: 630,
+              alt: 'Chris Liu - Software Developer',
+            }
+          ]
+        }
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
