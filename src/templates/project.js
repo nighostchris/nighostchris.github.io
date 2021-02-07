@@ -36,6 +36,7 @@ const ProjectTemplate = ({ data }) => {
                     <a
                       href={project.node.srcLink[0]}
                       target="_blank"
+                      rel="noreferrer"
                       className="w-full flex items-center justify-center py-1 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:text-lg"
                     >
                       Github Repository

@@ -5,36 +5,13 @@ import { faProjectDiagram, faClock, faLanguage } from "@fortawesome/free-solid-s
 
 import Root from "../../components/root/Root";
 
-const descriptionList = [
-  {
-    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fspecialist.png?alt=media&token=9473c0e2-8b3c-4ac0-90af-3a932230c5ae",
-    description: "Specialist Page"
-  },
-  {
-    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fspecialists.png?alt=media&token=ae9615d1-6062-43ac-8224-2ec98d9dd0aa",
-    description: "Specialists List",
-    remarks: "Neat categorization of specialists with one-click phone call and Vcard display"
-  },
-  {
-    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fbranch.png?alt=media&token=f02389ca-4566-4ff6-bb28-123a66c6a10a",
-    description: "Branch Page",
-    remarks: "Featuring common issues with quick overview of clinics' details and services offered"
-  },
-  {
-    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Fbody-check-plans.png?alt=media&token=88159e93-d032-4d15-a91b-8a8af5903ecc",
-    description: "Body Check Plans",
-    remarks: "User-Friendly interface to view and compare all plans"
-  },
-  {
-    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Flanding-page.png?alt=media&token=9ad76bd2-484e-44b6-94a0-62304dd408a3",
-    description: "Landing Page",
-    remarks: "Featuring a specific health info topic to raise readers' knowledge"
-  },
-  {
-    image: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron%2Frelated-passages.png?alt=media&token=4dc335a4-872e-4f40-9c50-8566267c00e8",
-    description: "Related Passages",
-    remarks: "One of the carousels used in website that enable easy navigation of lengthy data"
-  }
+const screenshots = [
+  { src: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron.care%2Fnew-design%2Fspecialist-page.webp?alt=media&token=57b1e0b9-2e6b-43eb-8ea9-4c0c01d95963", alt: "specialist-page" },
+  { src: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron.care%2Fnew-design%2Fspecialists-list.webp?alt=media&token=f0d986ef-0400-4045-9947-a1e4f6523c88", alt: "specialists-list" },
+  { src: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron.care%2Fnew-design%2Fbranch-page.webp?alt=media&token=bf396c84-71f9-4497-9bd1-c02f5e118ff5", alt: "branch-page" },
+  { src: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron.care%2Fnew-design%2Fbody-check-plans.webp?alt=media&token=00cb0a22-3428-4282-92d8-0c38fa53c258", alt: "body-check-plans" },
+  { src: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron.care%2Fnew-design%2Flanding-page.webp?alt=media&token=27d8f209-4929-4066-9dff-5790fe24dd57", alt: "landing-pages" },
+  { src: "https://firebasestorage.googleapis.com/v0/b/nighostchris-github-io.appspot.com/o/projects%2Fchiron.care%2Fnew-design%2Frelated-passages.webp?alt=media&token=a2d559e3-9db3-4ae3-aed2-c0bde0e4c00b", alt: "related-passages" }
 ];
 
 const videoList = [
@@ -105,69 +82,10 @@ const ChironWebsiteProjectPage = () => (
           />
         </div>
       </div>
-      <div className="flex-col md:flex hidden">
+      <div className="flex flex-col items-center bg-gray-700 p-8 md:p-12">
         {
-          descriptionList.map((description, index) => (
-            index % 2 === 0 ? (
-              <div className="flex flex-row bg-gray-700">
-                <div className="h-56 bg-white sm:h-72 md:h-full w-full md:w-1/2">
-                  <img className="w-full h-full object-scale-down" src={description.image} alt="" />
-                </div>
-                <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-4 lg:px-10">
-                  <p className="text-white text-2xl lg:text-3xl xl:text-5xl font-extrabold tracking-wider">
-                    { description.description }
-                  </p>
-                  {
-                    description.remarks && (
-                      <p className="mt-3 text-md lg:text-lg text-justify text-gray-300 max-w-lg">
-                        { description.remarks }
-                      </p>
-                    )
-                  }
-                </div>
-              </div>
-            ) : (
-              <div className="flex flex-row bg-gray-700">
-                <div className="w-full md:w-1/2 flex flex-col justify-center items-center px-4 lg:px-10">
-                  <p className="text-white text-2xl lg:text-3xl xl:text-5xl font-extrabold tracking-wider">
-                    { description.description }
-                  </p>
-                  {
-                    description.remarks && (
-                      <p className="mt-3 text-md lg:text-lg text-justify text-gray-300 max-w-lg">
-                        { description.remarks }
-                      </p>
-                    )
-                  }
-                </div>
-                <div className="h-56 bg-white sm:h-72 md:h-full w-full md:w-1/2">
-                  <img className="w-full h-full object-scale-down" src={description.image} alt="" />
-                </div>
-              </div>
-            )
-          ))
-        }
-      </div>
-      <div className="flex flex-col md:hidden">
-        {
-          descriptionList.map((description) => (
-            <div className="flex flex-col bg-gray-700">
-              <div className="h-56 w-full flex flex-col justify-center items-center px-10">
-                <p className="text-white text-3xl font-bold tracking-wider">
-                  { description.description }
-                </p>
-                {
-                  description.remarks && (
-                    <p className="mt-3 text-lg text-gray-300 text-justify">
-                      { description.remarks }
-                    </p>
-                  )
-                }
-              </div>
-              <div className="h-56 bg-white w-full">
-                <img className="w-full h-full object-scale-down" src={description.image} alt="" />
-              </div>
-            </div>
+          screenshots.map((screenshot, index) => (
+            <img className={`w-fit-content ${index !== 0 ? "pt-8 md:pt-12" : ""}`} src={screenshot.src} alt={screenshot.alt} />
           ))
         }
       </div>
